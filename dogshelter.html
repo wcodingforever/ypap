@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            background-size: 100vw 100vh;
+        }
+
+        #navdesk {
+            display: none;
+        }
+
+
+        @media screen and (max-width: 480px) {
+
+            #navmobile {
+                height: 85px;
+                width: 100%;
+                font-size: 1.5em;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .logodiv {
+                height: 80px;
+                width: 80px;
+                font-size: 1.5em;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-around;
+                background-color: #1D4872;
+                border-radius: 40px;
+                margin-left: 10px;
+                margin-top: 5px;
+
+            }
+            .logostyle {
+                width: 55px;
+                height: 55px; 
+                margin: auto;
+            }
+
+            #mobilemenubutton{
+                font-size: 45px;
+                margin-right: 10px;
+                
+            }
+
+            #mobilemenudiv{
+                font-size: 1.5em;
+                margin: 30px;
+                display: none;
+
+            }
+
+            .mobilemenuoptions {
+                margin-bottom: 20px;
+                border-bottom: 1px solid #1D4872;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="navdesk"><!--navigation desktop-->
+        <div class="logodiv"><img class="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6">
+        </div>
+    </div>
+    <div id="navmobile"><!--navigation mobile-->
+        <div class="logodiv"><img class="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div>
+        <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
+    </div>
+    <div id="mobilemenudiv"><!--mobile menu options-->
+        <div class="menuoptions" id="aboutoption">About Us</div>
+        <div class="menuoptions" id="flightoption">Flight Buddy</div>
+        <div class="menuoptions" id="fosteroption">Foster</div>
+        <div class="menuoptions" id="volunteeroption">Volunteer</div>
+        <div class="menuoptions" id="donationsoption">Donations</div>
+        <div class="menuoptions" id="storiesoption">Stories</div>
+        <div class="menuoptions" id="contactoption">Contact Us</div>
+        <div class="menuoptions" id="newsoption">News Letters</div>
+    </div>
+    <div>
+        <!-- testing the function to see if it works -->
+        <div class="hidepage" id="aboutpage">About Us</div>
+        <div class="hidepage" id="flightpage">Flight Buddy</div>
+        <div class="hidepage" id="fosterpage">Foster</div>
+        <div class="hidepage" id="volunteerpage">Volunteer</div>
+        <div class="hidepage" id="donationspage">Donations</div>
+        <div class="hidepage" id="storiespage">Stories</div>
+        <div class="hidepage" id="contactpage">Contact Us</div>
+        <div class="hidepage" id="newspage">News Letters</div>
+    </div>
+
+    <script>
+
+        //all the different pages needs a class added to them called "hidepage" and an id mathing the options id but with page instead of option for this function to work
+        var menuOptions = document.querySelectorAll(".menuoptions");
+        var allPages = document.querySelectorAll(".hidepage");
+        var mobileMenu = document.querySelector("#mobilemenudiv");
+        var mobileMenuButton = document.querySelector("#mobilemenubutton");
+
+
+
+        mobileMenuButton.addEventListener("click", function(){
+            mobileMenu.style.display = "block";
+            hideAllPages();
+        });
+
+        //this hides all the pages that we have and the menu option page
+        function hideAllPages() {
+        for (var i = 0; i < allPages.length; i++) {
+            var thisPage = allPages[i];
+            thisPage.style.display = "none";
+            }
+        }
+
+        hideAllPages();
+
+
+        //this finds what page we want to open and closes the menu option list
+        for (var i = 0; i < menuOptions.length; i++) {
+            var thisPage = menuOptions[i];
+
+            thisPage.addEventListener("click", function(){
+                var optionPos = this.id.indexOf("option");
+                var myType = this.id.substring(0, optionPos);
+                var myPage = document.querySelector("#" + myType + "page");
+                
+                if (myPage.style.display === "none") {
+                    // mobileMenu.style.display = "none"
+                    hideAllPages();
+                    myPage.style.display = "block";
+                    mobileMenu.style.display = "none";
+                }
+            });
+        }
+    </script>
+    
+</body>
+</html>
