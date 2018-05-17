@@ -123,20 +123,23 @@
         var submitButton = document.querySelector("#submitbutton");
 
         //This forces the calendar to only accept start dates of tomorrow or later!
-        var todayDate = new Date();
-        var ddGotten = todayDate.getDate();
-        var mmGotten = todayDate.getMonth()+1;
-        var yyyyGotten = todayDate.getFullYear();
-        var dateOffset = ddGotten + 1;
-        if(dateOffset<10){
-                dateOffset= "0"+dateOffset
-            }
-            if(mmGotten<10){
-                mmGotten="0"+mmGotten
-            }
-        todayDate = yyyyGotten+'-'+mmGotten+'-'+dateOffset;
-        document.getElementById("startdate").setAttribute("min", todayDate);
-
+        function getDate () {
+            var todayDate = new Date();
+            var ddGotten = todayDate.getDate();
+            var mmGotten = todayDate.getMonth()+1;
+            var yyyyGotten = todayDate.getFullYear();
+            var dateOffset = ddGotten + 1;
+            if(dateOffset<10){
+                    dateOffset= "0"+dateOffset
+                }
+                if(mmGotten<10){
+                    mmGotten="0"+mmGotten
+                }
+            todayDate = yyyyGotten+'-'+mmGotten+'-'+dateOffset;
+            document.getElementById("startdate").setAttribute("min", todayDate);
+        }
+        getDate();
+        
         //Add event listener to the button, making sure it can only submit when all fields have been filled out
         submitButton.addEventListener("click", function() {
             if (applicantName.value === ""|| phoneNumber.value === "" || emailAddress.value === ""|| homeAddress.value === "" || startDate.value === "" || endDate.value === "") {
