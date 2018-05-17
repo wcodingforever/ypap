@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        * {
+        /* * {
             outline: 1px solid red;
-        }
+        } */
         body {
             margin: 0px;
             padding: 0px;
@@ -27,6 +27,11 @@
         #otherinfo {
             width: 85%;
         }
+
+        .requiredfield {
+            color: red;
+        }
+
         #submitbuttonwrapper {
             margin: 20px;
         }
@@ -73,34 +78,34 @@
         </div>
     </div>
     <div id="bottomwrapper">
-        <div id="pleasenote">Please note that all fields are mandatory!</div>
+        <div id="pleasenote">Please note that all fields marked with a <span class="requiredfield">*</span> are mandatory!</div>
         <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
         <div class="inputwrapper" id="namewrapper">
-            <div class="fielddesc">Your name</div>
+            <div class="fielddesc">Your name <span class="requiredfield">*</span></div>
             <input type="text" id="name">
         </div>
         <div class="inputwrapper" id="phonenumwrapper">
-            <div class="fielddesc">Your phone number</div>
+            <div class="fielddesc">Your phone number <span class="requiredfield">*</span></div>
             <input type="text" id="phonenum">
         </div>
         <div class="inputwrapper" id="emailwrapper">
-            <div class="fielddesc">Your email address</div>
+            <div class="fielddesc">Your email address <span class="requiredfield">*</span></div>
             <input type="text" id="email">
         </div>
         <div class="inputwrapper" id="addresswrapper">
-            <div class="fielddesc">Your home address</div>
+            <div class="fielddesc">Your home address <span class="requiredfield">*</span></div>
             <input type="text" id="address">
         </div>
         <div class="inputwrapper" id="startdatewrapper">
-            <div class="fielddesc">Start of availability date</div>
+            <div class="fielddesc">Start of availability date <span class="requiredfield">*</span></div>
             <input type="date" id="startdate">
         </div>
         <div class="inputwrapper" id="enddatewrapper">
-            <div class="fielddesc">End of availability date</div>
+            <div class="fielddesc">End of availability date <span class="requiredfield">*</span></div>
             <input type="date" id="enddate">
         </div>
         <div class="inputwrapper" id="otherinfowrapper">
-            <div class="fielddesc">Please let us know if there are any special circumstances that need to be considered before we ask you to foster a dog. (Children in the home, other pets, living space avilability, etc.)</div>
+            <div class="fielddesc">Please let us know if there are any special circumstances that need to be considered before we ask you to foster a dog. (Children in the home, other pets, living space limitations, etc.)</div>
             <textarea name="otherinfo" id="otherinfo" rows="5"></textarea>
         </div>
         <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="Submit application"></div>
@@ -116,10 +121,62 @@
         var otherInfo = document.querySelector("#otherinfo");
         //The variable for the submit button.
         var submitButton = document.querySelector("#submitbutton");
+
+        //This forces the calendar to only accept start dates of tomorrow or later!
+        var todayDate = new Date();
+        var ddGotten = todayDate.getDate();
+        var mmGotten = todayDate.getMonth()+1;
+        var yyyyGotten = todayDate.getFullYear();
+        var dateOffset = ddGotten + 1;
+        if(dateOffset<10){
+                dateOffset= "0"+dateOffset
+            }
+            if(mmGotten<10){
+                mmGotten="0"+mmGotten
+            }
+        todayDate = yyyyGotten+'-'+mmGotten+'-'+dateOffset;
+        document.getElementById("startdate").setAttribute("min", todayDate);
+
         //Add event listener to the button, making sure it can only submit when all fields have been filled out
         submitButton.addEventListener("click", function() {
-            
+            if (applicantName.value === ""|| phoneNumber.value === "" || emailAddress.value === ""|| homeAddress.value === "" || startDate.value === "" || endDate.value === "") {
+                alert("Please make sure to fill out all the fields!")
+            }
+            else {
+                //Below makes sure that the email address has an @ in it.
+                var emailInput = emailAddress.value;
+                var validEmailCheck = emailInput.indexOf("@");
+                if (validEmailCheck < 0) {
+                    alert("Please enter a valid email address.");
+                }
+                //Below makes sure that the info entered in the phone number section is a number.
+                var phoneNumberInput = phoneNumber.value;
+                if (phoneNumberInput / 1 !== phoneNumberInput) {
+                    alert("Please enter a valid phone number.")
+                }
+                else submitInformation(); //This calls the function that submits the entered information to the php!
+            }
         })
+        //Below is only called when the submit button is clicked and all the conditions are met!
+        function submitInformation() {
+            //Below is the package of all the information in the fields.
+            var flightBuddyFormInfo = {
+                FlightDate: departureDate.value,
+                Destination: destinationCity.value,
+                Name: travelerName.value,
+                PhoneNumber: phoneNumber.value,
+                Email: emailAddress.value
+            };
+            var flightBuddyAjax = new XMLHttpRequest();
+            flightBuddyAjax.onreadystatechange = function() {
+                if (flightBuddyAjax.readyState === 4 && flightBuddyAjax.status === 200) {
+                    alert("Thank you. Your application has been submitted.");
+                }
+            }
+            var outGoingFlightBuddyInfo = JSON.stringify(flightBuddyFormInfo);
+            flightBuddyAjax.open("POST", "sendflightform.php");
+            flightBuddyAjax.send(outGoingFlightBuddyInfo);
+        }
     </script>
 </body>
 </html>
