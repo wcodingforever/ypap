@@ -68,6 +68,7 @@
                     #TODO All checking for the right info by JS
                     no useless requests for DB
 
+
 #Front end: 
     #Standarts:
         - @media screen and (max-width: 481px) inside modible version
@@ -75,4 +76,4 @@
 
     donations.html
         #TODO Title adjust
-        
+
