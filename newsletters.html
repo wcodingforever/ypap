@@ -53,9 +53,32 @@
             <div class="fielddesc">Your email address</div>
             <input type="text" id="email">
         </div>
-        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="Sign up!"></div>
+        <div id="submitbuttonwrapper"><input id="signupbutton" type="button" value="Sign up!"></div>
     </div>
     <script>
+        //The variables pointing towards each input field.
+        var signUpName = document.querySelector("#name");
+        var signUpEmail = document.querySelector("#email");
+
+        //The variable for the sign up button.
+        var signUpButton = document.querySelector("#signupbutton");
+
+        signUpButton.addEventListener("click", function() {
+            //Below checks that all fields have been filled out.
+            if (signUpName.value === "" || signUpEmail.value === "") {
+                alert("Please make sure to fill out all the fields.")
+            }
+            else {
+                var emailInput = signUpEmail.value;
+                var validEmailCheck = emailInput.indexOf("@");
+                if (validEmailCheck < 0) {
+                    alert("Please enter a valid email address.");
+                }
+                else signUpNewsLetter(); //This calls the function that submits the user's information!
+            }
+        })
+
+
     </script>
 </body>
 </html>
