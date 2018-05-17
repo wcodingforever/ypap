@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            outline: 1px solid red;
+        }
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #text {
+            display: inline-block;
+            padding: 10px;
+        }
+        .inputwrapper {
+            margin: 15px;
+        }
+        #submitbuttonwrapper {
+            margin: 20px;
+        }
+        @media screen and (min-width: 481px) {
+            #everythingwrapper {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="everythingwrapper">
+        <div id="newsletterimage">Image file here</div>
+        <!-- Below is the text, made up to sound kind of right. -->
+        <div id="text">
+            Want to stay up-to-date with everything that's happening at the Yongin Pound? Subscribe to our newsletter and get regular updates on volunteer opportunities and news about our cuddly friends!
+        </div>
+    </div>
+    <div id="bottomwrapper">
+        <div class="inputwrapper" id="namewrapper">
+            <div class="fielddesc">Your name</div>
+            <input type="text" id="name">
+        </div>
+        <div class="inputwrapper" id="emailwrapper">
+            <div class="fielddesc">Your email address</div>
+            <input type="text" id="email">
+        </div>
+        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="Sign up!"></div>
+    </div>
+    <script>
+    </script>
+</body>
+</html>
