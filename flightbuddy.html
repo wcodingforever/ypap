@@ -22,13 +22,6 @@
             max-height: 100%;
         }
 
-        #flightbuddyimage {
-            width: 400px;
-            height: 300px;
-            /* display: inline-block; */
-            float: left;
-        }
-
         #text {
             display: inline-block;
             padding: 10px;
@@ -46,22 +39,27 @@
             margin: 20px;
         }
 
+        @media screen and (min-width: 481px) {
 
+            #everythingwrapper {
+                display: flex;
+                justify-content: center;
+            }
+
+        }
 
     </style>
-    <!-- Mediascreen max width should be 480, so set it to 481 -->
 </head>
 <body>
-    <div id="flightbuddyimage"><img src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
-    <!-- Below is the text taken straight from the YPAP page. -->
-    <div id="text">
-        Couriers are people flying internationally who are willing to check in a dog under their name at the airport. The pound will arrange everything and there is no cost to you. Usually only DIRECT flights work for sending an animal on a plane due to long flight times and airline regulations. If you are not flying direct, please let us know and we can try to arrange a dog to fly IN CABIN with you, under the seat. Most commonly we need flights to SFO, LAX, JFK, SEA, ORD, IAD, YVR, YYZ, VIE, MUC.
+    <div id="everythingwrapper">
+        <div id="flightbuddyimage"><img src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
+        <!-- Below is the text taken straight from the YPAP page. -->
+        <div id="text">
+            Couriers are people flying internationally who are willing to check in a dog under their name at the airport. The pound will arrange everything and there is no cost to you. Usually only DIRECT flights work for sending an animal on a plane due to long flight times and airline regulations. If you are not flying direct, please let us know and we can try to arrange a dog to fly IN CABIN with you, under the seat. Most commonly we need flights to SFO, LAX, JFK, SEA, ORD, IAD, YVR, YYZ, VIE, MUC.
+        </div>
     </div>
     <div id="bottomwrapper">
-        <div id="pleasenote">
-            Please note that all fields are mandatory!
-        </div>
-
+        <div id="pleasenote">Please note that all fields are mandatory!</div>
         <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
         <div class="inputwrapper" id="flightdatewrapper">
             <div class="fielddesc">Date of departure</div>
@@ -124,11 +122,11 @@
         function submitInformation() {
             //Below is the package of all the information in the fields.
             var flightBuddyFormInfo = {
-                submittedDate: departureDate.value,
-                submittedCity: destinationCity.value,
-                submittedName: travelerName.value,
-                submittedPhone: phoneNumber.value,
-                submittedEmail: emailAddress.value
+                FlightDate: departureDate.value,
+                Destination: destinationCity.value,
+                Name: travelerName.value,
+                PhoneNumber: phoneNumber.value,
+                Email: emailAddress.value
             };
             var flightBuddyAjax = new XMLHttpRequest();
             flightBuddyAjax.onreadystatechange = function() {
