@@ -136,9 +136,27 @@
                     mmGotten="0"+mmGotten
                 }
             todayDate = yyyyGotten+'-'+mmGotten+'-'+dateOffset;
-            document.getElementById("startdate").setAttribute("min", todayDate);
+            startdate.setAttribute("min", todayDate);
         }
         getDate();
+
+        //This forces the calendar to only accept end dates of more than one week after today!
+        function getEndDate () {
+            var todayDate = new Date();
+            var ddGotten = todayDate.getDate();
+            var mmGotten = todayDate.getMonth()+1;
+            var yyyyGotten = todayDate.getFullYear();
+            var dateOffset = ddGotten + 8;
+            if(dateOffset<10){
+                    dateOffset= "0"+dateOffset
+                }
+                if(mmGotten<10){
+                    mmGotten="0"+mmGotten
+                }
+            todayDate = yyyyGotten+'-'+mmGotten+'-'+dateOffset;
+            enddate.setAttribute("min", todayDate);
+        }
+        getEndDate();
         
         //Add event listener to the button, making sure it can only submit when all fields have been filled out
         submitButton.addEventListener("click", function() {
@@ -163,22 +181,24 @@
         //Below is only called when the submit button is clicked and all the conditions are met!
         function submitInformation() {
             //Below is the package of all the information in the fields.
-            var flightBuddyFormInfo = {
-                FlightDate: departureDate.value,
-                Destination: destinationCity.value,
-                Name: travelerName.value,
+            var fosterFormInfo = {
+                Name: applicantName.value,
                 PhoneNumber: phoneNumber.value,
-                Email: emailAddress.value
+                Email: emailAddress.value,
+                Address: homeAddress.value,
+                StartDate: departureDate.value,
+                EndDate: endDate.value,
+                OtherInfo: otherInfo.value,
             };
-            var flightBuddyAjax = new XMLHttpRequest();
-            flightBuddyAjax.onreadystatechange = function() {
-                if (flightBuddyAjax.readyState === 4 && flightBuddyAjax.status === 200) {
+            var fosterAjax = new XMLHttpRequest();
+            fosterAjax.onreadystatechange = function() {
+                if (fosterAjax.readyState === 4 && fosterAjax.status === 200) {
                     alert("Thank you. Your application has been submitted.");
                 }
             }
-            var outGoingFlightBuddyInfo = JSON.stringify(flightBuddyFormInfo);
-            flightBuddyAjax.open("POST", "sendflightform.php");
-            flightBuddyAjax.send(outGoingFlightBuddyInfo);
+            var outGoingFosterInfo = JSON.stringify(fosterFormInfo);
+            fosterAjax.open("POST", "sendflightform.php");
+            fosterAjax.send(outGoingFosterInfo);
         }
     </script>
 </body>
