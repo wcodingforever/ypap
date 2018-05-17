@@ -1,5 +1,3 @@
-CREATE DATABASE `dogadoptions`;
-
 USE dogadoptions;
 
 CREATE TABLE `mailinglist`(
