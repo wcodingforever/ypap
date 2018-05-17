@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+                * {
+        outline: 1px solid red;
+        }
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #text {
+            display: inline-block;
+            padding: 10px;
+        }
+        #pleasenote {
+            margin: 10px;
+        }
+        .inputwrapper {
+            margin: 15px;
+        }
+        #submitbuttonwrapper {
+            margin: 20px;
+        }
+        @media screen and (min-width: 481px) {
+            #everythingwrapper {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="everythingwrapper">
+        <div id="flightbuddyimage"><img src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
+        <!-- Below is the text taken straight from the YPAP page. -->
+        <div id="text">
+            <div id="rundown">Fostering is temporarily caring for a dog as if it were your own. Fosters are people who have time and love to give, but can’t commit to a dog forever.
+            <br>
+            <br>
+            1. YPAP needs fosters to house dogs before they fly internationally.
+            <br>
+            In this case, a specific dog has been adopted outside of Korea, but due to health and safety regulations, must live outside the pound for 1-4 months. It is expensive to board a dog for this time so you can volunteer your home.
+            <br>
+            <br>
+            2. YPAP also needs fosters to house dogs until they find adoption.
+            <br>
+            Getting the dog out of a cage is extremely important for their mental and physical health. They are happier and friendlier when they meet potential adopters.
+            <br>
+            In this case, the animal does not necessarily have a set time with you. Fostering could be for a week or could be for months.
+            <br>
+            Your main job is caring for the dog, but we also hope you help the pound by promoting the adoption of the animal. Take pictures together, talk with your friends and family, chat with people when you go on walks, put on an “Adopt Me” bandana and sit at a cafe or bar together – whatever you can think of to get them noticed! The most important thing is to SHARE.
+            <br>
+            <br>
+            Fosters must fill out an application that covers basic questions you need to consider before taking in a dog.
+            <br>
+            <br>
+            Dogs will be vaccinated and spayed/neutered before they come to your home. We should be able to take care of all the vetting and driving and leave things as simple as possible for you.
+            <br>
+            <br>
+            If you are willing to take on more than just housing the dog (if you can drive, do vet visits, administer medication at home) please let us know as this can help immensely!</div>
+        </div>
+    </div>
+    <div id="bottomwrapper">
+        <div id="pleasenote">Please note that all fields are mandatory!</div>
+        <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
+        <div class="inputwrapper" id="namewrapper">
+            <div class="fielddesc">Your name</div>
+            <input type="text" id="name">
+        </div>
+        <div class="inputwrapper" id="phonenumwrapper">
+            <div class="fielddesc">Traveler's phone number</div>
+            <input type="text" id="phonenum">
+        </div>
+        <div class="inputwrapper" id="emailwrapper">
+            <div class="fielddesc">Your email address</div>
+            <input type="text" id="email">
+        </div>
+        <div class="inputwrapper" id="addresswrapper">
+            <div class="fielddesc">Your home address</div>
+            <input type="text" id="email">
+        </div>
+        <div class="inputwrapper" id="startdatewrapper">
+            <div class="fielddesc">Start of availability date</div>
+            <input type="date" id="startdate">
+        </div>
+        <div class="inputwrapper" id="enddatewrapper">
+            <div class="fielddesc">End of availability date</div>
+            <input type="date" id="enddate">
+        </div>
+        <div class="inputwrapper" id="otherinfowrapper">
+            <div class="fielddesc">Please let us know if there are any special circumstances that need to be considered before we ask you to foster a dog. (Children in the home, other pets, living space avilability, etc.)</div>
+            <input type="textarea" id="otherinfo">
+        </div>
+        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="Submit application"></div>
+    </div>
+    <script>
+    </script>
+</body>
+</html>
