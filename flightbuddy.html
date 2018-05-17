@@ -100,6 +100,15 @@
                 submittedPhone: phoneNumber.value,
                 submittedEmail: emailAddress.value
             };
+            var flightBuddyAjax = new XMLHttpRequest();
+            flightBuddyAjax.onreadystatechange = function() {
+                if (flightBuddyAjax.readyState === 4 && flightBuddyAjax.status === 200) {
+                    alert("Thank you. Your application has been submitted.");
+                }
+            }
+            var outGoingFlightBuddyInfo = JSON.stringify(flightBuddyFormInfo);
+            flightBuddyAjax.open("POST", "sendflightform.php");
+            flightBuddyAjax.send(outGoingFlightBuddyInfo);
         }
 
     </script>
