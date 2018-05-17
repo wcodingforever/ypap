@@ -1,3 +1,10 @@
+     /\_____/\
+     |  o o  |
+    __\__^__/__
+   (__/     \__)
+    _|   .   |_
+   (__\_____/__)
+
 #DatabaseTables
     dogs: id|name|gender("male", "female")|age(NULL)|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/155)|picture(NULL/1000)|status|
 
@@ -41,7 +48,7 @@
                 return: id, content, picture (LIFO)LIM(5,15)
     
     donorinfo.php DB:donations
-        receive: namewhodonated, emailwhodonated, howmuhdonated
+        receive: namewhodonated, emailwhodonated, howmuhdonated, currency
             value: TBD
                 return: (nothing)
                     #TODO All checking for the right info by JS
@@ -61,4 +68,12 @@
                     #TODO All checking for the right info by JS
                     no useless requests for DB
 
-    
+
+#Front end: 
+    #Standarts:
+        - @media screen and (max-width: 481px) inside modible version
+        - 
+
+    donations.html
+        #TODO Title adjust
+
