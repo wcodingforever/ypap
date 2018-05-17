@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        * {
+        outline: 1px solid red;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        .inputwrapper {
+            margin: 15px;
+        }
+
+        #submitbuttonwrapper {
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Below is the text taken straight from the YPAP page. -->
+    <p>
+        Couriers are people flying internationally who are willing to check in a dog under their name at the airport. The pound will arrange everything and there is no cost to you. Usually only DIRECT flights work for sending an animal on a plane due to long flight times and airline regulations. If you are not flying direct, please let us know and we can try to arrange a dog to fly IN CABIN with you, under the seat. Most commonly we need flights to SFO, LAX, JFK, SEA, ORD, IAD, YVR, YYZ, VIE, MUC.
+        <br>
+        <br>
+        Please note that all fields are mandatory!
+    </p>
+    <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
+    <div class="inputwrapper" id="flightdatewrapper">
+        <div class="fielddesc">Date of departure</div>
+        <input type="date" id="flightdate">
+    </div>
+    <div class="inputwrapper" id="destinationwrapper">
+        <div class="fielddesc">Destination city</div>
+        <input type="text" id="destination">
+    </div>
+    <div class="inputwrapper" id="namewrapper">
+        <div class="fielddesc">Traveler name</div>
+        <input type="text" id="name">
+    </div>
+    <div class="inputwrapper" id="phonenumwrapper">
+        <div class="fielddesc">Traveler's phone number</div>
+        <input type="text" id="phonenum">
+    </div>
+    <div class="inputwrapper" id="emailwrapper">
+        <div class="fielddesc">Traveler's email address</div>
+        <input type="text" id="email">
+    </div>
+    <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="Submit application"></div>
+    <script>
+        //The variables pointing towards each input field.
+        var departureDate = document.querySelector("#flightdate");
+        var destinationCity = document.querySelector("#destination");
+        var travelerName = document.querySelector("#name");
+        var phoneNumber = document.querySelector("#phonenum");
+        var emailAddress = document.querySelector("#email");
+        //The variable for the submit button.
+        var submitButton = document.querySelector("#submitbutton");
+
+        //Add event listener to the button, making sure it can only submit when all fields have been filled out
+        submitButton.addEventListener("click", function() {
+
+        })
+
+    </script>
+</body>
+</html>
