@@ -1,6 +1,6 @@
 USE dogadoptions;
 
-CREATE TABLE `flightbuddy`(
+CREATE TABLE `adoption`(
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `dogid` INT NOT NULL,
     `name` VARCHAR(64) NOT NULL,
@@ -11,4 +11,4 @@ CREATE TABLE `flightbuddy`(
     `submitdate` DATETIME NOT NULL DEFAULT NOW()
 );
 
-flightbuddy.dogid
+adoption.dogid
