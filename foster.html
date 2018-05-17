@@ -27,11 +27,16 @@
         #otherinfo {
             width: 85%;
         }
-
+        input, textarea {
+            outline: 1px solid black;
+        }
         .requiredfield {
             color: red;
         }
-
+        #imgwrapper {
+            display: flex;
+            justify-content: center;
+        }
         #submitbuttonwrapper {
             margin: 20px;
         }
@@ -43,12 +48,15 @@
             #otherinfo {
                 width: 400px;
             }
+            input, textarea {
+                outline: none;
+            }
         }
     </style>
 </head>
 <body>
     <div id="everythingwrapper">
-        <div><img id="fosterimage" src="https://ypaprescue.files.wordpress.com/2018/05/kakaotalk_20180507_153251433-e1525766428832.jpg?w=330&h=240&crop=1"></div>
+        <div id="imgwrapper"><img id="fosterimage" src="https://ypaprescue.files.wordpress.com/2018/05/kakaotalk_20180507_153251433-e1525766428832.jpg?w=330&h=240&crop=1"></div>
         <!-- Below is the text taken straight from the YPAP page. -->
         <div id="text">
             <div id="rundown">Fostering is temporarily caring for a dog as if it were your own. Fosters are people who have time and love to give, but can’t commit to a dog forever.
