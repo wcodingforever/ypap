@@ -25,8 +25,6 @@
     --------------------------------------------
 #php API
     #TODO adjust db nulls/datatypes
-    #TODO API Test
-    #TODO sendadoptionform.php?
 
     getdogprofile.php DB:dogs
         receive: whattoget
