@@ -28,8 +28,8 @@
         $stmt->execute();
         // $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $result = json_encode($result);
-        echo($result);
+        // $result = json_encode($result);
+        // echo($result);
 
         $connection = null;
         $stmt = null;

@@ -14,10 +14,11 @@
 
     volunteerform: id|name|phone|email|worktype(NULL)|preferences(NULL)|availability|
 
+    adoption: id|dogid|name|email|phone|address|zip|submittime|
     --------------------------------------------
 #php API
     #TODO adjust db nulls/datatypes
-    #TODO bridge with frontend(var)/db
+    #TODO API Test
     #TODO sendadoptionform.php?
 
     getdogprofile.php DB:dogs
@@ -31,6 +32,7 @@
                     .arrivaldate, .notes, .picture, (FIFO)
 
     getdogstories.php DB:stories
+        #ask Ilya about initial request
         receive: initialrequest
             value: yes
                 return: id, content, picture (LIFO)LIM5
@@ -52,6 +54,11 @@
                     #TODO All checking for the right info by JS
                     no useless requests for DB
 
-    sendadoptionform.php DB:
+    sendadoptionform.php DB:adoption
+        receive: dogtoadopt, nameoftheadopter, emailoftheadopter, phoneoftheadopter, addressoftheadopter, zipcodeoftheadopter
+            value: TBD
+                return: (nothing)
+                    #TODO All checking for the right info by JS
+                    no useless requests for DB
 
     
