@@ -95,11 +95,29 @@
         //The variable for the submit button.
         var submitButton = document.querySelector("#submitbutton");
 
+        //This forces the calendar to only accept start dates of tomorrow or later!
+        function getDate () {
+            var todayDate = new Date();
+            var ddGotten = todayDate.getDate();
+            var mmGotten = todayDate.getMonth()+1;
+            var yyyyGotten = todayDate.getFullYear();
+            var dateOffset = ddGotten + 1;
+            if(dateOffset<10){
+                    dateOffset= "0"+dateOffset;
+                }
+                if(mmGotten<10){
+                    mmGotten="0"+mmGotten;
+                }
+            todayDate = yyyyGotten+'-'+mmGotten+'-'+dateOffset;
+            document.getElementById("startdate").setAttribute("min", todayDate);
+        }
+        getDate();
+
         //Add event listener to the button, making sure it can only submit when all fields have been filled out
         submitButton.addEventListener("click", function() {
             //Below checks that all fields have been filled out.
             if (departureDate.value === "" || destinationCity.value === "" || travelerName.value === "" || phoneNumber.value === ""|| emailAddress === "") {
-                alert("Please make sure to fill out all the fields.")
+                alert("Please make sure to fill out all the fields.");
             }
             else {
                 //Below makes sure that the email address has an @ in it.
@@ -111,7 +129,7 @@
                 //Below makes sure that the info entered in the phone number section is a number.
                 var phoneNumberInput = phoneNumber.value;
                 if (phoneNumberInput / 1 !== phoneNumberInput) {
-                    alert("Please enter a valid phone number.")
+                    alert("Please enter a valid phone number.");
                 }
                 else submitInformation(); //This calls the function that submits the entered information to the php!
             }
