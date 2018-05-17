@@ -1,1 +1,2 @@
-TODO: Fill me in!
+TODO:
+-Spice up page with images/css

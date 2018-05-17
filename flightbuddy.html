@@ -17,13 +17,25 @@
             font-family: sans-serif;
         }
 
-        p {
-            margin: 10px;
-        }
-
         img {
             max-width: 100%;
             max-height: 100%;
+        }
+
+        #flightbuddyimage {
+            width: 400px;
+            height: 300px;
+            /* display: inline-block; */
+            float: left;
+        }
+
+        #text {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        #pleasenote {
+            margin: 10px;
         }
 
         .inputwrapper {
@@ -34,39 +46,46 @@
             margin: 20px;
         }
 
+
+
     </style>
+    <!-- Mediascreen max width should be 480, so set it to 481 -->
 </head>
 <body>
     <div id="flightbuddyimage"><img src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
     <!-- Below is the text taken straight from the YPAP page. -->
-    <p>
+    <div id="text">
         Couriers are people flying internationally who are willing to check in a dog under their name at the airport. The pound will arrange everything and there is no cost to you. Usually only DIRECT flights work for sending an animal on a plane due to long flight times and airline regulations. If you are not flying direct, please let us know and we can try to arrange a dog to fly IN CABIN with you, under the seat. Most commonly we need flights to SFO, LAX, JFK, SEA, ORD, IAD, YVR, YYZ, VIE, MUC.
-        <br>
-        <br>
-        Please note that all fields are mandatory!
-    </p>
-    <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
-    <div class="inputwrapper" id="flightdatewrapper">
-        <div class="fielddesc">Date of departure</div>
-        <input type="date" id="flightdate">
     </div>
-    <div class="inputwrapper" id="destinationwrapper">
-        <div class="fielddesc">Destination city</div>
-        <input type="text" id="destination">
+    <div id="bottomwrapper">
+        <div id="pleasenote">
+            Please note that all fields are mandatory!
+        </div>
+
+        <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
+        <div class="inputwrapper" id="flightdatewrapper">
+            <div class="fielddesc">Date of departure</div>
+            <input type="date" id="flightdate">
+        </div>
+        <div class="inputwrapper" id="destinationwrapper">
+            <div class="fielddesc">Destination city</div>
+            <input type="text" id="destination">
+        </div>
+        <div class="inputwrapper" id="namewrapper">
+            <div class="fielddesc">Traveler name</div>
+            <input type="text" id="name">
+        </div>
+        <div class="inputwrapper" id="phonenumwrapper">
+            <div class="fielddesc">Traveler's phone number</div>
+            <input type="text" id="phonenum">
+        </div>
+        <div class="inputwrapper" id="emailwrapper">
+            <div class="fielddesc">Traveler's email address</div>
+            <input type="text" id="email">
+        </div>
+        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="Submit application"></div>
     </div>
-    <div class="inputwrapper" id="namewrapper">
-        <div class="fielddesc">Traveler name</div>
-        <input type="text" id="name">
-    </div>
-    <div class="inputwrapper" id="phonenumwrapper">
-        <div class="fielddesc">Traveler's phone number</div>
-        <input type="text" id="phonenum">
-    </div>
-    <div class="inputwrapper" id="emailwrapper">
-        <div class="fielddesc">Traveler's email address</div>
-        <input type="text" id="email">
-    </div>
-    <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="Submit application"></div>
+
     <script>
         //The variables pointing towards each input field.
         var departureDate = document.querySelector("#flightdate");
@@ -84,18 +103,21 @@
             if (departureDate.value === "" || destinationCity.value === "" || travelerName.value === "" || phoneNumber.value === ""|| emailAddress === "") {
                 alert("Please make sure to fill out all the fields.")
             }
-            //Below makes sure that the email address has an @ in it.
-            var emailInput = emailAddress.value;
-            var validEmailCheck = emailInput.indexOf("@")
-            if (validEmailCheck < 0) {
-                alert("Please enter a valid email address.");
+            else {
+                //Below makes sure that the email address has an @ in it.
+                var emailInput = emailAddress.value;
+                var validEmailCheck = emailInput.indexOf("@")
+                if (validEmailCheck < 0) {
+                    alert("Please enter a valid email address.");
+                }
+                //Below makes sure that the info entered in the phone number section is a number.
+                var phoneNumberInput = phoneNumber.value;
+                if (phoneNumberInput / 1 !== phoneNumberInput) {
+                    alert("Please enter a valid phone number.")
+                }
+                else submitInformation(); //This calls the function that submits the entered information to the php!
             }
-            //Below makes sure that the info entered in the phone number section is a number.
-            var phoneNumberInput = phoneNumber.value;
-            if (phoneNumberInput / 1 !== phoneNumberInput) {
-                alert("Please enter a valid phone number.")
-            }
-            else submitInformation(); //This calls the function that submits the entered information to the php!
+
         })
 
         //Below is only called when the submit button is clicked and all the conditions are met!
