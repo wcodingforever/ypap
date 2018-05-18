@@ -8,6 +8,7 @@
 #DatabaseTables
     dogs: id|name|gender("male", "female")|age|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/1000)|picture(NULL/1000)|status|
         -age is varchar ('Adult', 'puppy', 10, etc.)
+        -when there are no information it returns 'null'
     
     stories: id|uploaddate|content(2000)|picture(1000)|
     mappingmultiple: id|storyid|dogid|
