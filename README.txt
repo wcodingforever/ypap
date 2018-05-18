@@ -6,8 +6,9 @@
    (__\_____/__)
 
 #DatabaseTables
-    dogs: id|name|gender("male", "female")|age(NULL)|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/155)|picture(NULL/1000)|status|
-
+    dogs: id|name|gender("male", "female")|age|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/155)|picture(NULL/1000)|status|
+        -age is varchar ('Adult', 'puppy', 10, etc.)
+    
     stories: id|uploaddate|content(1000)|picture(1000)|
     mappingmultiple: id|storyid|dogid|
 
@@ -22,11 +23,11 @@
     volunteerform: id|name|phone|email|worktype(NULL)|preferences(NULL)|availability|
 
     adoption: id|dogid|name|email|phone|address|zip|submittime|
+
+    sqldata: sample Data added for dogs and stories
     --------------------------------------------
 #php API
     #TODO adjust db nulls/datatypes
-    #TODO API Test
-    #TODO sendadoptionform.php?
 
     getdogprofile.php DB:dogs
         receive: whattoget
@@ -42,10 +43,10 @@
         #ask Ilya about initial request
         receive: initialrequest
             value: yes
-                return: id, content, picture (LIFO)LIM5
+                return: id, content, picture, uploaddate (LIFO)LIM5
         receive: initialrequest
-            value: (any)
-                return: id, content, picture (LIFO)LIM(5,15)
+            value: (number)
+                return: id, content, picture, uploaddate (LIFO)LIM((number,number+5)
     
     donorinfo.php DB:donations
         receive: namewhodonated, emailwhodonated, howmuhdonated, currency
