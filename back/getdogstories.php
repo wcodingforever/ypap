@@ -38,9 +38,15 @@
             $stmt = $connection->prepare("
                 SELECT `id`, `content`, `picture`
                 FROM `stories`
-                ORDER BY `uploaddate` DESC LIMIT 5, 15;
+                ORDER BY `uploaddate` DESC LIMIT :downfrom, :downto;
                 ");
+            ////////////////////////////////////////// Bind Params
+            $downdrombind = $receive->initialrequest;
+            $downtobind = $downdrombind + 5;
 
+            $stmt->bindParam(':downfrom', $downdrombind);
+            $stmt->bindParam(':downto', $downtobind);
+            //////////////////////////////////////////
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
