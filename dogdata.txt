@@ -32,64 +32,60 @@ notes: Meet Merlin! We don’t know for sure, but because he is a pitbull, we as
 picture: https://imgur.com/J4PmW4M
 
 0004
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Eddie
+gender: Male
+age: 1
+spayed/neutered: No
+weight: 30
+breed: Pitbull
+arrival date: 2016-08-23
+notes: It is most likely that Eddie here lived on a heavy chain and was a victim of cruelty. He was probably neglected, used, and treated like property for people’s entertainment in dog fights. Many people don’t understand, but the dogs in fighting rings are no different than any other dog. Eddie wants to be happy. He wants to give back. What he wants to do is love. Eddie will certainly need an experienced owner and trainer who is willing to work with him and his trauma.
+picture: https://imgur.com/EKHoEeT
 
 0005
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
+name: Bob
+gender: Male
+age: 4
+spayed/neutered: No
+weight: 20
+breed: Mixed
+arrival date: 2016-09-20
+notes: This is Bob. Bob has been in the pound for much too long all because he is a big black mutt dog. Although he doesn’t seem terribly bothered by the pound environment, it’s still time for him to het a home. He’s lived a long time without a loving owner and is hoping for somebody who will accept him for who he is, flaws and all. Bob came in with a limp in his hind legs, assumed from an old injury that didn’t heal properly. Bob has tested heartworm positive and will need to undergo treatment.
+picture: https://imgur.com/eItdqiE
 status:
 
 0006
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Lena
+gender: Female
+age: 2
+spayed/neutered: No
+weight: 25
+breed: Jindo Mix
+arrival date: 2016-02-07
+notes: Meet Lena! She has a beautiful gold coat and white nose with eyes that just sparkle. She really stands out as quite a gorgeous girl. She has been overlooked at the pound time and time again, though she is an absolute doll. Lena would make a wonderful companion. She’s a country girl though and will probably need a little patience learning to live in a home. She would love to be pampered and spoiled and leaver her past all behind her.
+picture: https://imgur.com/xNzEmSN
 
 0007
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Norbert
+gender: Male
+age: 1
+spayed/neutered: No
+weight: 20
+breed: Mixed
+arrival date: 2016
+notes: This is Norbert. He likes to be around other dogs as they help him feel less alone. He likes people too, but gets nervous when people ask him to come out of his cage. In spite of the suffering he’s been through, he is still happy for attention, as long as you are slow and gentle. He is hoping that a patient someone will see fit to give him a loving home. He will need another dog in the home to help him understand that he’s safe.
+picture: https://imgur.com/uBrGF3F
 
 0008
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Zandra
+gender: Female
+age: 
+spayed/neutered: No
+weight: 15
+breed: Jindo
+arrival date: 2016-03-23
+notes: Meet Zandra. She came into the pound rail thin and without much energy. She has slowly been gaining weight, but really what she needs is regular exercise to build up her muscles. It’s likely she has lived most of her life on a chain and has never been the strong healthy girl she should be. At the pound she is quiet and reserved, not excited by much. She is so bored and lonely and never been shown what doggie life should be like. We would love to see this pretty girl with a loving family.
+picture: https://imgur.com/4GqxuTY
 
 0009
 name:
