@@ -61,7 +61,7 @@
 </head>
 <body>
     <div id="everythingwrapper">
-        <!-- <div class="storytextwrapper" "beaconforstorygetnum">
+        <!-- <div class="storytextwrapper">
             <div class="storyimagewrapper"><img class="storyimage" src ="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
             <div class="storytitle">Title here<span class="storydate">Date here</span></div>
             This spam is spam a spam long spam body spam of spam text spam serving spam as spam the spam venerable spam placeholder spam for spam the spam stories spam of spam the spam dogs! Trying spam to spam pad spam this spam out spam as spam much spam as spam possible spam to spam get spam a spam good spam feel spam for spam the spam look spam of spam the spam page. By spam spamming spam the spam page spam with spam spam spam like spam the spam spam spam spouting spam spammers spam of spam yore, spam back spam in spam the spam days spam when spam spam spam was just spam a spam word spam for spam the spam tinned spam meat spam.
@@ -72,7 +72,7 @@
     <script>
         var thePageBody = document.querySelector("#everythingwrapper"); //Selects the body of the page, which will be populated with new stories
         var showMoreButtonElem = document.querySelector("#showmore"); //Selects the 'show more' button
-        var numToSend = document.indexOf("beaconforstorygetnum");
+        var numToSend = 5;
 
         function getStories(numToSend) {
             var storyGetter = new XMLHttpRequest();
@@ -82,14 +82,15 @@
                     var gottenStories = JSON.parse(entryStr);
                     for (var i = 0; i < gottenStories.length; i++) {
                         var thisStory = gottenStories[i];
-                        thePageBody.innerHTML += "<div class='storytextwrapper'><div class='storyimagewrapper'><img class='storyimage' src ='" + thisStory.picture + "'></div><div class='storytitle'>" + thisStory.id + "<span class='storydate'>" + thisStory.date + "</span></div>" + thisStory.content +"</div><div class='divider'></div>";
+                        thePageBody.innerHTML += "<div class='storytextwrapper' 'beaconforstorygetnum'><div class='storyimagewrapper'><img class='storyimage' src ='" + thisStory.picture + "'></div><div class='storytitle'>" + thisStory.id + "<span class='storydate'>" + thisStory.date + "</span></div>" + thisStory.content +"</div><div class='divider'></div>"
                         //Variables to fill in: ID, content, picture
-                    }
-                }
-            }
-            storyGetter.send("POST", "getdogstories.php");
+                    };
+                };
+            };
+            storyGetter.open("POST", "getdogstories.php");
             storyGetter.send(numToSend);
         }
+        getStories(0);
         //The js will get stories from the back end and put them up in the body, starting with the most recent entries
 
         showMoreButtonElem.addEventListener("click", getStories(numToSend));
