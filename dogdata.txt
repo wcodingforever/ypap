@@ -176,49 +176,46 @@ notes: Hyun is just a bundle of love and so much fun. His goofy, playful demeano
 picture: https://imgur.com/cFym72C
 
 0017
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Oppa
+gender: Male
+age: 4
+spayed/neutered: No
+weight: 17
+breed: Terrier Mix
+arrival date: 2015-12-07
+notes: This is Oppa. This cutie can be a little shy when meeting new people, but once he knows you he is all cuddles. Oppa will need support in adjusting to new surroundings and strangers, as he can be cautious and shy—so a quiet home in a quiet area would be best. We aren’t sure if he is house-trained or not, so an adopter should have a flexible schedule to allow time for this. Due to his sensitive/shy personality, we feel Oppa is best suited to a home with gentle children teenaged and up.
+picture: https://imgur.com/vUdaEUA
 
 0018
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Fly
+gender: Male
+age: Under 1
+spayed/neutered: No
+weight: 10
+breed: Jindo Mix
+arrival date: 2016-09-05
+notes: Say hi to Fly! He’s just a happy puppy and has a lot of enthusiasm! If you need a buddy to cheer you along and jump for joy when you come home, pick him! His favorite activities include walks, chew toys, and eating treats. He will need some time and training to stimulate his mind and help him become a well-mannered boy. This pup is a real sweetheart and I think he will make a great addition to someone’s family!
+picture: https://imgur.com/Zl8KMTJ
 
 0019
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
+name: Beano
+gender: Male
+age: Under 1
+spayed/neutered: No
+weight: 5
+breed: Jindo Mix
+arrival date: 2016-08-28
+notes: Here’s Beano! He’s a healthy and happy puppy who’s very sweet and absolutely loves people. He is very playful with other dogs and loves to cuddle too. We love this little guy and hope you will too. Beano is expected to be about 20kg fully grown.
+picture: https://imgur.com/HmdTCwE
 status:
 
 0020
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Annie
+gender: Female
+age: Under 1
+spayed/neutered: No
+weight: 5
+breed: Jindo Mix
+arrival date: 2016-08-07
+notes: Meet Annie! She is very sweet and gentle and greets you with a big smile. She loves when someone spends time with her and will thank them with a kiss. While she can still be a little shy at times, she is totally content to sit on a lap and be pet for as long as possible. Annie’s calm and friendly demeanor will make her a great addition to your family.
+picture: https://imgur.com/IhPW8o9
