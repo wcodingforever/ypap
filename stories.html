@@ -117,8 +117,7 @@
             };
             storyGetterAgain.send(forSend);
         }
-
-        showMoreButtonElem.addEventListener("click", getStoriesAgain());
+        showMoreButtonElem.addEventListener("click", getStoriesAgain(initialrequest.numForSend));
         //This button sends yet more requests to the back. The number being sent is the number of stories already on the page.
     </script>
 </body>
