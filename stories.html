@@ -112,7 +112,10 @@
                 };
             };
             storyGetterAgain.open("POST", "getdogstories.php");
-            storyGetterAgain.send(numForSend);
+            var forSend = {
+                initialrequest: numForSend
+            };
+            storyGetterAgain.send(forSend);
         }
 
         showMoreButtonElem.addEventListener("click", getStoriesAgain());
