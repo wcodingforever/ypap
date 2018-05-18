@@ -88,100 +88,92 @@ notes: Meet Zandra. She came into the pound rail thin and without much energy. S
 picture: https://imgur.com/4GqxuTY
 
 0009
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Gi
+gender: Female
+age: 3
+spayed/neutered: No
+weight: 22
+breed: Jindo Mix
+arrival date: 2015-12-05
+notes: Gi is a lovely lady and very gentle. She is nervous by all the strangers, sights, and sounds at the pound, but give her a moment of your time and she warms right up to you. She is gentle to small and big dogs alike, very good on the leash, and very cuddly to people. She has gorgeous, stand out eyes because of her natural thick eyeliner. She will surely turn heads on your walks and play dates at the dog park.
+picture: https://imgur.com/nrRdB27
 
 0010
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Hugo
+gender: Male
+age: 1-2
+spayed/neutered: No
+weight: 25
+breed: Mixed
+arrival date: 2016-03-27
+notes: Hugo will need some patience and training in his new home. He is not trusting of new people and often barks at strangers. He has a hard time relaxing in the pound as he doesn’t like all the chaos and commotion. It makes him nervous and he doesn’t understand everything going on around him. Hugo probably had a hard start in life, we guess he was chained up as a guard dog. He do not have the staff or funds to get him the training he needs so he needs a special someone to give him a second chance.
+picture: https://imgur.com/WnPR5t8
 
 0011
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Austin
+gender: Male
+age: 2
+spayed/neutered: No
+weight: 20
+breed: Jindo
+arrival date: 2016-05-01
+notes: Meet Austin! Sadly, I have never seen this poor guy standing—he always seems to be pressed up in the corner of the cage, too upset and stressed to move. It seems he has never been shown human kindness and finds it difficult to trust people. It will take him time to open up to his new family but his transformation will be a special and rewarding thing to be a part of.
+picture: https://imgur.com/MWkyTba
 
 0012
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Arnie
+gender: Male
+age: 2
+spayed/neutered: No
+weight: 18
+breed: Jindo
+arrival date: 2015-12-12
+notes: You might be intimidated by a dog as good-looking and charming as Arnie, but you’ll quickly learn he’s the most friendly fellow! This young guy loves affection and will put his head in your hand to let you know he loves you. Arnie has been living well with other dogs, and might enjoy having the canine companionship of another pup like himself in his new forever home. Arnie is very smart and easily trainable. He would love to show you what a good boy he can be! Come meet him today!
+picture: https://imgur.com/j3A9FIg
 
 0013
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Swirl
+gender: Female
+age: 3
+spayed/neutered: No
+weight: 20
+breed: Jindo
+arrival date: 2015-12-22
+notes: We haven’t gotten the best read on Swirl yet. She is one that is just terrified of the pound and the cage. The first time I saw her she wouldn’t even move. Just curled up in the corner in a little ball. This last time I saw her at least she was sitting up. Didn’t seem to want anything to do with me. Still very scared, but maybe she has gotten a little more brave after being there for about a month now. She is likely a countryside guard dog who spent her life chained to someone’s tree.
+picture: https://imgur.com/4wkUTkt
 
 0014
-name:
-gender:
-age:
+name: Yuka
+gender: Female
+age: 5
 spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+weight: 15
+breed: Shiba Mix
+arrival date: 2016-05-26
+notes: This pretty girlie was brought into a local vet with an injured leg—probably picked up off the side of the road. The vets could not keep her and so she was brought to the pound. She is still in recovery. She is nervous by new people but not at all aggressive.
+picture: https://imgur.com/h8lnvBF
 
 0015
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Frida
+gender: Female
+age: 2
+spayed/neutered: No
+weight: 15
+breed: Pitbull Mix
+arrival date: 2016-03-30
+notes: Frida just loves to play with her Collie cage-mate. They get along so well even though they have to share such a tiny space. Frida also likes to compete for attention and loves when people come to meet her. She likes to stay active and can’t wait until she can get out of the cage and really stretch he legs. She would love to spend her days at the dog parks or hiking with her equally active owner. Please give this beautiful and unique girl the chance she deserves.
+picture: https://imgur.com/g3lCqRw
 
 0016
-name:
-gender:
-age:
-spayed/neutered:
-weight:
-breed:
-arrival date:
-notes:
-picture:
-status:
+name: Hyun
+gender: Male
+age: 2
+spayed/neutered: No
+weight: 12
+breed: Jindo Mix
+arrival date: 2015-12-13
+notes: Hyun is just a bundle of love and so much fun. His goofy, playful demeanor will bring smiles to your face and he’s also quite the competent cuddler. Hyun loves being close to you and giving kisses, then rolling on his back to graciously accept belly rubs. This young guy also adores his cage mates and seems like he’s always ready for fun. If you need more smiles in your life, come meet Hyun!
+picture: https://imgur.com/cFym72C
 
 0017
 name:
