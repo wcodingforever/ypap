@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TESTING</title>
+</head>
+<body>
+    <h1>ONLY FOR TESTS</h1>
+    <script>
+        var xml = new XMLHttpRequest();
+            xml.onreadystatechange = function(){
+                if (xml.readyState===4 && xml.status===200) {
+                    var response = xml.responseText;
+						response = JSON.parse(response);
+                        console.log(response);
+                }
+            }
+
+            xml.open("POST", "accountHandle.php");
+            var forSend = {
+					key: elem,
+					// key: elem,
+					// key: elem,
+					// key: elem,
+					// key: elem,
+					// key: elem
+				}
+				forSend = JSON.stringify(forSend);
+            xml.send(forSend);
+    </script>
+</body>
+</html>
