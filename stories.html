@@ -72,9 +72,8 @@
     <script>
         var thePageBody = document.querySelector("#everythingwrapper"); //Selects the body of the page, which will be populated with new stories
         var showMoreButtonElem = document.querySelector("#showmore"); //Selects the 'show more' button
-        var numToSend = 5;
 
-        function getStories(numToSend) {
+        function getStoriesInitial() {
             var storyGetter = new XMLHttpRequest();
             storyGetter.onreadystatechange = function () {
                 if (storyGetter.readyState === 4 && storyGetter.status === 200) {
@@ -82,18 +81,41 @@
                     var gottenStories = JSON.parse(entryStr);
                     for (var i = 0; i < gottenStories.length; i++) {
                         var thisStory = gottenStories[i];
-                        thePageBody.innerHTML += "<div class='storytextwrapper' 'beaconforstorygetnum'><div class='storyimagewrapper'><img class='storyimage' src ='" + thisStory.picture + "'></div><div class='storytitle'>" + thisStory.id + "<span class='storydate'>" + thisStory.date + "</span></div>" + thisStory.content +"</div><div class='divider'></div>"
-                        //Variables to fill in: ID, content, picture
+                        thePageBody.innerHTML += "<div class='storytextwrapper' 'beaconforstorygetnum'><div class='storyimagewrapper'><img class='storyimage' src ='" + thisStory.picture + "'></div><div class='storytitle'>" + thisStory.id + "<span class='storydate'>" + thisStory.date + "</span></div>" + thisStory.content + "</div><div class='divider'></div>"
+                        //This adds the picture, id, date, and content from the backend!
                     };
                 };
             };
             storyGetter.open("POST", "getdogstories.php");
-            storyGetter.send(numToSend);
+            var forSend = {
+                initialrequest: "yes"
+            };
+            forSend = JSON.stringify(forSend);
+            storyGetter.send(forSend);
         }
-        getStories(0);
+        getStoriesInitial(initialrequest.yes);
         //The js will get stories from the back end and put them up in the body, starting with the most recent entries
 
-        showMoreButtonElem.addEventListener("click", getStories(numToSend));
+        function getStoriesAgain() {
+            var beaconWords = document.querySelectorAll(".beaconforstorygetnum");
+            var numForSend = beaconWords.length;
+            var storyGetterAgain = new XMLHttpRequest();
+            storyGetterAgain.onreadystatechange = function () {
+                if (storyGetterAgain.readyState === 4 && storyGetterAgain.status === 200) {
+                    var entryStr = storyGetterAgain.responseText;
+                    var gottenStories = JSON.parse(entryStr);
+                    for (var i = 0; i < gottenStories.length; i++) {
+                        var thisStory = gottenStories[i];
+                        thePageBody.innerHTML += "<div class='storytextwrapper' 'beaconforstorygetnum'><div class='storyimagewrapper'><img class='storyimage' src ='" + thisStory.picture + "'></div><div class='storytitle'>" + thisStory.id + "<span class='storydate'>" + thisStory.date + "</span></div>" + thisStory.content + "</div><div class='divider'></div>"
+                        //This adds the picture, id, date, and content from the backend!
+                    };
+                };
+            };
+            storyGetterAgain.open("POST", "getdogstories.php");
+            storyGetterAgain.send(numForSend);
+        }
+
+        showMoreButtonElem.addEventListener("click", getStoriesAgain());
         //This button sends yet more requests to the back. The number being sent is the number of stories already on the page.
     </script>
 </body>
