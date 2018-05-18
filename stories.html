@@ -14,13 +14,22 @@
             padding: 0px;
             font-family: sans-serif;
         }
-        img {
+        #topimage {
             max-width: 100%;
             max-height: 100%;
         }
-        #text {
+        #storytextwrapper {
             display: inline-block;
             padding: 10px;
+        }
+        .storyimagewrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .storyimage {
+            max-width: 90%;
+            max-height: 90%;
         }
         #pleasenote {
             margin: 10px;
@@ -41,9 +50,11 @@
 </head>
 <body>
     <div id="everythingwrapper">
-        <div id="storyimagewrapper"><img src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
-        <div id="storytextwrapper">
-            Couriers are people flying internationally who are willing to check in a dog under their name at the airport. The pound will arrange everything and there is no cost to you. Usually only DIRECT flights work for sending an animal on a plane due to long flight times and airline regulations. If you are not flying direct, please let us know and we can try to arrange a dog to fly IN CABIN with you, under the seat. Most commonly we need flights to SFO, LAX, JFK, SEA, ORD, IAD, YVR, YYZ, VIE, MUC.
+        <div id="topimagewrapper"><img id="topimage" src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
+        <div class="storytextwrapper">
+            <h3>Title</h3>
+            <div class="storyimagewrapper"><img class="storyimage" src ="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
+            This spam is spam a spam long spam body spam of spam text spam serving spam as spam the spam venerable spam placeholder spam for spam the spam stories spam of spam the spam dogs! Trying spam to spam pad spam this spam out spam as spam much spam as spam possible spam to spam get spam a spam good spam feel spam for spam the spam look spam of spam the spam page. By spam spamming spam the spam page spam with spam spam spam like spam the spam spam spam spouting spam spammers spam of spam yore, spam back spam in spam the spam days spam when spam spam spam was just spam a spam word spam for spam the spam tinned spam meat spam.
         </div>
     </div>
     <script>
