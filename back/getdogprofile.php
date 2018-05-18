@@ -14,7 +14,7 @@
                 SELECT `id`, `picture`, `name` 
                 FROM `dogs` 
                 WHERE `status` = 1
-                ORDER BY `arrivaldate` DESC LIMIT 15;
+                ORDER BY `arrivaldate` DESC LIMIT 10;
                 ");
 
             $stmt->execute();
