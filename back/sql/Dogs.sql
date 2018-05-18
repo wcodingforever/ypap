@@ -9,7 +9,7 @@ CREATE TABLE `dogs`(
     `weight` VARCHAR(64) NOT NULL,
     `breed` VARCHAR(64) NULL,
     `arrivaldate` DATETIME NOT NULL DEFAULT NOW(),
-    `notes` VARCHAR(155) NULL,
+    `notes` VARCHAR(1000) NULL,
     `picture` VARCHAR(1000) NULL,
     `status` INT NOT NULL
 );

@@ -6,10 +6,10 @@
    (__\_____/__)
 
 #DatabaseTables
-    dogs: id|name|gender("male", "female")|age|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/155)|picture(NULL/1000)|status|
+    dogs: id|name|gender("male", "female")|age|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/1000)|picture(NULL/1000)|status|
         -age is varchar ('Adult', 'puppy', 10, etc.)
     
-    stories: id|uploaddate|content(1000)|picture(1000)|
+    stories: id|uploaddate|content(2000)|picture(1000)|
     mappingmultiple: id|storyid|dogid|
 
     flightbuddy: id|name|flightdate|destination|phone|email|
@@ -47,6 +47,7 @@
         receive: initialrequest
             value: (number)
                 return: id, content, picture, uploaddate (LIFO)LIM((number,number+5)
+        READ console for mistakes
     
     donorinfo.php DB:donations
         receive: namewhodonated, emailwhodonated, howmuhdonated, currency

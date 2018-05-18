@@ -32,11 +32,11 @@
         catch(PDOException $e) {
         }
     }
-    else{
+    elseif ($receive->initialrequest > 0){
         try{
             $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $stmt = $connection->prepare("
-                SELECT `id`, `content`, `picture`
+                SELECT `id`, `content`, `picture`, `uploaddate`
                 FROM `stories`
                 ORDER BY `uploaddate` DESC LIMIT :downfrom, :downto;
                 ");
@@ -58,6 +58,9 @@
         }
         catch(PDOException $e) {
         }
+    }
+    else{
+        echo("Wrong initialrequest value received, make sure 'yes' is .lowered and the number is more than 0");
     }
     
 ?>
