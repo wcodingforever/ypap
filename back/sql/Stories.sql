@@ -12,24 +12,5 @@ CREATE TABLE `mappingmultiple`(
 	`storyid` INT NOT NULL,
     `dogid` INT NOT NULL
 );
---mappingmultiple.storyid = stories.id
---mappingmultiple.dogid = dogs.id
------------------------------------------------
-INSERT INTO `stories`
-    (`uploaddate`, `content`, `picture`)
-VALUES
-    (now(), "This is about first dog and second (Dona and Illana)", "Picture");
-
-INSERT INTO `mappingmultiple`
-    (`storyid`, `dogid`)
-VALUES
-    (1, 1),
-    (1, 2);
 
 
-SELECT *
-FROM stories
-INNER JOIN mappingmultiple ON stories.id = mappingmultiple.storyid;
--- WHERE ;
-
---NO FOREIGN KEYS
