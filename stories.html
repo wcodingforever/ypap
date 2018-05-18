@@ -6,21 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        * {
+        /* * {
         outline: 1px solid red;
-        }
+        } */
         body {
             margin: 0px;
             padding: 0px;
             font-family: sans-serif;
         }
-        #topimage {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        #storytextwrapper {
+
+        .storytextwrapper {
             display: inline-block;
             padding: 10px;
+        }
+        .storytitle {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .storydate {
+            font-size: 0.6em;
+            font-weight: lighter;
+            margin: 0 0 0 10px;
         }
         .storyimagewrapper {
             display: flex;
@@ -28,8 +34,9 @@
             align-items: center;
         }
         .storyimage {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 80%;
+            max-height: 80%;
+            margin: 10px;
         }
         #pleasenote {
             margin: 10px;
@@ -41,21 +48,30 @@
             margin: 20px;
         }
         @media screen and (min-width: 481px) {
-            #everythingwrapper {
-                display: flex;
-                justify-content: center;
+            .storyimage {
+                max-width: 40%;
+                max-height: 40%;
+                margin: 10px;
             }
         }
     </style>
 </head>
 <body>
     <div id="everythingwrapper">
-        <div id="topimagewrapper"><img id="topimage" src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
-        <div class="storytextwrapper">
-            <h3>Title</h3>
-            <div class="storyimagewrapper"><img class="storyimage" src ="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
-            This spam is spam a spam long spam body spam of spam text spam serving spam as spam the spam venerable spam placeholder spam for spam the spam stories spam of spam the spam dogs! Trying spam to spam pad spam this spam out spam as spam much spam as spam possible spam to spam get spam a spam good spam feel spam for spam the spam look spam of spam the spam page. By spam spamming spam the spam page spam with spam spam spam like spam the spam spam spam spouting spam spammers spam of spam yore, spam back spam in spam the spam days spam when spam spam spam was just spam a spam word spam for spam the spam tinned spam meat spam.
-        </div>
+        <section>
+            <div class="storytextwrapper">
+                <div class="storyimagewrapper"><img class="storyimage" src ="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
+                <div class="storytitle">Title here<span class="storydate">Date here</span></div>
+                This spam is spam a spam long spam body spam of spam text spam serving spam as spam the spam venerable spam placeholder spam for spam the spam stories spam of spam the spam dogs! Trying spam to spam pad spam this spam out spam as spam much spam as spam possible spam to spam get spam a spam good spam feel spam for spam the spam look spam of spam the spam page. By spam spamming spam the spam page spam with spam spam spam like spam the spam spam spam spouting spam spammers spam of spam yore, spam back spam in spam the spam days spam when spam spam spam was just spam a spam word spam for spam the spam tinned spam meat spam.
+            </div>
+        </section>
+        <section>
+            <div class="storytextwrapper">
+                <div class="storyimagewrapper"><img class="storyimage" src ="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
+                <div class="storytitle">Title here<span class="storydate">Date here</span></div>
+                This spam is spam a spam long spam body spam of spam text spam serving spam as spam the spam venerable spam placeholder spam for spam the spam stories spam of spam the spam dogs! Trying spam to spam pad spam this spam out spam as spam much spam as spam possible spam to spam get spam a spam good spam feel spam for spam the spam look spam of spam the spam page. By spam spamming spam the spam page spam with spam spam spam like spam the spam spam spam spouting spam spammers spam of spam yore, spam back spam in spam the spam days spam when spam spam spam was just spam a spam word spam for spam the spam tinned spam meat spam.
+            </div>
+        </section>
     </div>
     <script>
         //The js will get stories from the back end and put them up in the body, starting with the most recent entries
