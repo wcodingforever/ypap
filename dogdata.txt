@@ -7,7 +7,7 @@ weight: 25
 breed: Mixed
 arrival date: 2016-09-30
 notes: Bruce is one of the staff and volunteers' all-time favorite dogs! He is a big softy-very gentle and well-behaved with people. He does well with dogs that he knows and has been socialized with, but will need an experienced handler and time warming up to new and unfamiliar dogs. He is also not too keen on cats, so a home without them would be required. We are all desperate for Bruce to go to a foster or forever home. He really needs to get out of the pound environment.
-picture: https://imgur.com/DUyxhPk
+picture: https://i.imgur.com/DUyxhPk.jpg
 
 0002
 name: Hooch
@@ -18,7 +18,7 @@ weight: 20
 breed: Jindo Mix
 arrival date: 2016-01-02
 notes: Hooch is a big boy with lots of love to give. He’ll need some care and patience as he learns to be an inside dog. BUT Jindos are super smart and with some attention and training I’m sure he’ll learn to be the companion he wants to be. Hooch does very well living together with other dogs. He can get super excited by others when he’s on the leash so you’ll have to hang on tight while he learns how to walk like a gentleman. We love his bright brown eyes, big smile, and his lopsided ears.
-picture: https://imgur.com/uWNfwjC
+picture: https://i.imgur.com/uWNfwjC.jpg
 
 0003
 name: Merlin
@@ -29,7 +29,7 @@ weight: 25
 breed: Pitbull
 arrival date: 2016-03-28
 notes: Meet Merlin! We don’t know for sure, but because he is a pitbull, we assume Merlin was used as a fighting dog before. He is strong and energetic and has been known to lunge at other dogs that pass by him. He is very friendly with women but we need to test him with men and children. He always wags his tail for the staff and turns around to ask for a nice butt scratch. Merlin will need an experienced owner and someone that will work on his manners.
-picture: https://imgur.com/J4PmW4M
+picture: https://i.imgur.com/J4PmW4M.jpg
 
 0004
 name: Eddie
@@ -40,7 +40,7 @@ weight: 30
 breed: Pitbull
 arrival date: 2016-08-23
 notes: It is most likely that Eddie here lived on a heavy chain and was a victim of cruelty. He was probably neglected, used, and treated like property for people’s entertainment in dog fights. Many people don’t understand, but the dogs in fighting rings are no different than any other dog. Eddie wants to be happy. He wants to give back. What he wants to do is love. Eddie will certainly need an experienced owner and trainer who is willing to work with him and his trauma.
-picture: https://imgur.com/EKHoEeT
+picture: https://i.imgur.com/EKHoEeT.jpg
 
 0005
 name: Bob
@@ -51,7 +51,7 @@ weight: 20
 breed: Mixed
 arrival date: 2016-09-20
 notes: This is Bob. Bob has been in the pound for much too long all because he is a big black mutt dog. Although he doesn’t seem terribly bothered by the pound environment, it’s still time for him to het a home. He’s lived a long time without a loving owner and is hoping for somebody who will accept him for who he is, flaws and all. Bob came in with a limp in his hind legs, assumed from an old injury that didn’t heal properly. Bob has tested heartworm positive and will need to undergo treatment.
-picture: https://imgur.com/eItdqiE
+picture: https://i.imgur.com/eItdqiE.jpg
 status:
 
 0006
@@ -63,7 +63,7 @@ weight: 25
 breed: Jindo Mix
 arrival date: 2016-02-07
 notes: Meet Lena! She has a beautiful gold coat and white nose with eyes that just sparkle. She really stands out as quite a gorgeous girl. She has been overlooked at the pound time and time again, though she is an absolute doll. Lena would make a wonderful companion. She’s a country girl though and will probably need a little patience learning to live in a home. She would love to be pampered and spoiled and leaver her past all behind her.
-picture: https://imgur.com/xNzEmSN
+picture: https://i.imgur.com/xNzEmSN.jpg
 
 0007
 name: Norbert
@@ -74,7 +74,7 @@ weight: 20
 breed: Mixed
 arrival date: 2016
 notes: This is Norbert. He likes to be around other dogs as they help him feel less alone. He likes people too, but gets nervous when people ask him to come out of his cage. In spite of the suffering he’s been through, he is still happy for attention, as long as you are slow and gentle. He is hoping that a patient someone will see fit to give him a loving home. He will need another dog in the home to help him understand that he’s safe.
-picture: https://imgur.com/uBrGF3F
+picture: https://i.imgur.com/uBrGF3F.jpg
 
 0008
 name: Zandra
@@ -85,7 +85,7 @@ weight: 15
 breed: Jindo
 arrival date: 2016-03-23
 notes: Meet Zandra. She came into the pound rail thin and without much energy. She has slowly been gaining weight, but really what she needs is regular exercise to build up her muscles. It’s likely she has lived most of her life on a chain and has never been the strong healthy girl she should be. At the pound she is quiet and reserved, not excited by much. She is so bored and lonely and never been shown what doggie life should be like. We would love to see this pretty girl with a loving family.
-picture: https://imgur.com/4GqxuTY
+picture: https://i.imgur.com/4GqxuTY.jpg
 
 0009
 name: Gi
@@ -96,7 +96,7 @@ weight: 22
 breed: Jindo Mix
 arrival date: 2015-12-05
 notes: Gi is a lovely lady and very gentle. She is nervous by all the strangers, sights, and sounds at the pound, but give her a moment of your time and she warms right up to you. She is gentle to small and big dogs alike, very good on the leash, and very cuddly to people. She has gorgeous, stand out eyes because of her natural thick eyeliner. She will surely turn heads on your walks and play dates at the dog park.
-picture: https://imgur.com/nrRdB27
+picture: https://i.imgur.com/nrRdB27.jpg
 
 0010
 name: Hugo
@@ -107,7 +107,7 @@ weight: 25
 breed: Mixed
 arrival date: 2016-03-27
 notes: Hugo will need some patience and training in his new home. He is not trusting of new people and often barks at strangers. He has a hard time relaxing in the pound as he doesn’t like all the chaos and commotion. It makes him nervous and he doesn’t understand everything going on around him. Hugo probably had a hard start in life, we guess he was chained up as a guard dog. He do not have the staff or funds to get him the training he needs so he needs a special someone to give him a second chance.
-picture: https://imgur.com/WnPR5t8
+picture: https://i.imgur.com/WnPR5t8.jpg
 
 0011
 name: Austin
@@ -118,7 +118,7 @@ weight: 20
 breed: Jindo
 arrival date: 2016-05-01
 notes: Meet Austin! Sadly, I have never seen this poor guy standing—he always seems to be pressed up in the corner of the cage, too upset and stressed to move. It seems he has never been shown human kindness and finds it difficult to trust people. It will take him time to open up to his new family but his transformation will be a special and rewarding thing to be a part of.
-picture: https://imgur.com/MWkyTba
+picture: https://i.imgur.com/MWkyTba.jpg
 
 0012
 name: Arnie
@@ -129,7 +129,7 @@ weight: 18
 breed: Jindo
 arrival date: 2015-12-12
 notes: You might be intimidated by a dog as good-looking and charming as Arnie, but you’ll quickly learn he’s the most friendly fellow! This young guy loves affection and will put his head in your hand to let you know he loves you. Arnie has been living well with other dogs, and might enjoy having the canine companionship of another pup like himself in his new forever home. Arnie is very smart and easily trainable. He would love to show you what a good boy he can be! Come meet him today!
-picture: https://imgur.com/j3A9FIg
+picture: https://i.imgur.com/j3A9FIg.jpg
 
 0013
 name: Swirl
@@ -140,7 +140,7 @@ weight: 20
 breed: Jindo
 arrival date: 2015-12-22
 notes: We haven’t gotten the best read on Swirl yet. She is one that is just terrified of the pound and the cage. The first time I saw her she wouldn’t even move. Just curled up in the corner in a little ball. This last time I saw her at least she was sitting up. Didn’t seem to want anything to do with me. Still very scared, but maybe she has gotten a little more brave after being there for about a month now. She is likely a countryside guard dog who spent her life chained to someone’s tree.
-picture: https://imgur.com/4wkUTkt
+picture: https://i.imgur.com/4wkUTkt.jpg
 
 0014
 name: Yuka
@@ -151,7 +151,7 @@ weight: 15
 breed: Shiba Mix
 arrival date: 2016-05-26
 notes: This pretty girlie was brought into a local vet with an injured leg—probably picked up off the side of the road. The vets could not keep her and so she was brought to the pound. She is still in recovery. She is nervous by new people but not at all aggressive.
-picture: https://imgur.com/h8lnvBF
+picture: https://i.imgur.com/h8lnvBF.jpg
 
 0015
 name: Frida
@@ -162,7 +162,7 @@ weight: 15
 breed: Pitbull Mix
 arrival date: 2016-03-30
 notes: Frida just loves to play with her Collie cage-mate. They get along so well even though they have to share such a tiny space. Frida also likes to compete for attention and loves when people come to meet her. She likes to stay active and can’t wait until she can get out of the cage and really stretch he legs. She would love to spend her days at the dog parks or hiking with her equally active owner. Please give this beautiful and unique girl the chance she deserves.
-picture: https://imgur.com/g3lCqRw
+picture: https://i.imgur.com/g3lCqRw.jpg
 
 0016
 name: Hyun
@@ -173,7 +173,7 @@ weight: 12
 breed: Jindo Mix
 arrival date: 2015-12-13
 notes: Hyun is just a bundle of love and so much fun. His goofy, playful demeanor will bring smiles to your face and he’s also quite the competent cuddler. Hyun loves being close to you and giving kisses, then rolling on his back to graciously accept belly rubs. This young guy also adores his cage mates and seems like he’s always ready for fun. If you need more smiles in your life, come meet Hyun!
-picture: https://imgur.com/cFym72C
+picture: https://i.imgur.com/cFym72C.jpg
 
 0017
 name: Oppa
@@ -184,7 +184,7 @@ weight: 17
 breed: Terrier Mix
 arrival date: 2015-12-07
 notes: This is Oppa. This cutie can be a little shy when meeting new people, but once he knows you he is all cuddles. Oppa will need support in adjusting to new surroundings and strangers, as he can be cautious and shy—so a quiet home in a quiet area would be best. We aren’t sure if he is house-trained or not, so an adopter should have a flexible schedule to allow time for this. Due to his sensitive/shy personality, we feel Oppa is best suited to a home with gentle children teenaged and up.
-picture: https://imgur.com/vUdaEUA
+picture: https://i.imgur.com/vUdaEUA.jpg
 
 0018
 name: Fly
@@ -195,7 +195,7 @@ weight: 10
 breed: Jindo Mix
 arrival date: 2016-09-05
 notes: Say hi to Fly! He’s just a happy puppy and has a lot of enthusiasm! If you need a buddy to cheer you along and jump for joy when you come home, pick him! His favorite activities include walks, chew toys, and eating treats. He will need some time and training to stimulate his mind and help him become a well-mannered boy. This pup is a real sweetheart and I think he will make a great addition to someone’s family!
-picture: https://imgur.com/Zl8KMTJ
+picture: https://i.imgur.com/Zl8KMTJ.jpg
 
 0019
 name: Beano
@@ -206,7 +206,7 @@ weight: 5
 breed: Jindo Mix
 arrival date: 2016-08-28
 notes: Here’s Beano! He’s a healthy and happy puppy who’s very sweet and absolutely loves people. He is very playful with other dogs and loves to cuddle too. We love this little guy and hope you will too. Beano is expected to be about 20kg fully grown.
-picture: https://imgur.com/HmdTCwE
+picture: https://i.imgur.com/HmdTCwE.jpg
 status:
 
 0020
@@ -218,4 +218,4 @@ weight: 5
 breed: Jindo Mix
 arrival date: 2016-08-07
 notes: Meet Annie! She is very sweet and gentle and greets you with a big smile. She loves when someone spends time with her and will thank them with a kiss. While she can still be a little shy at times, she is totally content to sit on a lap and be pet for as long as possible. Annie’s calm and friendly demeanor will make her a great addition to your family.
-picture: https://imgur.com/IhPW8o9
+picture: https://i.imgur.com/IhPW8o9.jpg
