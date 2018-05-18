@@ -1,0 +1,236 @@
+0001
+name: Bruce
+gender: Male
+age: 2-3
+spayed/neutered: No
+weight: 25
+breed: Mixed
+arrival date: 2016-09-30
+notes: Bruce is one of the staff and volunteers' all-time favorite dogs! He is a big softy-very gentle and well-behaved with people. He does well with dogs that he knows and has been socialized with, but will need an experienced handler and time warming up to new and unfamiliar dogs. He is also not too keen on cats, so a home without them would be required. We are all desperate for Bruce to go to a foster or forever home. He really needs to get out of the pound environment.
+picture: https://imgur.com/DUyxhPk
+
+0002
+name: Hooch
+gender: Male
+age: 2
+spayed/neutered: Yes
+weight: 20
+breed: Jindo Mix
+arrival date: 2016-01-02
+notes: Hooch is a big boy with lots of love to give. He’ll need some care and patience as he learns to be an inside dog. BUT Jindos are super smart and with some attention and training I’m sure he’ll learn to be the companion he wants to be. Hooch does very well living together with other dogs. He can get super excited by others when he’s on the leash so you’ll have to hang on tight while he learns how to walk like a gentleman. We love his bright brown eyes, big smile, and his lopsided ears.
+picture: https://imgur.com/uWNfwjC
+
+0003
+name: Merlin
+gender: Male
+age: 2
+spayed/neutered: No
+weight: 25
+breed: Pitbull
+arrival date: 2016-03-28
+notes: Meet Merlin! We don’t know for sure, but because he is a pitbull, we assume Merlin was used as a fighting dog before. He is strong and energetic and has been known to lunge at other dogs that pass by him. He is very friendly with women but we need to test him with men and children. He always wags his tail for the staff and turns around to ask for a nice butt scratch. Merlin will need an experienced owner and someone that will work on his manners.
+picture: https://imgur.com/J4PmW4M
+
+0004
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0005
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0006
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0007
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0008
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0009
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0010
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0011
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0012
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0013
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0014
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0015
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0016
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0017
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0018
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0019
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
+
+0020
+name:
+gender:
+age:
+spayed/neutered:
+weight:
+breed:
+arrival date:
+notes:
+picture:
+status:
