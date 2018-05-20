@@ -509,12 +509,10 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
         if(this.id === "availability_startDT"){
             var startDTObj = new Date(this.value);
             var todayDTObj = new Date();
-            if( startDTObj >= todayDTObj){
+            if( startDTObj <= todayDTObj){
                 alert("Unvaild date.  Please select available dates again.");
-                
             } 
-            console.log(startDTObj.toTimeString);
-            console.log(todayDTObj.toTimeString);
+
         }else{ 
             var startDT = document.getElementById("availability_startDT").value;
             var endDT = this.value;
