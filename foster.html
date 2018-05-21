@@ -193,8 +193,9 @@
                     alert("Please enter a valid email address.");
                 }
                 //Below makes sure that the info entered in the phone number section is a number.
-                var phoneNumberInput = phoneNumber.value;
-                if (phoneNumberInput / 1 !== phoneNumberInput) {
+                var phoneNumberInputString = phoneNumber.value;
+                var phoneNumberInput = parseInt(phoneNumberInputString);
+                if ((phoneNumberInput / 1) !== phoneNumberInput) {
                     alert("Please enter a valid phone number.")
                 }
                 else submitInformation(); //This calls the function that submits the entered information to the php!
@@ -208,7 +209,7 @@
                 PhoneNumber: phoneNumber.value,
                 Email: emailAddress.value,
                 Address: homeAddress.value,
-                StartDate: departureDate.value,
+                StartDate: startDate.value,
                 EndDate: endDate.value,
                 OtherInfo: otherInfo.value,
             };
