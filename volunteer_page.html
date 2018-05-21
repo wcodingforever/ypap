@@ -499,23 +499,35 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
         }
     }
 
+    var startDT = document.getElementById("availability_startDT");
+    startDT.addEventListener("change", isValidDTRange);
+
     var endDT= document.getElementById("availability_endDT");
     endDT.addEventListener("change", isValidDTRange);
 
     function isValidDTRange(){
-        var startDT = document.getElementById("availability_startDT").value;
-        var endDT = this.value;
+        if(this.id === "availability_startDT"){
+            var startDTObj = new Date(this.value);
+            var todayDTObj = new Date();
+            if( startDTObj <= todayDTObj){
+                alert("Unvaild date.  Please select available dates again.");
+            } 
 
-        //Visitors'll be forced to insert the start date first. 
-        if(startDT === ""){
-            alert("Please select the start date first.");
-            document.getElementById("availability_endDT").value = "";
-        }else{
-            var startDTObj = new Date(startDT);
-            var endDTObj = new Date(endDT);
-            if(startDTObj > endDTObj){
-                alert("Valid period. Please select available dates again.");
-                this.value = "";
+        }else{ 
+            var startDT = document.getElementById("availability_startDT").value;
+            var endDT = this.value;
+
+            //Visitors'll be forced to insert the start date first. 
+            if(startDT === ""){
+                alert("Please select the start date first.");
+                document.getElementById("availability_endDT").value = "";
+            }else{
+                var startDTObj = new Date(startDT);
+                var endDTObj = new Date(endDT);
+                if(startDTObj > endDTObj){
+                    alert("Valid period. Please select available dates again.");
+                    this.value = "";
+                }
             }
         }
     }
