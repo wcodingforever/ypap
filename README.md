@@ -1,17 +1,21 @@
+```
      /\_____/\
      |  o o  |
     __\__^__/__
    (__/     \__)
     _|   .   |_
    (__\_____/__)
-
+```
 
 # Database Setup
     Navigate your terminal (or Windows command prompt) to the back/sql folder. Then type:
 
-    `mysql -u<user> -p < createDb.sql`
-    `mysql -u<user> -p dogadoptions < dogadoptions-tables.sql`
-    `mysql -u<user> -p dogadoptions < dogadoptions-data.sql`
+        mysql -u<user> -p < createDb.sql
+
+        mysql -u<user> -p dogadoptions < dogadoptions-tables.sql
+
+        mysql -u<user> -p dogadoptions < dogadoptions-data.sql
+
 
 # DatabaseTables
     dogs: id|name|gender("male", "female")|age|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/1000)|picture(NULL/1000)|status|
