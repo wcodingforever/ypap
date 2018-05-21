@@ -48,6 +48,14 @@
         background-color: rgb(0,0,0);
         background-color: rgba(192, 192, 192, 0.966);
     }
+    .modalDogPicture {
+        height: 45vh;
+        width: 20vw;
+        text-align: center;
+        border: #cccccc solid 2px;
+        padding: 10px;
+        min-width: 65%;
+    }
     .dogName {
         text-align: left;
         color: #00337f;
@@ -244,6 +252,10 @@
         max-height: calc(100vh - 80px);
         overflow-y: auto;
     }
+    .modalDogPicture {
+        width: 100vw;
+        text-align:center;
+    }
     /* The Close Button */
     .close {
         color: #000000;
@@ -261,7 +273,7 @@
         cursor: pointer;
     }
     .adoptButton {
-        margin-top: -8%;
+        margin-top: -10%;
         float: right;
         margin-right: 6%;
         height: 5%;
@@ -305,7 +317,7 @@
                                 "<div class='myModal'>"+
                                         "<span class='close'>&times;</span>" +
                                         "<div>" +
-                                            "<img class = 'dogPicture' src='" + response[i].picture + "'>" +
+                                            "<img class = 'modalDogPicture' src='" + response[i].picture + "'>" +
                                         "</div>" +
                                         "<div class = 'dogNameModal'>"  + response[i].name + "</div>" +
                                         "<button class = 'adoptButton'>Adopt!</button>" +
