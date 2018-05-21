@@ -19,6 +19,7 @@
         text-align:center;
         border: #cccccc solid 2px;
         padding: 10px;
+        min-width: 90%;
         }
     .dogProfile {
         display:flex;
@@ -46,6 +47,14 @@
         overflow: auto;
         background-color: rgb(0,0,0);
         background-color: rgba(192, 192, 192, 0.966);
+    }
+    .modalDogPicture {
+        height: 45vh;
+        width: 20vw;
+        text-align: center;
+        border: #cccccc solid 2px;
+        padding: 10px;
+        min-width: 65%;
     }
     .dogName {
         text-align: left;
@@ -232,7 +241,7 @@
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
         z-index: 0; /* Sit on top */
-        padding-top: 22%; /* Location of the box */
+        padding-bottom: 23%; /* Location of the box */
         left: 0;
         top: 0;
         width: 100vw; /* Full width */
@@ -242,6 +251,10 @@
         background-color: rgba(192, 192, 192, 0.966); /* Black w/ opacity */
         max-height: calc(100vh - 80px);
         overflow-y: auto;
+    }
+    .modalDogPicture {
+        width: 100vw;
+        text-align:center;
     }
     /* The Close Button */
     .close {
@@ -260,7 +273,7 @@
         cursor: pointer;
     }
     .adoptButton {
-        margin-top: -8%;
+        margin-top: -10%;
         float: right;
         margin-right: 6%;
         height: 5%;
@@ -304,7 +317,7 @@
                                 "<div class='myModal'>"+
                                         "<span class='close'>&times;</span>" +
                                         "<div>" +
-                                            "<img class = 'dogPicture' src='" + response[i].picture + "'>" +
+                                            "<img class = 'modalDogPicture' src='" + response[i].picture + "'>" +
                                         "</div>" +
                                         "<div class = 'dogNameModal'>"  + response[i].name + "</div>" +
                                         "<button class = 'adoptButton'>Adopt!</button>" +
@@ -355,7 +368,7 @@
             // };
     
             
-            xhttp.open("POST", "getdogprofile.php");
+            xhttp.open("POST", "back/getdogprofile.php");
                 var messageObj = {
                     whattoget: "all"
                 }
