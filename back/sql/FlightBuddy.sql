@@ -3,7 +3,7 @@ USE dogadoptions;
 CREATE TABLE `flightbuddy`(
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(64) NOT NULL,
-    `flightdate` DATETIME NOT NULL,
+    `flightdate` DATE NOT NULL,
     `destination` VARCHAR(128) NOT NULL,
     `phone` VARCHAR(20) NOT NULL,
     `email` VARCHAR(255) NOT NULL

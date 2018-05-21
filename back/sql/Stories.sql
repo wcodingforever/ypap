@@ -12,5 +12,3 @@ CREATE TABLE `mappingmultiple`(
 	`storyid` INT NOT NULL,
     `dogid` INT NOT NULL
 );
-
-
