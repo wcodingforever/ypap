@@ -18,6 +18,19 @@
             display: inline-block;
             padding: 10px;
         }
+
+        #imgwrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #fosterimage {
+            max-width: 90%;
+            max-height: 90%;
+            margin: 10px;
+        }
+
         #pleasenote {
             margin: 10px;
         }
@@ -41,15 +54,16 @@
             margin: 20px;
         }
         @media screen and (min-width: 481px) {
-            #everythingwrapper {
-                display: flex;
-                justify-content: center;
-            }
             #otherinfo {
                 width: 400px;
             }
             input, textarea {
                 outline: none;
+            }
+            #fosterimage {
+                max-width: 40%;
+                max-height: 40%;
+                margin: 10px;
             }
         }
     </style>
