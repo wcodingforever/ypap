@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+$import= file_get_contents('lang.php');
+$myLang = $_REQUEST['lang'];
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
