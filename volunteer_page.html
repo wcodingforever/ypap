@@ -484,7 +484,7 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
 
     
 <script>
-    var listOfInputOfWorkTypes = document.querySelector("input[type='checkbox']"); 
+    var listOfInputOfWorkTypes = document.querySelectorAll("input[name='workType']"); 
     
     for(var i = 0; i < listOfInputOfWorkTypes.length; i++){
         var thisWorkType = listOfInputOfWorkTypes[i];
@@ -492,7 +492,8 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
     }
 
     function countSelectedWorkTypes(){
-        var listOfInputOfWorkTypes = document.querySelectorAll("input:checked");
+        var listOfInputOfWorkTypes = document.querySelectorAll("input[name='workType']:checked");
+ 
         if(listOfInputOfWorkTypes.length >= 3){
             alert("You can't select more than 3 worke types.");
             this.checked = false;
