@@ -1,3 +1,4 @@
+<<<<<<< HEAD:README.txt
 <<<<<<< HEAD
 <<<<<<< HEAD
 TODO:
@@ -15,18 +16,39 @@ var flightBuddyFormInfo = {
 };
 =======
 =======
+=======
+```
+>>>>>>> master:README.md
      /\_____/\
      |  o o  |
     __\__^__/__
    (__/     \__)
     _|   .   |_
    (__\_____/__)
+```
 
+<<<<<<< HEAD:README.txt
 >>>>>>> master
 #DatabaseTables
     dogs: id|name|gender("male", "female")|age(NULL)|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/155)|picture(NULL/1000)|status|
+=======
+# Database Setup
+    Navigate your terminal (or Windows command prompt) to the back/sql folder. Then type:
+>>>>>>> master:README.md
 
-    stories: id|uploaddate|content(1000)|picture(1000)|
+        mysql -u<user> -p < createDb.sql
+
+        mysql -u<user> -p dogadoptions < dogadoptions-tables.sql
+
+        mysql -u<user> -p dogadoptions < dogadoptions-data.sql
+
+
+# DatabaseTables
+    dogs: id|name|gender("male", "female")|age|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/1000)|picture(NULL/1000)|status|
+        -age is varchar ('Adult', 'puppy', 10, etc.)
+        -when there are no information it returns 'null'
+    
+    stories: id|uploaddate|content(2000)|picture(1000)|
     mappingmultiple: id|storyid|dogid|
 
     flightbuddy: id|name|flightdate|destination|phone|email|
@@ -40,11 +62,12 @@ var flightBuddyFormInfo = {
     volunteerform: id|name|phone|email|worktype(NULL)|preferences(NULL)|availability|
 
     adoption: id|dogid|name|email|phone|address|zip|submittime|
-    --------------------------------------------
-#php API
+
+    sqldata: sample Data added for dogs and stories
+
+
+# php API
     #TODO adjust db nulls/datatypes
-    #TODO API Test
-    #TODO sendadoptionform.php?
 
     getdogprofile.php DB:dogs
         receive: whattoget
@@ -60,10 +83,11 @@ var flightBuddyFormInfo = {
         #ask Ilya about initial request
         receive: initialrequest
             value: yes
-                return: id, content, picture (LIFO)LIM5
+                return: id, content, picture, uploaddate (LIFO)LIM5
         receive: initialrequest
-            value: (any)
-                return: id, content, picture (LIFO)LIM(5,15)
+            value: (number)
+                return: id, content, picture, uploaddate (LIFO)LIM((number,number+5)
+        READ console for mistakes
     
     donorinfo.php DB:donations
         receive: namewhodonated, emailwhodonated, howmuhdonated, currency
@@ -91,7 +115,7 @@ var flightBuddyFormInfo = {
 >>>>>>> master
 =======
 
-#Front end: 
+# Front end: 
     #Standarts:
         - @media screen and (max-width: 481px) inside modible version
         - 
@@ -99,4 +123,8 @@ var flightBuddyFormInfo = {
     donations.html
         #TODO Title adjust
 
+<<<<<<< HEAD:README.txt
 >>>>>>> master
+=======
+        
+>>>>>>> master:README.md
