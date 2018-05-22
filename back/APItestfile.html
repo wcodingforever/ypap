@@ -10,25 +10,48 @@
     <h1>ONLY FOR TESTS</h1>
     <script>
         var xml = new XMLHttpRequest();
-            xml.onreadystatechange = function(){
-                if (xml.readyState===4 && xml.status===200) {
-                    var response = xml.responseText;
-						response = JSON.parse(response);
-                        console.log(response);
-                }
+        xml.onreadystatechange = function(){
+            if (xml.readyState===4 && xml.status===200) {
+                var response = xml.responseText;
+                    response = JSON.parse(response);
+                    console.log(response);
             }
+        }
 
-            xml.open("POST", "accountHandle.php");
-            var forSend = {
-					key: elem,
-					// key: elem,
-					// key: elem,
-					// key: elem,
-					// key: elem,
-					// key: elem
-				}
-				forSend = JSON.stringify(forSend);
-            xml.send(forSend);
+        xml.open("POST", "getdogprofile.php");
+        var forSend = {
+            /////////// donotinfo
+                // namewhodonated: "Ilya",
+                // emailwhodonated: "kim.ilya@hotmail.com",
+                // howmuhdonated: 20,
+                // currency: "USD",
+            /////////// getdogprofile
+                whattoget: "all"
+            /////////// getdogstories
+                // initialrequest: "yes"
+            /////////// mailingsignupinfo
+                // whosubscribed: "Ilya",
+                // emailwhosubscribed: "kim.ilya@hotmail.com"
+            /////////// sendadoptionform
+                // dogtoadopt: 1,
+                // nameoftheadopter: "ilya",
+                // emailoftheadopter: "kim.lya@hotmail.com",
+                // phoneoftheadopter: "+8210-4898-1592",
+                // addressoftheadopter: "Incheon, blahblah, blahblhablha",
+                // zipcodeoftheadopter: "300-100"
+                // key: elem,
+                // key: elem,
+                // key: elem,
+                // key: elem,
+                // key: elem,
+                // key: elem,
+                // key: elem,
+                // key: elem,
+                // key: elem,
+                // key: elem
+            }
+            forSend = JSON.stringify(forSend);
+        xml.send(forSend);
     </script>
 </body>
 </html>
