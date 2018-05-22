@@ -11,24 +11,24 @@
         $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $stmt = $connection->prepare("
             INSERT INTO `adoption`
-                (`dogid`, `name`, `email`, `phone', `address`, `zip`, `submitdate`)
+                (`dogid`, `name`, `email`, `phone`, `address`, `zip`, `submitdate`)
             VALUES
                 (:dogtoadopt, :nameoftheadopter, :emailoftheadopter, :phoneoftheadopter, :addressoftheadopter, :zipcodeoftheadopter, now());
             ");
         ////////////////////////////////////////// Bind Params
-        $dogtoadopt = $receive->dogtoadopt;
-        $nameoftheadopter = $receive->nameoftheadopter;
-        $emailoftheadopter = $receive->emailoftheadopter;
-        $phoneoftheadopter = $receive->phoneoftheadopter;
-        $addressoftheadopter = $receive->addressoftheadopter;
-        $zipcodeoftheadopter = $receive->zipcodeoftheadopter;
+        $dogtoadoptbind = $receive->dogtoadopt;
+        $nameoftheadopterbind = $receive->nameoftheadopter;
+        $emailoftheadopterbind = $receive->emailoftheadopter;
+        $phoneoftheadopterbind = $receive->phoneoftheadopter;
+        $addressoftheadopterbind = $receive->addressoftheadopter;
+        $zipcodeoftheadopterbind = $receive->zipcodeoftheadopter;
         
-        $stmt->bindParam(':dogtoadopt', $dogtoadopt);
-        $stmt->bindParam(':nameoftheadopter', $nameoftheadopter);
-        $stmt->bindParam(':emailoftheadopter', $emailoftheadopter);
-        $stmt->bindParam(':phoneoftheadopter', $phoneoftheadopter);
-        $stmt->bindParam(':addressoftheadopter', $addressoftheadopter);
-        $stmt->bindParam(':zipcodeoftheadopter', $zipcodeoftheadopter);
+        $stmt->bindParam(':dogtoadopt', $dogtoadoptbind);
+        $stmt->bindParam(':nameoftheadopter', $nameoftheadopterbind);
+        $stmt->bindParam(':emailoftheadopter', $emailoftheadopterbind);
+        $stmt->bindParam(':phoneoftheadopter', $phoneoftheadopterbind);
+        $stmt->bindParam(':addressoftheadopter', $addressoftheadopterbind);
+        $stmt->bindParam(':zipcodeoftheadopter', $zipcodeoftheadopterbind);
         //////////////////////////////////////////
 
         $stmt->execute();
