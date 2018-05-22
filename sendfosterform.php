@@ -51,9 +51,8 @@
 // ); 
 
 $json = file_get_contents("php://input");
-echo $json. "<-json";
 $obj = json_decode($json);
-var_dump($obj);
+
 $name = $obj->Name;
 $Phone = $obj->PhoneNumber;
 $email = $obj->Email;
@@ -65,7 +64,7 @@ $otherInfo = $obj->OtherInfo;
 if($name !== "" || $phone !== "" || $email !== "" || $address !== "" || $startDate !== "" || $endDate !== ""){
     try{
         $servername = "localhost";
-        $dbname = "myDB";
+        $dbname = "dogadoptions";
         $username = "root";
         $pw = "";
 
