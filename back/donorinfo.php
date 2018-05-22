@@ -18,7 +18,7 @@
         ////////////////////////////////////////// Bind Params
         $hero = $receive->namewhodonated;
         $heroemail = $receive->emailwhodonated;
-        $howmuchhero = $receive->howmuhdonated;
+        $howmuchhero = $receive->howmuhdonated . " " . $receive->currency;
 
         $stmt->bindParam(':NameWhodonated', $hero);
         $stmt->bindParam(':emailWhoDonated', $heroemail);
