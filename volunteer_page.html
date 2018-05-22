@@ -532,7 +532,20 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
         }
     }
 
-    var phoneInputs = document.querySelectorAll("input[name='phone']");
+    var phoneInput = document.querySelectorAll("input[name='phone']");
+    phoneInput.addEventListener("change", isValidPhoneNum);
+
+    //CHK if it is a valid phone number or not!
+    function isValidPhoneNum(){
+        var phoneInput = this.value;
+        //The recommanded format(placeholder) is "0000 - 0000 - 00000";
+        //So, to validate the input, remove all "-" and " " in the input!!
+        phoneInput = phoneInput.replace(/[ -]/g, "");
+
+        if(!(Number.isInteger(phoneInput))||parseInt(phoneInput) < 0){
+            alert("Unvalid phone number. Please check the phone number.");
+        }
+    }
     
     var emailInput = document.getElementById("email");
     emailInput.addEventListener("change", isValidEmail);
