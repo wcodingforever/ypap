@@ -231,7 +231,7 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
                     <div class="title" id="form_title">
                         Want to participate? <br> Please write a form.
                     </div>
-                    <div class="field"><span class="f_title">Name </span> <input id="name" name="name" type="text"><span id="required"> (Required)</span></div>
+                    <div class="field"><span class="f_title">Name </span> <input id="name" name="name" type="text"><span id="required"> *</span></div>
                     <div class="field"><span class="f_title">Phone</span>
                         <!-- country codes (ISO 3166) and Dial codes. -->
                         <select name="phone" id="countryCode">
@@ -451,9 +451,9 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
                         	<option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
                         	<!-- </otgroup> -->
                         </select> 
-                        <input id="phoneNumber" name="phone" type="tel"><span id="required"> (Required)</span>
+                        <input id="phoneNumber" name="phone" type="tel"><span id="required"> *</span>
                     </div>
-                    <div class="field"><span class="f_title">E-mail</span> <input id="email" name="email" type="email"><span id="required"> (Required)</span></div>
+                    <div class="field"><span class="f_title">E-mail</span> <input id="email" name="email" type="email"><span id="required"> *</span></div>
                     <div class="field">
                         <div class="f_title"><span>Work Type (Prefereces)</span></div>
                         <div id="workType_text">Please choose 1 or 2 work types.</div>
@@ -484,7 +484,7 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
 
     
 <script>
-    var listOfInputOfWorkTypes = document.querySelectorAll("input[type='checkbox']"); 
+    var listOfInputOfWorkTypes = document.querySelector("input[type='checkbox']"); 
     
     for(var i = 0; i < listOfInputOfWorkTypes.length; i++){
         var thisWorkType = listOfInputOfWorkTypes[i];
@@ -532,7 +532,8 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
         }
     }
 
-    var phoneInput = document.querySelectorAll("input[name='phone']");
+
+    var phoneInput = document.querySelector("input[name='phone']");
     phoneInput.addEventListener("change", isValidPhoneNum);
 
     //CHK if it is a valid phone number or not!
@@ -540,9 +541,11 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
         var phoneInput = this.value;
         //The recommanded format(placeholder) is "0000 - 0000 - 00000";
         //So, to validate the input, remove all "-" and " " in the input!!
-        phoneInput = phoneInput.replace(/[ -]/g, "");
+        phoneInput = phoneInput.replace(/[ -]/g, ""); 
 
-        if(!(Number.isInteger(phoneInput))||parseInt(phoneInput) < 0){
+        phoneInput = Number(phoneInput);
+    
+        if(!(Number.isInteger(phoneInput))||phoneInput < 0 ){
             alert("Unvalid phone number. Please check the phone number.");
         }
     }
