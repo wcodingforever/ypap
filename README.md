@@ -12,9 +12,6 @@
 
         mysql -u<user> -p < createDb.sql
 
-#DatabaseTables
-    dogs: id|name|gender("male", "female")|age(NULL)|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/155)|picture(NULL/1000)|status|
-=======
         mysql -u<user> -p dogadoptions < dogadoptions-tables.sql
 
         mysql -u<user> -p dogadoptions < dogadoptions-data.sql
@@ -95,3 +92,5 @@
 
     donations.html
         #TODO Title adjust
+
+        
