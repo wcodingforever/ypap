@@ -17,9 +17,15 @@
             font-family: sans-serif;
         }
 
+        #flightbuddyimage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 90%;
+            max-height: 90%;
+            margin: 10px;
         }
 
         #text {
@@ -39,13 +45,23 @@
             margin: 20px;
         }
 
-        @media screen and (min-width: 481px) {
+        input, textarea {
+            outline: 1px solid black;
+        }
 
-            #everythingwrapper {
-                display: flex;
-                justify-content: center;
+        @media screen and (min-width: 481px) {
+            input, textarea {
+                outline: none;
+            }
+            img {
+                max-width: 40%;
+                max-height: 40%;
+                margin: 10px;
             }
 
+            input, textarea {
+                outline: none;
+            }
         }
 
     </style>
@@ -55,7 +71,20 @@
         <div id="flightbuddyimage"><img src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
         <!-- Below is the text taken straight from the YPAP page. -->
         <div id="text">
-            Couriers are people flying internationally who are willing to check in a dog under their name at the airport. The pound will arrange everything and there is no cost to you. Usually only DIRECT flights work for sending an animal on a plane due to long flight times and airline regulations. If you are not flying direct, please let us know and we can try to arrange a dog to fly IN CABIN with you, under the seat. Most commonly we need flights to SFO, LAX, JFK, SEA, ORD, IAD, YVR, YYZ, VIE, MUC.
+            <h2>Become a Flight Buddy!</h2>
+            Couriers are people flying internationally who are willing to check in a dog under their name at the airport.
+            <br>
+            <br>
+            The pound will arrange everything and there is no cost to you.
+            <br>
+            <br>
+            Usually only DIRECT flights work for sending an animal on a plane due to long flight times and airline regulations.
+            <br>
+            <br>
+            If you are not flying direct, please let us know and we can try to arrange a dog to fly IN CABIN with you, under the seat.
+            <br>
+            <br>
+            Most commonly we need flights to SFO, LAX, JFK, SEA, ORD, IAD, YVR, YYZ, VIE, MUC.
         </div>
     </div>
     <div id="bottomwrapper">
@@ -95,11 +124,29 @@
         //The variable for the submit button.
         var submitButton = document.querySelector("#submitbutton");
 
+        //This forces the calendar to only accept start dates of tomorrow or later!
+        function getDate () {
+            var todayDate = new Date();
+            var ddGotten = todayDate.getDate();
+            var mmGotten = todayDate.getMonth()+1;
+            var yyyyGotten = todayDate.getFullYear();
+            var dateOffset = ddGotten + 1;
+            if(dateOffset<10){
+                    dateOffset= "0"+dateOffset;
+                }
+                if(mmGotten<10){
+                    mmGotten="0"+mmGotten;
+                }
+            todayDate = yyyyGotten+'-'+mmGotten+'-'+dateOffset;
+            departureDate.setAttribute("min", todayDate);
+        }
+        getDate();
+
         //Add event listener to the button, making sure it can only submit when all fields have been filled out
         submitButton.addEventListener("click", function() {
             //Below checks that all fields have been filled out.
             if (departureDate.value === "" || destinationCity.value === "" || travelerName.value === "" || phoneNumber.value === ""|| emailAddress === "") {
-                alert("Please make sure to fill out all the fields.")
+                alert("Please make sure to fill out all the fields.");
             }
             else {
                 //Below makes sure that the email address has an @ in it.
@@ -111,7 +158,7 @@
                 //Below makes sure that the info entered in the phone number section is a number.
                 var phoneNumberInput = phoneNumber.value;
                 if (phoneNumberInput / 1 !== phoneNumberInput) {
-                    alert("Please enter a valid phone number.")
+                    alert("Please enter a valid phone number.");
                 }
                 else submitInformation(); //This calls the function that submits the entered information to the php!
             }
@@ -122,11 +169,11 @@
         function submitInformation() {
             //Below is the package of all the information in the fields.
             var flightBuddyFormInfo = {
-                FlightDate: departureDate.value,
-                Destination: destinationCity.value,
-                Name: travelerName.value,
-                PhoneNumber: phoneNumber.value,
-                Email: emailAddress.value
+                flightdateofthebuddy: departureDate.value,
+                destinationofthebuddy: destinationCity.value,
+                nameofthebuddy: travelerName.value,
+                phoneofthebuddy: phoneNumber.value,
+                emailofthebuddy: emailAddress.value
             };
             var flightBuddyAjax = new XMLHttpRequest();
             flightBuddyAjax.onreadystatechange = function() {

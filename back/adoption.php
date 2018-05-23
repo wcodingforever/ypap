@@ -12,7 +12,6 @@
  @media screen and (min-width:481px) {
     body{
         font-family: Verdana;
-        background: yellow;
     }
     #intro{
         display: inline-block;
@@ -65,6 +64,12 @@
     #dogName{
         border: 2px solid #0e5ba9;
     }
+<<<<<<< HEAD
+=======
+    #dogId{
+        display:none;
+    }
+>>>>>>> master
     #box_form_field_name_surname{
         border-top: 0.8px rgba(0, 0, 0, 0.2) solid;
         padding-top: 20px;
@@ -133,6 +138,12 @@
     #dogName{
         border: 2px solid #0e5ba9;
     }
+<<<<<<< HEAD
+=======
+    #dogId{
+        display:none;
+    }
+>>>>>>> master
     #box_form_field_name_surname{
         border-top: 0.8px rgba(0, 0, 0, 0.2) solid;
         padding-top: 20px;
@@ -158,16 +169,28 @@
     
                     <div id="form_field_dogName_line">
                         <div id="box_form_field_dogName" class="form_fields">
+<<<<<<< HEAD
                             <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptdogname'];?>: + response[i].adoptdogname + </div>
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="text" name="dogName" class="form_input" id="dogName"><!-- required --> 
+=======
+                            <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptdogname'];?>:</div>
+                                <span class="requiredSymbol">*</span>
+                            </span>
+                            <input type="text" name="dogName" class="form_input" id="dogName" value="<?php $_GET['name'] ?>"><!-- required --> 
+                            <input type="text" name="dogId" class="form_input" id="dogId" value="<?php $_GET['id'] ?>">
+>>>>>>> master
                         </div><!-- box_form_field_dogName --> 
                     </div><!-- end form_field_dogName_line --> 
                     
                     <div id="form_field_name_surname_line">
                         <div id="box_form_field_name_surname" class="form_fields">
+<<<<<<< HEAD
                             <span class="text_field_form" id="nameTextField"><div><?php echo $lang[$myLang]['adoptname'];?>: + response[i].adoptname + </div>
+=======
+                            <span class="text_field_form" id="nameTextField"><div><?php echo $lang[$myLang]['adoptname'];?>:</div>
+>>>>>>> master
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="text" name="name" class="form_input" id="name"><!-- required --> 
@@ -181,14 +204,22 @@
                 
                     <div id="form_field_phone_line">
                         <div class="form_fields">
+<<<<<<< HEAD
                             <span class="text_field_form" id="phoneTextField"><div><?php echo $lang[$myLang]['adoptphone'];?>: + response[i].adoptphone + </div></span>
+=======
+                            <span class="text_field_form" id="phoneTextField"><div><?php echo $lang[$myLang]['adoptphone'];?>:</div></span>
+>>>>>>> master
                             <input type="tel" name="phone" class="form_input" id="phone"><!-- optionnal --> 
                         </div><!-- end phone --> 
                     </div><!-- end form_field_phone_line -->    
 
                     <di id="form_field_mail_line">
                         <div class="form_fields">
+<<<<<<< HEAD
                             <span class="text_field_form" id="emailTextField"><div><?php echo $lang[$myLang]['adoptemail'];?>: + response[i].adoptemail + </div>
+=======
+                            <span class="text_field_form" id="emailTextField"><div><?php echo $lang[$myLang]['adoptemail'];?>:</div>
+>>>>>>> master
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="email" name="email" class="form_input" id="email"><!--optionnal --> 
@@ -197,7 +228,11 @@
 
                     <di id="form_field_adress_line">
                         <div class="form_fields">
+<<<<<<< HEAD
                             <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptaddress'];?>: + response[i].adoptaddress + </div>
+=======
+                            <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptaddress'];?>:</div>
+>>>>>>> master
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="text" name="adress" class="form_input" id="adress"><!-- required --> 
@@ -206,7 +241,11 @@
 
                     <di id="form_field_zipcode_line">
                         <div class="form_fields">
+<<<<<<< HEAD
                             <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptzip'];?>: + response[i].adoptzip + </div>
+=======
+                            <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptzip'];?>:</div>
+>>>>>>> master
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="text" name="zipcode" class="form_input" id="zipCode"><!-- required --> 
@@ -239,7 +278,11 @@
 <script>
     function fieldsVerification() {
     
+<<<<<<< HEAD
     var dogNameElem = document.querySelector("#dogName");
+=======
+    var dogIdElem = document.querySelector("#dogId");
+>>>>>>> master
     var userNameElem = document.querySelector("#name");
     // var userSurnameElem = document.querySelector("#surname");
     var userPhoneElem = document.querySelector("#phone"); //optionnal
@@ -247,7 +290,11 @@
     var userAdressElem = document.querySelector("#adress");
     var userZipCodeElem = document.querySelector("#zipCode");
     // var userCountryElem = document.querySelector("#country");
+<<<<<<< HEAD
         var dogName = dogNameElem.value;
+=======
+        var dogId = dogIdElem.value;
+>>>>>>> master
         var userName = userNameElem.value;
         // var userSurname = userSurnameElem.values;
         var userPhone = userPhoneElem.value;
@@ -292,7 +339,11 @@
                             , addressoftheadopter: userAdress
                             , zipcodeoftheadopter: userZipCode
                             // , "XXX": "userCountry"
+<<<<<<< HEAD
                             , dogtoadopt: dogName
+=======
+                            , dogtoadopt: dogId
+>>>>>>> master
                             }; 
         var forSend = JSON.stringify(adoptInfoForm);
         xhttp.send(forSend);
