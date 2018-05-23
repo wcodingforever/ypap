@@ -15,7 +15,7 @@ if(( $name !== "")&& ( $phone !== "") && ( $email !== "" )){
     try{
 
         $servername = 'localhost';
-        $dbname = 'myDB';
+        $dbname = 'dogadoptions';
         $username = 'root';
         $pw = '';
 
