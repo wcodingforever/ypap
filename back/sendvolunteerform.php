@@ -51,10 +51,10 @@ if(( $name !== "")&& ( $phone !== "") && ( $email !== "" )){
         $sta = null;
 
     }catch(PDOException $e){
-        $response = "ERORR";
+        $response = "ERROR";
     }
 }else{
-    $response = "ERORR";
+    $response = "ERROR";
 }
 
 echo $response;
