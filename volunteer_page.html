@@ -493,7 +493,6 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
 
     function countSelectedWorkTypes(){
         var listOfInputOfWorkTypes = document.querySelectorAll("input[name='workType']:checked");
- 
         if(listOfInputOfWorkTypes.length >= 3){
             alert("You can't select more than 3 worke types.");
             this.checked = false;
@@ -566,7 +565,9 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
     function sendForm(){
         //Check if there is any empty field.
         var name = document.querySelector("input[name = 'name']").value; 
-        var phone = document.querySelector("input[name = 'phone']").value; 
+        var countryCode = document.querySelector("#countryCode").value;
+        var leftPhoneNum = document.querySelector("input[name = 'phone']").value; 
+        var phoneNumber = "";
         var email = document.querySelector("input[name = 'email']").value; 
         var workTypes = document.querySelectorAll("input[name = 'workType']:checked");
         var workType1 = "";
@@ -590,7 +591,11 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
                 ii)Both, availability_startDT, availability_endDT were provided:
                 availible => availability_startDT ~ availability_endDT
         */
-        //1)Work type
+        //1)Phone number; Country code +  the left phone number(in which  all '-', ' '(space) were removed.)
+        leftPhoneNum = leftPhoneNum.replace(/[ -]/g, "");
+        var phoneNumber = "+" + countryCode + " " +  leftPhoneNum;
+
+        //2)Work type
         if(workTypes.length === 1){
             workType1 = workTypes[0].value;
             workType2 = "";
@@ -599,7 +604,7 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
             workType1 = workTypes[0].value;
             workType2 = workTypes[1].value;
         }
-        //2)Availability
+        //3)Availability
         //If two dates were not chosen or same,
         if(availabilityDTs[0].value === availabilityDTs[1].value){
             availability = availability_startDT;
@@ -610,18 +615,19 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
         }
     
         //In the case where any of the required fields were not inserted..
-        if(name === ""||phone === "" || email === ""){
+        if(name === ""||leftPhoneNum === "" || email === ""){
             alert("Please insert all required datas.");
         }
         //If all required data were required, 
         else{
             var obj = {};
             obj.name = name;
-            obj.phone = phone;
+            obj.phone = phoneNumber;
             obj.email = email;
             obj.workType1 = workType1;
             obj.workType2 = workType2;
             obj.availability = availability;
+            console.log(obj);
         
             var json = JSON.stringify(obj);
             var xhr = new XMLHttpRequest();
