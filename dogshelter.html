@@ -193,25 +193,40 @@
         <div class="menuoptions">Donations</div>
         <div class="menuoptions">Stories</div>
         <div class="menuoptions">Contact Us</div>
-        <div class="menuoptions">News Letters</div>
+        <div class="menuoptions">Newsletters</div>
     </div>
-
+    <input type="hidden" id="hiddenlang" name="languagesetting" value="en">
     <script>
         var menuOptions = document.querySelectorAll(".menuoptions");
         var mobileMenu = document.querySelector("#menudiv");
         var mobileMenuButton = document.querySelector("#mobilemenubutton");
-        var menuEnglishElem = document.querySelector("#menuenglish");
-        var menuKoreanElem = document.querySelector("#menukorean");
-        var menuRussianElem = document.querySelector("#menurussian");
-        var menuFrenchElem = document.querySelector("#menufrench");
-        var menuSwedishElem = document.querySelector("#menuswedish");
+        var langOptions = document.querySelector(".langOptions");
+        var dropdownElem = document.querySelector("#chooseLang");
+        // var langChangeDevice = 
+        dropdownElem.addEventListener("change", languageSwitch);
+        var hiddenLanguage = document.querySelector("#hiddenlang");
+        var langToSet = "";
 
-        // menuEnglishElem.addEventListener("Click");
-        // menuKoreanElem.addEventListener("Click");
-        // menuRussianElem.addEventListener("Click");
-        // menuFrenchElem.addEventListener("Click");
-        // menuSwedishElem.addEventListener("Click");
-
+        function languageSwitch() {
+            var currentLang = this.value;
+            if (currentLang === "English") {
+                var langToSet = "en";
+            }
+            if (currentLang === "한국어") {
+                var langToSet = "ko";
+            }
+            if (currentLang === "Русский") {
+                var langToSet = "ru";
+            }
+            if (currentLang === "Français") {
+                var langToSet = "fr";
+            }
+            if (currentLang === "Svenska") {
+                var langToSet = "sv";
+            }
+            hiddenLanguage.value = langToSet;
+            console.log(langToSet);
+        };
 
         for (var i = 0; i < menuOptions.length; i++) {
             var thisThing = menuOptions[i];
