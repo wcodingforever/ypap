@@ -1,11 +1,25 @@
+```
      /\_____/\
      |  o o  |
     __\__^__/__
    (__/     \__)
     _|   .   |_
    (__\_____/__)
+```
+#TODO
+    Phone verification should be just(not empty && no more than 20 char)
+        db has varchar for "+", "-", "()"
+# Database Setup
+    Navigate your terminal (or Windows command prompt) to the back/sql folder. Then type:
 
-#DatabaseTables
+        mysql -u<user> -p < createDb.sql
+
+        mysql -u<user> -p dogadoptions < dogadoptions-tables.sql
+
+        mysql -u<user> -p dogadoptions < dogadoptions-data.sql
+
+
+# DatabaseTables
     dogs: id|name|gender("male", "female")|age|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/1000)|picture(NULL/1000)|status|
         -age is varchar ('Adult', 'puppy', 10, etc.)
         -when there are no information it returns 'null'
@@ -26,8 +40,9 @@
     adoption: id|dogid|name|email|phone|address|zip|submittime|
 
     sqldata: sample Data added for dogs and stories
-    --------------------------------------------
-#php API
+
+
+# php API
     #TODO adjust db nulls/datatypes
 
     getdogprofile.php DB:dogs
@@ -72,11 +87,13 @@
                     no useless requests for DB
 
 
-#Front end: 
+# Front end: 
     #Standarts:
         - @media screen and (max-width: 481px) inside modible version
         - 
 
     donations.html
         #TODO Title adjust
-
+    
+    
+        

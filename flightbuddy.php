@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+$import= file_get_contents('lang.php');
+$myLang = $_REQUEST['lang'];
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,17 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-
         /* * {
         outline: 1px solid red;
         } */
-
         body {
             margin: 0px;
             padding: 0px;
             font-family: sans-serif;
         }
-
         #flightbuddyimage {
             display: flex;
             justify-content: center;
@@ -27,28 +27,22 @@
             max-height: 90%;
             margin: 10px;
         }
-
         #text {
             display: inline-block;
             padding: 10px;
         }
-
         #pleasenote {
             margin: 10px;
         }
-
         .inputwrapper {
             margin: 15px;
         }
-
         #submitbuttonwrapper {
             margin: 20px;
         }
-
         input, textarea {
             outline: 1px solid black;
         }
-
         @media screen and (min-width: 481px) {
             input, textarea {
                 outline: none;
@@ -58,12 +52,7 @@
                 max-height: 40%;
                 margin: 10px;
             }
-
-            input, textarea {
-                outline: none;
-            }
         }
-
     </style>
 </head>
 <body>
@@ -91,26 +80,26 @@
         <div id="pleasenote">Please note that all fields are mandatory!</div>
         <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
         <div class="inputwrapper" id="flightdatewrapper">
-            <div class="fielddesc">Date of departure</div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['flightdate'];?>: + response[i].flightdate + </div>
             <input type="date" id="flightdate">
         </div>
         <div class="inputwrapper" id="destinationwrapper">
-            <div class="fielddesc">Destination city</div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['destination'];?>: + response[i].destination + </div>
             <input type="text" id="destination">
         </div>
         <div class="inputwrapper" id="namewrapper">
-            <div class="fielddesc">Traveler name</div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['travelername'];?>: + response[i].travelername + </div>
             <input type="text" id="name">
         </div>
         <div class="inputwrapper" id="phonenumwrapper">
-            <div class="fielddesc">Traveler's phone number</div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['travelerphone'];?>: + response[i].travelerphone + </div>
             <input type="text" id="phonenum">
         </div>
         <div class="inputwrapper" id="emailwrapper">
-            <div class="fielddesc">Traveler's email address</div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['traveleremail'];?>: + response[i].traveleremail + </div>
             <input type="text" id="email">
         </div>
-        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="Submit application"></div>
+        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>: + response[i].submitmessage + "></div>
     </div>
 
     <script>
@@ -120,10 +109,8 @@
         var travelerName = document.querySelector("#name");
         var phoneNumber = document.querySelector("#phonenum");
         var emailAddress = document.querySelector("#email");
-
         //The variable for the submit button.
         var submitButton = document.querySelector("#submitbutton");
-
         //This forces the calendar to only accept start dates of tomorrow or later!
         function getDate () {
             var todayDate = new Date();
@@ -141,7 +128,6 @@
             departureDate.setAttribute("min", todayDate);
         }
         getDate();
-
         //Add event listener to the button, making sure it can only submit when all fields have been filled out
         submitButton.addEventListener("click", function() {
             //Below checks that all fields have been filled out.
@@ -162,18 +148,16 @@
                 }
                 else submitInformation(); //This calls the function that submits the entered information to the php!
             }
-
         })
-
         //Below is only called when the submit button is clicked and all the conditions are met!
         function submitInformation() {
             //Below is the package of all the information in the fields.
             var flightBuddyFormInfo = {
-                flightdateofthebuddy: departureDate.value,
-                destinationofthebuddy: destinationCity.value,
-                nameofthebuddy: travelerName.value,
-                phoneofthebuddy: phoneNumber.value,
-                emailofthebuddy: emailAddress.value
+                FlightDate: departureDate.value,
+                Destination: destinationCity.value,
+                Name: travelerName.value,
+                PhoneNumber: phoneNumber.value,
+                Email: emailAddress.value
             };
             var flightBuddyAjax = new XMLHttpRequest();
             flightBuddyAjax.onreadystatechange = function() {
@@ -182,10 +166,9 @@
                 }
             }
             var outGoingFlightBuddyInfo = JSON.stringify(flightBuddyFormInfo);
-            flightBuddyAjax.open("POST", "back/sendflightform.php");
+            flightBuddyAjax.open("POST", "sendflightform.php");
             flightBuddyAjax.send(outGoingFlightBuddyInfo);
         }
-
     </script>
 </body>
 </html>

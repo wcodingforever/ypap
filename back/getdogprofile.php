@@ -4,12 +4,16 @@
     ////////////////////////////////////////////// Server conf
     $servername = 'localhost';
 	$username = 'root';
-	$password = '';
+    $password = '';
     $dbname = 'dogadoptions';
+    // $servername = '192.168.1.112';
+    // $username = 'alex';
+    // $password = 'deleteme';
+    // $dbname = 'dogadoptions';
+	$connection = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8mb4", $username, $password);
     //////////////////////////////////////////////
     if ($receive->whattoget === "sample") {
         try{
-			$connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 			$stmt = $connection->prepare("
                 SELECT `id`, `picture`, `name` 
                 FROM `dogs` 
@@ -31,7 +35,6 @@
     }
     elseif ($receive->whattoget === "all") {
         try{
-			$connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 			$stmt = $connection->prepare("
                 SELECT `id`, `name`, `gender`, `age`, `spayed`, `weight`, `breed`, `arrivaldate`, `notes`, `picture`
                 FROM `dogs`
@@ -42,13 +45,44 @@
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $result = json_encode($result);
-            echo($result);
+            $resultStr = json_encode($result
+                // Need these options to get around odd characters in the data. (latin1 vs utf8)
+                // , JSON_PARTIAL_OUTPUT_ON_ERROR
+            );
+
+            if ($resultStr === FALSE) {
+                switch (json_last_error()) {
+                    case JSON_ERROR_NONE:
+                        echo ' - No errors';
+                    break;
+                    case JSON_ERROR_DEPTH:
+                        echo ' - Maximum stack depth exceeded';
+                    break;
+                    case JSON_ERROR_STATE_MISMATCH:
+                        echo ' - Underflow or the modes mismatch';
+                    break;
+                    case JSON_ERROR_CTRL_CHAR:
+                        echo ' - Unexpected control character found';
+                    break;
+                    case JSON_ERROR_SYNTAX:
+                        echo ' - Syntax error, malformed JSON';
+                    break;
+                    case JSON_ERROR_UTF8:
+                        echo ' - Malformed UTF-8 characters, possibly incorrectly encoded';
+                    break;
+                    default:
+                        echo ' - Unknown error';
+                    break;
+                }
+            }
+            else echo($resultStr);
 
             $connection = null;
             $stmt = null;
         }
         catch(PDOException $e) {
+            echo($e);
         }
     }
+    else echo ("CAN'T READ INPUT!");
 ?>

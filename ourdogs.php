@@ -323,7 +323,7 @@ $myLang = $_REQUEST['lang'];
                                             "<img class = 'modalDogPicture' src='" + response[i].picture + "'>" +
                                         "</div>" +
                                         "<div class = 'dogNameModal'>"  + response[i].name + "</div>" +
-                                        "<form action='adoption.php?name=" + response[i].name + "&" + "id=" + response[i].id + "'" +
+                                        "<form action='adoption.php?name=" + response[i].name + "&" + "id=" + response[i].id + "'>" +
                                             "<input class = 'adoptButton' type='submit' value='<?php echo $lang[$myLang]['adopt'];?>' />" +
                                         "</form>" +
                                     "<div class='popupInfoDiv'>" +

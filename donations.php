@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+$import= file_get_contents('lang.php');
+$myLang = $_REQUEST['lang'];
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,7 +34,6 @@
             cursor: pointer;
         }
         @media screen and (max-width: 481px){
-
         }
     </style>
 </head>
@@ -45,26 +47,26 @@
     </div>
     <div>
         <div class="inputwrapper" id="donationnamediv">
-            <div class="fielddesc">Your name</div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationname'];?>: + response[i].donationname + </div></div>
             <input type="text" placeholder="Leave the field empty if you want to donate anonymously">
         </div>
         <div class="inputwrapper" id="donationemaildiv">
-            <div class="fielddesc">Your e-mail</div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationemail'];?>: + response[i].donationemail + </div></div>
             <input type="text" placeholder="Leave the field empty if you want to donate anonymously">
         </div>
         <div class="inputwrapper" id="donationamountdiv">
-            <div class="fielddesc">Donation Amount</div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationamount'];?>: + response[i].donationamount + </div></div>
             <input type="text" placeholder="1.00">
         </div>
         <div class="inputwrapper" id="donationcurrencydiv">
-            <div class="fielddesc">Currency</div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationcurrency'];?>: + response[i].donationcurrency + </div></div>
             <select id="donationcurrency">
                 <option>USD</option>
                 <option>KRW</option>
                 <option>EUR</option>
             </select>
         </div>
-        <div id="donatebuttonwrapper"><button>Donate!</button></div>
+        <div id="donatebuttonwrapper"><button><div><?php echo $lang[$myLang]['donatebutton'];?>: + response[i].donatebutton + </div></button></div>
         <div id="paypaldonate">Or donate with a PayPal<br>
             <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EP3GTQ4M9YPZU"><img src="https://i2.wp.com/deadlaugh.com/wp-content/uploads/2017/03/PayPal-Donate-Button-High-Quality-PNG.png"></a>
         </div>
@@ -75,7 +77,6 @@
         var amountElem    = document.querySelector("#donationamountdiv");
         var currencyElem  = document.querySelector("#donationcurrencydiv");
         var donateButton  = document.querySelector("#donatebuttonwrapper").querySelector("button");
-
         var nameValue     = nameElem.querySelector("input");
         var emailValue    = emailElem.querySelector("input");
         var amountValue   = amountElem.querySelector("input");
@@ -85,7 +86,6 @@
             if ( amountValue.value === "") {
                 alert("Fill out the donation amount!.");
             }
-
             else {
                 if (nameValue.value==="" && emailValue.value==="") {
                     var fromwho = "anonymous";
