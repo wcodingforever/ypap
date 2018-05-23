@@ -17,9 +17,15 @@
             font-family: sans-serif;
         }
 
+        #flightbuddyimage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 90%;
+            max-height: 90%;
+            margin: 10px;
         }
 
         #text {
@@ -44,11 +50,15 @@
         }
 
         @media screen and (min-width: 481px) {
-
-            #everythingwrapper {
-                display: flex;
-                justify-content: center;
+            input, textarea {
+                outline: none;
             }
+            img {
+                max-width: 40%;
+                max-height: 40%;
+                margin: 10px;
+            }
+
             input, textarea {
                 outline: none;
             }
@@ -61,7 +71,20 @@
         <div id="flightbuddyimage"><img src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
         <!-- Below is the text taken straight from the YPAP page. -->
         <div id="text">
-            Couriers are people flying internationally who are willing to check in a dog under their name at the airport. The pound will arrange everything and there is no cost to you. Usually only DIRECT flights work for sending an animal on a plane due to long flight times and airline regulations. If you are not flying direct, please let us know and we can try to arrange a dog to fly IN CABIN with you, under the seat. Most commonly we need flights to SFO, LAX, JFK, SEA, ORD, IAD, YVR, YYZ, VIE, MUC.
+            <h2>Become a Flight Buddy!</h2>
+            Couriers are people flying internationally who are willing to check in a dog under their name at the airport.
+            <br>
+            <br>
+            The pound will arrange everything and there is no cost to you.
+            <br>
+            <br>
+            Usually only DIRECT flights work for sending an animal on a plane due to long flight times and airline regulations.
+            <br>
+            <br>
+            If you are not flying direct, please let us know and we can try to arrange a dog to fly IN CABIN with you, under the seat.
+            <br>
+            <br>
+            Most commonly we need flights to SFO, LAX, JFK, SEA, ORD, IAD, YVR, YYZ, VIE, MUC.
         </div>
     </div>
     <div id="bottomwrapper">
@@ -146,11 +169,11 @@
         function submitInformation() {
             //Below is the package of all the information in the fields.
             var flightBuddyFormInfo = {
-                FlightDate: departureDate.value,
-                Destination: destinationCity.value,
-                Name: travelerName.value,
-                PhoneNumber: phoneNumber.value,
-                Email: emailAddress.value
+                flightdateofthebuddy: departureDate.value,
+                destinationofthebuddy: destinationCity.value,
+                nameofthebuddy: travelerName.value,
+                phoneofthebuddy: phoneNumber.value,
+                emailofthebuddy: emailAddress.value
             };
             var flightBuddyAjax = new XMLHttpRequest();
             flightBuddyAjax.onreadystatechange = function() {
