@@ -69,11 +69,15 @@
             justify-content: center;
         }
 
+        .menuoptions:hover {
+            cursor: pointer;
+        }
+
         #chooseLang {
             display: inline-flex;
             border: 1px solid #0e5ba9;
             border-radius: 3px;
-            width: 60px;
+            width: 80px;
             height: 30px;
             vertical-align: top;
             font-family: sans-serif;
@@ -137,7 +141,7 @@
             display: inline-block;
             border: 1px solid #0e5ba9;
             border-radius: 3px;
-            width: 60px;
+            width: 80px;
             height: 30px;
             margin-left: 130px;
             margin-bottom: 20px;
@@ -152,10 +156,11 @@
         <div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div>
         
         <select id="chooseLang"><!--mobile lang. options-->
-            <option class="langOptions">En.</option>
-            <option class="langOptions">Kr.</option>
-            <option class="langOptions">Russ.</option>
-            <option class="langOptions">Fr.</option>
+            <option class="langOptions" id="menuenglish">English</option>
+            <option class="langOptions" id="menukorean">한국어</option>
+            <option class="langOptions" id="menurussian">Русский</option>
+            <option class="langOptions" id="menufrench">Français</option>
+            <option class="langOptions" id="menuswedish">Svenska</option>
         </select>
         
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
@@ -195,10 +200,10 @@
 
         mobileMenuButton.addEventListener("click", function(){
             if (mobileMenu.style.display === "block"){
-                mobileMenu.style.display = "none"
+                mobileMenu.style.display = "none";
             }
             else {
-                mobileMenu.style.display = "block"
+                mobileMenu.style.display = "block";
             }
         });
     </script>
