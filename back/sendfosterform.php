@@ -51,21 +51,21 @@
 // ); 
 
 $json = file_get_contents("php://input");
-echo $json. "<-json";
 $obj = json_decode($json);
-var_dump($obj);
+$response = "OK";
+
 $name = $obj->Name;
-$Phone = $obj->PhoneNumber;
+$phone = $obj->PhoneNumber;
 $email = $obj->Email;
 $address = $obj->Address;
-$startDate = $obj->StartDate; 
+$startDate = $obj->StartDate;
 $endDate = $obj->EndDate;
 $otherInfo = $obj->OtherInfo;
 
 if($name !== "" || $phone !== "" || $email !== "" || $address !== "" || $startDate !== "" || $endDate !== ""){
     try{
         $servername = "localhost";
-        $dbname = "myDB";
+        $dbname = "dogadoptions";
         $username = "root";
         $pw = "";
 
@@ -95,10 +95,13 @@ if($name !== "" || $phone !== "" || $email !== "" || $address !== "" || $startDa
         $sta = null;
 
     }catch(PDOException $e){
-
+        $response = "ERROR";
     }
+}else{
+    $response = "ERROR";
 }
 
+echo $response;
 
 
 ?>

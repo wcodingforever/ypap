@@ -134,7 +134,7 @@
     </div>
     <script>
         //The variables pointing towards each input field.
-        var applicantName = document.querySelector("#namewrapper");
+        var applicantName = document.querySelector("#name");
         var phoneNumber = document.querySelector("#phonenum");
         var emailAddress = document.querySelector("#email");
         var homeAddress = document.querySelector("#address");
@@ -193,10 +193,9 @@
                     alert("Please enter a valid email address.");
                 }
                 //Below makes sure that the info entered in the phone number section is a number.
-                var phoneNumberInputString = phoneNumber.value;
-                var phoneNumberInput = parseInt(phoneNumberInputString);
-                if ((phoneNumberInput / 1) !== phoneNumberInput) {
-                    alert("Please enter a valid phone number.")
+                var phoneNumberInput = phoneNumber.value;
+                if (phoneNumberInput.length > 20) {
+                    alert("Phone numbers must be 20 characters or less.")
                 }
                 else submitInformation(); //This calls the function that submits the entered information to the php!
             }
@@ -213,6 +212,7 @@
                 EndDate: endDate.value,
                 OtherInfo: otherInfo.value,
             };
+            console.log(fosterFormInfo);
             var fosterAjax = new XMLHttpRequest();
             fosterAjax.onreadystatechange = function() {
                 if (fosterAjax.readyState === 4 && fosterAjax.status === 200) {
@@ -220,7 +220,7 @@
                 }
             }
             var outGoingFosterInfo = JSON.stringify(fosterFormInfo);
-            fosterAjax.open("POST", "sendflightform.php");
+            fosterAjax.open("POST", "sendfosterform.php");
             fosterAjax.send(outGoingFosterInfo);
         }
     </script>

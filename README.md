@@ -20,7 +20,10 @@
 
 
 # DatabaseTables
-    dogs: id|name|gender("male", "female")|age|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/1000)|picture(NULL/1000)|status|
+    #TODO
+        php verification for breed in and breed out
+    dogs: id|name|gender(0,1)|age|spayed(0,1)|weight|breed(space seperated)|arrivaldate|notes(NULL/1000)|picture(NULL/1000)|status|
+    
         -age is varchar ('Adult', 'puppy', 10, etc.)
         -when there are no information it returns 'null'
     
@@ -31,7 +34,7 @@
 
     mailinglist: id|name|email|
 
-    donations: id|name|email|donatetime|amount|
+    donations: id|name|email|donatetime|amount|currency|
 
     fosterform: id|pickupdate(NOW())|dropoffdate|name|phone|email|address|preferences|
 
