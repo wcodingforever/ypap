@@ -165,11 +165,11 @@
         function submitInformation() {
             //Below is the package of all the information in the fields.
             var flightBuddyFormInfo = {
-                FlightDate: departureDate.value,
-                Destination: destinationCity.value,
-                Name: travelerName.value,
-                PhoneNumber: phoneNumber.value,
-                Email: emailAddress.value
+                flightdateofthebuddy: departureDate.value,
+                destinationofthebuddy: destinationCity.value,
+                nameofthebuddy: travelerName.value,
+                phoneofthebuddy: phoneNumber.value,
+                emailofthebuddy: emailAddress.value
             };
             var flightBuddyAjax = new XMLHttpRequest();
             flightBuddyAjax.onreadystatechange = function() {
