@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+$import= file_get_contents('lang.php');
+$myLang = $_REQUEST['lang'];
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,8 +11,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <style>
-
-@media screen and (min-width: 481px) {
         /* * {outline: 1px solid red} */
         body {
             padding: 0px;
@@ -17,14 +18,10 @@
             width: 100vw; 
             height: 100vh;
         }
-
         #navigationbar {
             height: 160px;
             width: 100%;
-            display: flex;
-            justify-content: space-between;
         }
-
         #logodiv{
             background-color: #1D4872;
             display: inline-flex;
@@ -36,18 +33,14 @@
             margin-left: 20px;
             margin-top: 10px;
         }
-
         #logostyle {
             height: 100px;
             width: 100px;
             border-radius: 20px;
-
         }
-
         #mobilemenubutton {
             display: none;
         }
-
         #menudiv {
             width: 100%;
             height: 50px;
@@ -57,7 +50,6 @@
             font-size: 20px;
             display: block;
         }
-
         .menuoptions {
             width:110px;
             height: 100%;
@@ -68,24 +60,7 @@
             align-items: center;
             justify-content: center;
         }
-
-        #chooseLang {
-            display: inline-flex;
-            border: 1px solid #0e5ba9;
-            border-radius: 3px;
-            width: 60px;
-            height: 30px;
-            vertical-align: top;
-            font-family: sans-serif;
-            font-weight: bold;
-            margin-top: 3%;
-            margin-right: 5%;
-        }
-}
-
-
- @media screen and (max-width: 481px) {
-
+        @media screen and (max-width: 481px) {
             #navigationbar {
                 height: 85px;
                 width: 100%;
@@ -94,7 +69,6 @@
                 align-items: center;
                 justify-content: space-between;
             }
-
             #logodiv {
                 height: 80px;
                 width: 80px;
@@ -107,92 +81,61 @@
                 margin-left: 10px;
                 margin-top: 5px;
             }
-
             #logostyle {
                 width: 55px;
                 height: 55px; 
                 margin: auto;
             }
-
             #mobilemenubutton{
                 font-size: 45px;
                 margin-right: 10px;
                 display: block;
                 
             }
-
             #menudiv{
                 font-size: 1.5em;
                 margin: 30px;
                 display: none;
             }
-
             .menuoptions {
                 margin-bottom: 20px;
                 border-bottom: 1px solid #1D4872;
                 width: 300px;
             }
-
-        #chooseLang {
-            display: inline-block;
-            border: 1px solid #0e5ba9;
-            border-radius: 3px;
-            width: 60px;
-            height: 30px;
-            margin-left: 130px;
-            margin-bottom: 20px;
-            font-family: sans-serif;
-            font-weight: bold;
         }
-}
     </style>
 </head>
 <body>
     <div id="navigationbar"><!--navigation mobile-->
         <div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div>
-        
-        <select id="chooseLang"><!--mobile lang. options-->
-            <option class="langOptions">En.</option>
-            <option class="langOptions">Kr.</option>
-            <option class="langOptions">Russ.</option>
-            <option class="langOptions">Fr.</option>
-        </select>
-        
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
     </div>
-
     <div id="menudiv"><!--mobile menu options-->
-        <div class="menuoptions">About Us</div>
-        <div class="menuoptions">Flight Buddy</div>
-        <div class="menuoptions">Foster</div>
-        <div class="menuoptions">Volunteer</div>
-        <div class="menuoptions">Donations</div>
-        <div class="menuoptions">Stories</div>
-        <div class="menuoptions">Contact Us</div>
-        <div class="menuoptions">News Letters</div>
+        <div class="menuoptions"><div><a href="aboutus.html"><?php echo $lang[$myLang]['navabout'];?>: + response[i].navabout + </a></div></div>
+        <div class="menuoptions"><div><a href="flightbuddy.html"><?php echo $lang[$myLang]['navflight'];?>: + response[i].navflight + </a></div></div>
+        <div class="menuoptions"><div><a href="foster.php"><?php echo $lang[$myLang]['navfoster'];?>: + response[i].navfoster + </a></div></div>
+        <div class="menuoptions"><div><a href="volunteer.php"><?php echo $lang[$myLang]['navvolunteer'];?>: + response[i].navvolunteer + </a></div></div>
+        <div class="menuoptions"><div><a href="donations.php"><?php echo $lang[$myLang]['navdonate'];?>: + response[i].navdonate + </a></div></div>
+        <div class="menuoptions"><div><a href="stories.html"><?php echo $lang[$myLang]['navstories'];?>: + response[i].navstories + </a></div></div>
+        <div class="menuoptions"><div><a href="contactus.php"><?php echo $lang[$myLang]['navcontact'];?>: + response[i].navcontact + </a></div></div>
+        <div class="menuoptions"><div><a href="newsletters.php"><?php echo $lang[$myLang]['navnewsletter'];?>: + response[i].navnewsletter + </a></div></div>
     </div>
 
     <script>
         var menuOptions = document.querySelectorAll(".menuoptions");
         var mobileMenu = document.querySelector("#menudiv");
         var mobileMenuButton = document.querySelector("#mobilemenubutton");
-
-
         for (var i = 0; i < menuOptions.length; i++) {
             var thisThing = menuOptions[i];
             thisThing.addEventListener("mouseover", hoverBlue);
             thisThing.addEventListener("mouseout", backToGrey);
             }
-
         function backToGrey(){
             this.style.backgroundColor = "white";
         }
-
         function hoverBlue(){ 
             this.style.backgroundColor = "#99E8F9";
         }
-
-
         mobileMenuButton.addEventListener("click", function(){
             if (mobileMenu.style.display === "block"){
                 mobileMenu.style.display = "none"

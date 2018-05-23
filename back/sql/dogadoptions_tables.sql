@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.28-MariaDB, for Win32 (AMD64)
+-- MySQL dump 10.16  Distrib 10.1.31-MariaDB, for Win32 (AMD64)
 --
 -- Host: localhost    Database: dogadoptions
 -- ------------------------------------------------------
--- Server version	10.1.28-MariaDB
+-- Server version	10.1.31-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -102,13 +102,13 @@ DROP TABLE IF EXISTS `fosterform`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fosterform` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pickupdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `dropoffdate` datetime NOT NULL,
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `preferences` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `startDate` datetime NOT NULL,
+  `endDate` datetime NOT NULL,
+  `otherInfo` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -187,4 +187,4 @@ CREATE TABLE `volunteers` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-21 20:14:30
+-- Dump completed on 2018-05-22 17:40:39

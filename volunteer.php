@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+$import= file_get_contents('lang.php');
+$myLang = $_REQUEST['lang'];
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>volunteer_page</title>
 <style>
-
 @media screen and (max-width: 640px){
     body{
         height: 4000px;
@@ -77,7 +79,6 @@ a{
     padding-top: 1em;
     margin-bottom: 11em;
 }
-
 form span{
    color: blue; 
 }
@@ -85,7 +86,6 @@ form span{
     color: #b30ab3;
     font-weight: bold;
 }
-
 form{
     /* width: */
     display: flex;
@@ -99,7 +99,6 @@ form{
     margin-bottom: 0.3em;
     font-weight: bold;
 }
-
 #workType_text{
     margin-bottom: 0.6em;
 }
@@ -107,7 +106,6 @@ form{
     margin-bottom: 2.2em;
     color: blue;
 }
-
 .DT{
     display: inline-block;
     margin-right: 3em;
@@ -231,8 +229,8 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
                     <div class="title" id="form_title">
                         Want to participate? <br> Please write a form.
                     </div>
-                    <div class="field"><span class="f_title">Name </span> <input id="name" name="name" type="text" placeholder="Your name"><span id="required"> *</span></div>
-                    <div class="field"><span class="f_title" placeholder = "000 - 0000 - 0000">Phone</span>
+                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteername'];?>: + response[i].volunteername + </div> </span> <input id="name" name="name" type="text"><span id="required"> (Required)</span></div>
+                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteerphone'];?>: + response[i].volunteerphone + </div></span>
                         <!-- country codes (ISO 3166) and Dial codes. -->
                         <select name="phone" id="countryCode">
                             <option data-countryCode="KR" value="82">Korea South (+82)</option>
@@ -451,31 +449,31 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
                         	<option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
                         	<!-- </otgroup> -->
                         </select> 
-                        <input id="phoneNumber" name="phone" type="tel" placeholder="0000 - 0000 - 0000 - 0000"><span id="required"> *</span>
+                        <input id="phoneNumber" name="phone" type="tel"><span id="required"> (Required)</span>
                     </div>
-                    <div class="field"><span class="f_title">E-mail </span> <input id="email" name="email" type="email" placeholder="sofia1234@domain.com"><span id="required"> *</span></div>
+                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteeremail'];?>: + response[i].volunteeremail + </div></span> <input id="email" name="email" type="email"><span id="required"> (Required)</span></div>
                     <div class="field">
-                        <div class="f_title"><span>Work Type (Prefereces)</span></div>
+                        <div class="f_title"><span><div><?php echo $lang[$myLang]['volunteertype'];?>: + response[i].volunteertype + </div></span></div>
                         <div id="workType_text">Please choose 1 or 2 work types.</div>
                             <div id="workTypes">
-                                <label for="cleaning">Cleaning</label><input id="cleaning" name="workType" type="checkbox" value="cleaning">
-                                <label for="driving">Driving</label><input id="driving" name="workType" type="checkbox" value="driving">
-                                <label for="administration">Administration</label><input id="administration" name="workType" type="checkbox" value="administration">
-                                <label for="courier">Courier</label><input id="courier" name="workType" type="checkbox" value="courier">
-                                <label for="donate">Donate</label><input id="donate" name="workType" type="checkbox" value="donate">
-                                <label for="others">Others</label><input id="others" name="workType" type="checkbox" value="others">
+                                <label for="cleaning"><div><?php echo $lang[$myLang]['volunteerclean'];?>: + response[i].volunteerclean + </div></label><input id="cleaning" name="workType" type="checkbox" value="cleaning">
+                                <label for="driving"><div><?php echo $lang[$myLang]['volunteerdrive'];?>: + response[i].volunteerdrive + </div></label><input id="driving" name="workType" type="checkbox" value="driving">
+                                <label for="administration"><div><?php echo $lang[$myLang]['volunteeradmin'];?>: + response[i].volunteeradmin + </div></label><input id="administration" name="workType" type="checkbox" value="administration">
+                                <label for="courier"><div><?php echo $lang[$myLang]['volunteerflight'];?>: + response[i].volunteerflight + </div></label><input id="courier" name="workType" type="checkbox" value="courier">
+                                <label for="donate"><div><?php echo $lang[$myLang]['volunteerdonate'];?>: + response[i].volunteerdonate + </div></label><input id="donate" name="workType" type="checkbox" value="donate">
+                                <label for="others"><div><?php echo $lang[$myLang]['volunteerother'];?>: + response[i].volunteerother + </div></label><input id="others" name="workType" type="checkbox" value="others">
                             </div>
                     </div>
                     <div class="field">
-                        <div class="f_title"><span>Availability</span></div>
+                        <div class="f_title"><span><div><?php echo $lang[$myLang]['volunteeravailability'];?>: + response[i].volunteeravilability + </div></span></div>
                         <div id="dateContainer">
                             <div>Please let us know when you can join our activities.</div>
-                            <div class="DT"><b>Start Date</b> <input id="availability_startDT" name="availability" type="date"></div>
-                            <div class="DT"><b>End Date</b> <input id="availability_endDT" name="availability" type="date"></div>
+                            <div class="DT"><b><div><?php echo $lang[$myLang]['volunteerstart'];?>: + response[i].volunteerstart + </div></b> <input id="availability_startDT" name="availability" type="date"></div>
+                            <div class="DT"><b><div><?php echo $lang[$myLang]['volunteerend'];?>: + response[i].volunteerend + </div></b> <input id="availability_endDT" name="availability" type="date"></div>
                         </div>
                     </div>
                     <br><br>
-                    <input id="submitButton" type="button" value="submit" value="Submit">
+                    <input id="submitButton" type="button" value="submit" value="<div><?php echo $lang[$myLang]['submitmessage'];?>: + response[i].submitmessage + </div>">
                 </div>
             </form>
         </div>
@@ -484,13 +482,12 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
 
     
 <script>
-    var listOfInputOfWorkTypes = document.querySelector("input[type='checkbox']"); 
+    var listOfInputOfWorkTypes = document.querySelectorAll("input[type='checkbox']"); 
     
     for(var i = 0; i < listOfInputOfWorkTypes.length; i++){
         var thisWorkType = listOfInputOfWorkTypes[i];
         thisWorkType.addEventListener("change", countSelectedWorkTypes);
     }
-
     function countSelectedWorkTypes(){
         var listOfInputOfWorkTypes = document.querySelectorAll("input:checked");
         if(listOfInputOfWorkTypes.length >= 3){
@@ -498,13 +495,10 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
             this.checked = false;
         }
     }
-
     var startDT = document.getElementById("availability_startDT");
     startDT.addEventListener("change", isValidDTRange);
-
     var endDT= document.getElementById("availability_endDT");
     endDT.addEventListener("change", isValidDTRange);
-
     function isValidDTRange(){
         if(this.id === "availability_startDT"){
             var startDTObj = new Date(this.value);
@@ -512,11 +506,9 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
             if( startDTObj <= todayDTObj){
                 alert("Unvaild date.  Please select available dates again.");
             } 
-
         }else{ 
             var startDT = document.getElementById("availability_startDT").value;
             var endDT = this.value;
-
             //Visitors'll be forced to insert the start date first. 
             if(startDT === ""){
                 alert("Please select the start date first.");
@@ -531,37 +523,17 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
             }
         }
     }
-
-
-    var phoneInput = document.querySelector("input[name='phone']");
-    phoneInput.addEventListener("change", isValidPhoneNum);
-
-    //CHK if it is a valid phone number or not!
-    function isValidPhoneNum(){
-        var phoneInput = this.value;
-        //The recommanded format(placeholder) is "0000 - 0000 - 00000";
-        //So, to validate the input, remove all "-" and " " in the input!!
-        phoneInput = phoneInput.replace(/[ -]/g, ""); 
-
-        phoneInput = Number(phoneInput);
-    
-        if(!(Number.isInteger(phoneInput))||phoneInput < 0 ){
-            alert("Unvalid phone number. Please check the phone number.");
-        }
-    }
+    var phoneInputs = document.querySelectorAll("input[name='phone']");
     
     var emailInput = document.getElementById("email");
     emailInput.addEventListener("change", isValidEmail);
-
     function isValidEmail(){
         if( this.value.indexOf("@") === -1){                    
             alert("Invaild email address. Please insert the correct address.");
         }
     }
-
     var submitButton = document.getElementById("submitButton");
     submitButton.addEventListener("click", sendForm);
-
     function sendForm(){
         //Check if there is any empty field.
         var name = document.querySelector("input[name = 'name']").value; 
@@ -625,7 +597,6 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
             var json = JSON.stringify(obj);
             var xhr = new XMLHttpRequest();
             var inputContainer = document.getElementById("inputContainer");
-
             xhr.onreadystatechange = function () {
                 if(xhr.readyState === 4 && xhr.status === 200){
                     var response = xhr.responseText;
@@ -641,9 +612,6 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
             xhr.send(json);
         }
     }
-
-
-
 </script>
 </body>
 </html>
