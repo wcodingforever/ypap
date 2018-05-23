@@ -7,7 +7,6 @@
    (__\_____/__)
 ```
 
-
 # Database Setup
     Navigate your terminal (or Windows command prompt) to the back/sql folder. Then type:
 
@@ -94,3 +93,4 @@
     donations.html
         #TODO Title adjust
 
+        
