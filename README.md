@@ -6,7 +6,9 @@
     _|   .   |_
    (__\_____/__)
 ```
-
+#TODO
+    Phone verification should be just(not empty && no more than 20 char)
+        db has varchar for "+", "-", "()"
 # Database Setup
     Navigate your terminal (or Windows command prompt) to the back/sql folder. Then type:
 
@@ -92,5 +94,6 @@
 
     donations.html
         #TODO Title adjust
-
+    
+    
         
