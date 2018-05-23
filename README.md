@@ -1,24 +1,4 @@
-<<<<<<< HEAD:README.txt
-<<<<<<< HEAD
-<<<<<<< HEAD
-TODO:
--Spice up page with images/css
-
-
-Note for whoever is doing PHP for this file:
-
-var flightBuddyFormInfo = {
-    FlightDate: departureDate.value,
-    Destination: destinationCity.value,
-    Name: travelerName.value,
-    PhoneNumber: phoneNumber.value,
-    Email: emailAddress.value
-};
-=======
-=======
-=======
 ```
->>>>>>> master:README.md
      /\_____/\
      |  o o  |
     __\__^__/__
@@ -27,14 +7,9 @@ var flightBuddyFormInfo = {
    (__\_____/__)
 ```
 
-<<<<<<< HEAD:README.txt
->>>>>>> master
-#DatabaseTables
-    dogs: id|name|gender("male", "female")|age(NULL)|spayed|weight|breed(NULL)|arrivaldate(DEFAULT NOW())|notes(NULL/155)|picture(NULL/1000)|status|
-=======
+
 # Database Setup
     Navigate your terminal (or Windows command prompt) to the back/sql folder. Then type:
->>>>>>> master:README.md
 
         mysql -u<user> -p < createDb.sql
 
@@ -110,10 +85,6 @@ var flightBuddyFormInfo = {
                     #TODO All checking for the right info by JS
                     no useless requests for DB
 
-<<<<<<< HEAD
-    
->>>>>>> master
-=======
 
 # Front end: 
     #Standarts:
@@ -123,8 +94,3 @@ var flightBuddyFormInfo = {
     donations.html
         #TODO Title adjust
 
-<<<<<<< HEAD:README.txt
->>>>>>> master
-=======
-        
->>>>>>> master:README.md
