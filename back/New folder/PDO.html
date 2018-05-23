@@ -1,0 +1,266 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Current Stock Status</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<style>
+    body{
+        padding-bottom: 3em;
+    }
+    #main_title{
+        font-size: 3em;
+        font-weight: bold;
+        padding-left: 1.38em;
+    }
+    #date{
+        padding-left: 4.38em;
+    }
+    table{
+        border: 1px solid gray;
+    }
+    #containerForItemLists{
+        display: flex;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .container{
+        display: inline-block;
+        width: 20em;
+        margin: 0px 3em;       
+    }
+    .title{
+        font-weight: bold;
+        background: skyblue;
+    }
+    table{
+        width: 20em;
+    }
+    #hiddenButton{
+        display: none;
+    }
+    #reverseButton{
+        position: relative;
+        left: 19.3em;
+        top: 0.5em;
+    }
+    .productName{
+        cursor: pointer;
+    }
+    #threeLeastItems{
+        color: red;
+        font-weight: bold;
+    }
+    #instruction{
+        display: inline-block;
+        font-size: 2em;
+        font-weight: bold;
+        position: relative;
+        top: -4em;
+        left: 15.8em;
+    }
+    #detailsContainer{
+        padding: 0em 4em;
+    }
+    #photoAndOtherDetailsContainer{
+        display: flex;
+        border: 1px solid gray;
+    }
+    #photoContainer{
+        margin-right: 3em;
+    }
+    #resetButton{
+        position: relative;
+        top: 1em;
+        left: 91.4em;
+        color: blue;
+        font-weight: bold;
+    }
+
+</style>
+</head>
+<body>
+    <div id="main_title">Current Stock Status</div>
+    <p id ="date">Standard: </p>
+    <div id="biggestContainer">
+        <div id="containerForItemLists">
+            <div class="container">
+                <div class="title">All Items in Stock</div>
+                <div id="allItems">
+                    <table></table>
+                </div>
+                <input id="hiddenButton" type= "button"> 
+                <input id="reverseButton" type="button" value="Reverse">
+            </div>
+            <div class="container">
+                <div class="title">3 Most Stocked Items</div>
+                <div id="threeMostItems">
+                    <table></table>
+                </div>    
+            </div>
+            <div class="container">
+                    <div class="title">3 Least Stocked Items</div>
+                    <div id="threeLeastItems">
+                        <table></table>
+                    </div>    
+            </div>
+        </div>
+        <div id="instruction">
+                Click a product name to see its more details.
+        </div>
+        <div id="detailsContainer">
+            <div class="title">Details</div>
+            <div id="photoAndOtherDetailsContainer">
+                <div id="photoContainer"></div>
+                <div id="otherDetails"></div>
+            </div>
+        </div>
+    </div>
+    <input id="resetButton" type="button" value="Reset">
+<script>
+    var date = document.getElementById("date");
+    window.addEventListener("load", getDateTime);
+    window.addEventListener("load", getAllItems);
+
+    function getDateTime(){
+        var dtObj = new Date();
+        var dtStr = dtObj.toString();
+        var endIndex = dtStr.indexOf("(");
+        var dtStr = dtStr.slice(0, endIndex);
+        date.innerHTML += "";
+        date.innerHTML += dtStr;
+
+    }
+
+    var allItemsTable = document.querySelector("#allItems table");
+    var threeMostItems = document.querySelector("#threeMostItems table");
+    var threeLeastItems = document.querySelector("#threeLeastItems table");
+
+    function writeTableWithJson(json, getThree, reverseOrNot=false){
+        var arrOfJsonObjs = JSON.parse(json);       
+        if(reverseOrNot=== true){
+            arrOfJsonObjs = arrOfJsonObjs.reverse();            
+        }
+        if(getThree === false){
+            allItemsTable.innerHTML += "<th></th><th>Name</th><th>Quantity</th>";
+            for(var i = 0; i < arrOfJsonObjs.length; i++){
+                var thisJsonObj = arrOfJsonObjs[i];
+                allItemsTable.innerHTML += 
+                "<tr>" +  "<td>" + (i + 1) + "</td>" +"<td class='productName'>" +  thisJsonObj.name + "</td>" +  
+                "<td>" + thisJsonObj.qt + "</td>" + "</tr>";
+            }
+        }else if(reverseOrNot === false && getThree === true){
+            for(var i = 0; i < 3; i++){
+                var thisJsonObj = arrOfJsonObjs[i];
+                threeLeastItems.innerHTML += 
+                "<tr>" +  "<td>" + (i + 1) + "</td>" +"<td class='productName'>" +  thisJsonObj.name + "</td>" +  
+                "<td>" + thisJsonObj.qt + " <i class='fas fa-exclamation-circle'></i>" + "</td>" + "</tr>";
+            }
+            // var productNames = document.getElementsByClassName("productName");
+            // productNames.addEventListener("click", showDetails);
+        }else if(reverseOrNot === true && getThree === true){
+            for(var i = 0; i < 3; i++){
+                var thisJsonObj = arrOfJsonObjs[i];
+                threeMostItems.innerHTML += 
+                "<tr>" +  "<td>" + (i + 1) + "</td>" +"<td class='productName'>" +  thisJsonObj.name + "</td>" +  
+                "<td>" + thisJsonObj.qt + "</td>" + "</tr>";
+            }
+            // var productNames = document.getElementsByClassName("productName");
+            // productNames.addEventListener("click", showDetails);
+        }
+    }
+
+
+    var json_allItemsData = "";
+    var hiddenButton = document.getElementById("hiddenButton");
+
+    function getAllItems(){
+        var xhr = new XMLHttpRequest();    
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState === 4 && xhr.status === 200){
+                json_allItemsData = xhr.responseText;
+                writeTableWithJson( json_allItemsData, false);
+                hiddenButton.click();
+            }
+        }
+        xhr.open("POST","getAllItems.php");
+        xhr.send();
+    }
+
+    var reverseButton = document.getElementById("reverseButton");
+    reverseButton.addEventListener("click", reverseOrder);
+    var toggle = 0;
+
+    function reverseOrder(){
+        allItemsTable.innerHTML = "";
+        if(toggle===0){
+            writeTableWithJson( json_allItemsData, false, true);
+            toggle ++;
+        }else{
+            writeTableWithJson( json_allItemsData, false);
+            toggle = 0;
+        }
+    }
+
+    hiddenButton.addEventListener("click", getThreeMostLeastItems);
+
+    function getThreeMostLeastItems(){
+        writeTableWithJson( json_allItemsData, true);
+        writeTableWithJson( json_allItemsData, true, true);
+        var productNames = document.getElementsByClassName("productName");
+        // for(var i = 0; i < productNames.length; i ++){
+        //     var thisProductName = productNames[i].innerHTML;
+        //     console.log(thisProductName);
+        // }
+        for(var i = 0; i < productNames.length; i ++){
+            var thisProductName = productNames[i];
+            thisProductName.addEventListener("click", showDetails);
+        }
+    }
+
+    var photoContainer = document.getElementById("photoContainer");
+    var otherDetails = document.getElementById("otherDetails");
+
+    function showDetails(){
+        var productName = this.innerHTML;
+        console.log(productName);
+        var json = "";
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState === 4 && xhr.status === 200){
+                json = xhr.responseText;
+                //name`, `make`, `description`, `price per unit`, 
+                console.log(json);
+                var obj = JSON.parse(json);
+                var img_url = obj.img_url;
+                var name = obj.name;
+                var make = obj.make;
+                var description = obj.description;
+                var price = obj["price per unit"];
+                console.log(img_url);
+                photoContainer.innerHTML = "";
+                photoContainer.innerHTML += '<img id="photo" src="' + img_url +  '">';
+                otherDetails.innerHTML = "";
+                otherDetails.innerHTML += "<p>Name : " + name + "</p>";
+                otherDetails.innerHTML += "<p>Brand: " + make + "</p>";
+                otherDetails.innerHTML += "<p>Description: " + description + "</p>";
+            }
+        }
+        xhr.open("POST", "getDetails.php");
+        // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send('{"productName":' + '"' + productName + '"}');
+        // xhr.send("productName=" + productName);
+    }
+
+    var resetButton = document.getElementById("resetButton");
+    resetButton.addEventListener("click", function () { location.reload();});
+    
+ 
+
+   
+
+</script>
+</body>
+</html>

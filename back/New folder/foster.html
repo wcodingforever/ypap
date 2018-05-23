@@ -18,19 +18,6 @@
             display: inline-block;
             padding: 10px;
         }
-
-        #imgwrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #fosterimage {
-            max-width: 90%;
-            max-height: 90%;
-            margin: 10px;
-        }
-
         #pleasenote {
             margin: 10px;
         }
@@ -54,16 +41,15 @@
             margin: 20px;
         }
         @media screen and (min-width: 481px) {
+            #everythingwrapper {
+                display: flex;
+                justify-content: center;
+            }
             #otherinfo {
                 width: 400px;
             }
             input, textarea {
                 outline: none;
-            }
-            #fosterimage {
-                max-width: 40%;
-                max-height: 40%;
-                margin: 10px;
             }
         }
     </style>
@@ -134,7 +120,7 @@
     </div>
     <script>
         //The variables pointing towards each input field.
-        var applicantName = document.querySelector("#namewrapper");
+        var applicantName = document.querySelector("#name");
         var phoneNumber = document.querySelector("#phonenum");
         var emailAddress = document.querySelector("#email");
         var homeAddress = document.querySelector("#address");
@@ -189,13 +175,13 @@
                 //Below makes sure that the email address has an @ in it.
                 var emailInput = emailAddress.value;
                 var validEmailCheck = emailInput.indexOf("@");
-                if (validEmailCheck < 0) {
+                if (validEmailCheck < 0 ) {
                     alert("Please enter a valid email address.");
                 }
                 //Below makes sure that the info entered in the phone number section is a number.
-                var phoneNumberInputString = phoneNumber.value;
-                var phoneNumberInput = parseInt(phoneNumberInputString);
-                if ((phoneNumberInput / 1) !== phoneNumberInput) {
+                var phoneNumberInput = phoneNumber.value;
+                var convertedPhoneNum = Number(phoneNumberInput);
+                if (parseInt(phoneNumberInput) === NaN){
                     alert("Please enter a valid phone number.")
                 }
                 else submitInformation(); //This calls the function that submits the entered information to the php!
@@ -217,6 +203,7 @@
             fosterAjax.onreadystatechange = function() {
                 if (fosterAjax.readyState === 4 && fosterAjax.status === 200) {
                     alert("Thank you. Your application has been submitted.");
+                    console.log(fosterAjax.responseXML);
                 }
             }
             var outGoingFosterInfo = JSON.stringify(fosterFormInfo);
