@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+$import= file_get_contents('lang.php');
+$myLang = $_REQUEST['lang'];
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,19 +21,16 @@
             display: inline-block;
             padding: 10px;
         }
-
         #imgwrapper {
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         #fosterimage {
             max-width: 90%;
             max-height: 90%;
             margin: 10px;
         }
-
         #pleasenote {
             margin: 10px;
         }
@@ -103,34 +103,34 @@
         <div id="pleasenote">Please note that all fields marked with a <span class="requiredfield">*</span> are mandatory!</div>
         <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
         <div class="inputwrapper" id="namewrapper">
-            <div class="fielddesc">Your name <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fostername'];?>: + response[i].fostername + </div> <span class="requiredfield">*</span></div>
             <input type="text" id="name">
         </div>
         <div class="inputwrapper" id="phonenumwrapper">
-            <div class="fielddesc">Your phone number <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterphone'];?>: + response[i].fosterphone + </div> <span class="requiredfield">*</span></div>
             <input type="text" id="phonenum">
         </div>
         <div class="inputwrapper" id="emailwrapper">
-            <div class="fielddesc">Your email address <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosteremail'];?>: + response[i].fosteremail + </div> <span class="requiredfield">*</span></div>
             <input type="text" id="email">
         </div>
         <div class="inputwrapper" id="addresswrapper">
-            <div class="fielddesc">Your home address <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosteraddress'];?>: + response[i].fosteraddress + </div> <span class="requiredfield">*</span></div>
             <input type="text" id="address">
         </div>
         <div class="inputwrapper" id="startdatewrapper">
-            <div class="fielddesc">Start of availability date <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterstartdate'];?>: + response[i].fosterstartdate + </div> <span class="requiredfield">*</span></div>
             <input type="date" id="startdate">
         </div>
         <div class="inputwrapper" id="enddatewrapper">
-            <div class="fielddesc">End of availability date <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['forsterenddate'];?>: + response[i].fosterenddate + </div> <span class="requiredfield">*</span></div>
             <input type="date" id="enddate">
         </div>
         <div class="inputwrapper" id="otherinfowrapper">
-            <div class="fielddesc">Please let us know if there are any special circumstances that need to be considered before we ask you to foster a dog. (Children in the home, other pets, living space limitations, etc.)</div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterother'];?>: + response[i].fosterother + </div></div>
             <textarea name="otherinfo" id="otherinfo" rows="5"></textarea>
         </div>
-        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="Submit application"></div>
+        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<div><?php echo $lang[$myLang]['submitmessage'];?>: + response[i].submitmessage + </div>"></div>
     </div>
     <script>
         //The variables pointing towards each input field.
@@ -143,7 +143,6 @@
         var otherInfo = document.querySelector("#otherinfo");
         //The variable for the submit button.
         var submitButton = document.querySelector("#submitbutton");
-
         //This forces the calendar to only accept start dates of tomorrow or later!
         function getDate () {
             var todayDate = new Date();
@@ -161,7 +160,6 @@
             startdate.setAttribute("min", todayDate);
         }
         getDate();
-
         //This forces the calendar to only accept end dates of more than one week after today!
         function getEndDate () {
             var todayDate = new Date();
