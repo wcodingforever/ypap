@@ -20,7 +20,7 @@
 # DatabaseTables
     #TODO
         php verification for breed in and breed out
-    dogs: id|name|gender(0,1)|age|spayed(0,1)|weight|breed(comma seperated numbers)|arrivaldate|notes(NULL/1000)|picture(NULL/1000)|status|
+    dogs: id|name|gender(0,1)|age|spayed(0,1)|weight|breed(space seperated)|arrivaldate|notes(NULL/1000)|picture(NULL/1000)|status|
     
         -age is varchar ('Adult', 'puppy', 10, etc.)
         -when there are no information it returns 'null'
