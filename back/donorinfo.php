@@ -11,18 +11,20 @@
         $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $stmt = $connection->prepare("
             INSERT INTO `donations`
-                (`name`, `email`, `donatetime`, `amount`)
+                (`name`, `email`, `donatetime`, `amount`, `currency`)
             VALUES
-                (:NameWhodonated, :emailWhoDonated, now(), :HowMuchDonated);
+                (:NameWhodonated, :emailWhoDonated, now(), :HowMuchDonated, :cur);
             ");
         ////////////////////////////////////////// Bind Params
         $hero = $receive->namewhodonated;
         $heroemail = $receive->emailwhodonated;
-        $howmuchhero = $receive->howmuhdonated . " " . $receive->currency;
+        $howmuchhero = $receive->howmuhdonated;
+        $currency = $receive->currency;
 
         $stmt->bindParam(':NameWhodonated', $hero);
         $stmt->bindParam(':emailWhoDonated', $heroemail);
         $stmt->bindParam(':HowMuchDonated', $howmuchhero);
+        $stmt->bindParam(':cur', $currency);
         //////////////////////////////////////////
 
         $stmt->execute();

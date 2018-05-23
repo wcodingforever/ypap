@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.28-MariaDB, for Win32 (AMD64)
+-- MySQL dump 10.16  Distrib 10.1.31-MariaDB, for Win32 (AMD64)
 --
 -- Host: localhost    Database: dogadoptions
 -- ------------------------------------------------------
--- Server version	10.1.28-MariaDB
+-- Server version	10.1.31-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,15 +39,15 @@ CREATE TABLE `adoption` (
 -- Table structure for table `dogs`
 --
 
-DROP TABLE IF EXISTS `dogs`;
+DROP TABLE IF EXISTS `dog`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dogs` (
+CREATE TABLE `dog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` enum('male','female') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` enum(0,1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `age` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `spayed` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `spayed` enum(0,1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `weight` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `breed` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `arrivaldate` date NOT NULL,
@@ -62,15 +62,16 @@ CREATE TABLE `dogs` (
 -- Table structure for table `donations`
 --
 
-DROP TABLE IF EXISTS `donations`;
+DROP TABLE IF EXISTS `donation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `donations` (
+CREATE TABLE `donation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `donatetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `amount` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` int COLLATE utf8mb4_unicode_ci NOT NULL,
+  `currency` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -102,13 +103,13 @@ DROP TABLE IF EXISTS `fosterform`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fosterform` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pickupdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `dropoffdate` datetime NOT NULL,
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `preferences` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `startDate` datetime NOT NULL,
+  `endDate` datetime NOT NULL,
+  `otherInfo` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -147,10 +148,10 @@ CREATE TABLE `mappingmultiple` (
 -- Table structure for table `stories`
 --
 
-DROP TABLE IF EXISTS `stories`;
+DROP TABLE IF EXISTS `story`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `stories` (
+CREATE TABLE `story` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uploaddate` datetime NOT NULL,
   `content` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -163,10 +164,10 @@ CREATE TABLE `stories` (
 -- Table structure for table `volunteers`
 --
 
-DROP TABLE IF EXISTS `volunteers`;
+DROP TABLE IF EXISTS `volunteer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `volunteers` (
+CREATE TABLE `volunteer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -187,4 +188,4 @@ CREATE TABLE `volunteers` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-21 20:14:30
+-- Dump completed on 2018-05-22 17:40:39
