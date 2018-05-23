@@ -153,8 +153,8 @@
                 }
                 //Below makes sure that the info entered in the phone number section is a number.
                 var phoneNumberInput = phoneNumber.value;
-                if (phoneNumberInput / 1 !== phoneNumberInput) {
-                    alert("Please enter a valid phone number.");
+                if (phoneNumberInput.length > 20) {
+                    alert("Phone numbers must be under 20 characters.");
                 }
                 else submitInformation(); //This calls the function that submits the entered information to the php!
             }
