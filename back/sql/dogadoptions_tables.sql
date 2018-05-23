@@ -45,15 +45,15 @@ DROP TABLE IF EXISTS `dog`;
 CREATE TABLE `dog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` enum(0,1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` int(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `age` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `spayed` enum(0,1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `spayed` int(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `weight` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `breed` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `arrivaldate` date NOT NULL,
   `notes` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `picture` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` int(11) NOT NULL,
+  `status` int(3) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -71,7 +71,7 @@ CREATE TABLE `donation` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `donatetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `amount` int COLLATE utf8mb4_unicode_ci NOT NULL,
-  `currency` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL
+  `currency` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
