@@ -9,7 +9,7 @@
 
     <style>
 
-@media screen and (min-width: 481px) {
+    @media screen and (min-width: 481px) {
         /* * {outline: 1px solid red} */
         body {
             padding: 0px;
@@ -69,80 +69,103 @@
             justify-content: center;
         }
 
+        .menuoptions:hover {
+            cursor: pointer;
+        }
+
         #chooseLang {
             display: inline-flex;
             border: 1px solid #0e5ba9;
             border-radius: 3px;
-            width: 60px;
+            width: 80px;
             height: 30px;
             vertical-align: top;
             font-family: sans-serif;
             font-weight: bold;
             margin-top: 3%;
-            margin-right: 5%;
+            margin-right: 20%;
+        }
+
+        #donatebutton {
+            position: absolute;
+            right: 5%;
+            top: 3%;
+            text-align: center;
+            width: 200px;
+            height: 75px;
+            line-height: 75px;
+            /* outline: 1px solid red; */
+        }
+
+        #donatebutton:hover {
+            cursor: pointer;
         }
 }
 
+/* Mobile version */
+    @media screen and (max-width: 481px) {
 
- @media screen and (max-width: 481px) {
+        #navigationbar {
+            height: 85px;
+            width: 100%;
+            font-size: 1.5em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-            #navigationbar {
-                height: 85px;
-                width: 100%;
-                font-size: 1.5em;
-                display: inline-flex;
-                align-items: center;
-                justify-content: space-between;
-            }
+        #logodiv {
+            height: 80px;
+            width: 80px;
+            font-size: 1.5em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: #1D4872;
+            border-radius: 40px;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
 
-            #logodiv {
-                height: 80px;
-                width: 80px;
-                font-size: 1.5em;
-                display: inline-flex;
-                align-items: center;
-                justify-content: space-around;
-                background-color: #1D4872;
-                border-radius: 40px;
-                margin-left: 10px;
-                margin-top: 5px;
-            }
+        #logostyle {
+            width: 55px;
+            height: 55px; 
+            margin: auto;
+        }
 
-            #logostyle {
-                width: 55px;
-                height: 55px; 
-                margin: auto;
-            }
+        #mobilemenubutton{
+            font-size: 45px;
+            margin-right: 10px;
+            display: block;
+            
+        }
 
-            #mobilemenubutton{
-                font-size: 45px;
-                margin-right: 10px;
-                display: block;
-                
-            }
+        #menudiv{
+            font-size: 1.5em;
+            margin: 30px;
+            display: none;
+        }
 
-            #menudiv{
-                font-size: 1.5em;
-                margin: 30px;
-                display: none;
-            }
-
-            .menuoptions {
-                margin-bottom: 20px;
-                border-bottom: 1px solid #1D4872;
-                width: 300px;
-            }
+        .menuoptions {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #1D4872;
+            width: 300px;
+        }
 
         #chooseLang {
             display: inline-block;
             border: 1px solid #0e5ba9;
             border-radius: 3px;
-            width: 60px;
+            width: 80px;
             height: 30px;
-            margin-left: 130px;
-            margin-bottom: 20px;
+            margin-left: 100px;
+            margin-bottom: 8px;
             font-family: sans-serif;
             font-weight: bold;
+        }
+
+        #donatebutton {
+            display: none;
         }
 }
     </style>
@@ -150,13 +173,14 @@
 <body>
     <div id="navigationbar"><!--navigation mobile-->
         <div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div>
-        
         <select id="chooseLang"><!--mobile lang. options-->
-            <option class="langOptions">En.</option>
-            <option class="langOptions">Kr.</option>
-            <option class="langOptions">Russ.</option>
-            <option class="langOptions">Fr.</option>
+            <option class="langOptions" id="menuenglish">English</option>
+            <option class="langOptions" id="menukorean">한국어</option>
+            <option class="langOptions" id="menurussian">Русский</option>
+            <option class="langOptions" id="menufrench">Français</option>
+            <option class="langOptions" id="menuswedish">Svenska</option>
         </select>
+        <div id="donatebutton">Please consider donating!</div>
         
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
     </div>
@@ -176,6 +200,17 @@
         var menuOptions = document.querySelectorAll(".menuoptions");
         var mobileMenu = document.querySelector("#menudiv");
         var mobileMenuButton = document.querySelector("#mobilemenubutton");
+        var menuEnglishElem = document.querySelector("#menuenglish");
+        var menuKoreanElem = document.querySelector("#menukorean");
+        var menuRussianElem = document.querySelector("#menurussian");
+        var menuFrenchElem = document.querySelector("#menufrench");
+        var menuSwedishElem = document.querySelector("#menuswedish");
+
+        // menuEnglishElem.addEventListener("Click");
+        // menuKoreanElem.addEventListener("Click");
+        // menuRussianElem.addEventListener("Click");
+        // menuFrenchElem.addEventListener("Click");
+        // menuSwedishElem.addEventListener("Click");
 
 
         for (var i = 0; i < menuOptions.length; i++) {
@@ -195,10 +230,10 @@
 
         mobileMenuButton.addEventListener("click", function(){
             if (mobileMenu.style.display === "block"){
-                mobileMenu.style.display = "none"
+                mobileMenu.style.display = "none";
             }
             else {
-                mobileMenu.style.display = "block"
+                mobileMenu.style.display = "block";
             }
         });
     </script>
