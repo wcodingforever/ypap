@@ -45,9 +45,9 @@ DROP TABLE IF EXISTS `dogs`;
 CREATE TABLE `dogs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` enum('male','female') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` enum(0,1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `age` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `spayed` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `spayed` enum(0,1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `weight` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `breed` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `arrivaldate` date NOT NULL,
