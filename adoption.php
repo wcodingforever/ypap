@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+$import= file_get_contents('lang.php');
+$myLang = $_REQUEST['lang'];
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -63,6 +66,9 @@
     }
     #dogName{
         border: 2px solid #0e5ba9;
+    }
+    #dogId{
+        display:none;
     }
     #box_form_field_name_surname{
         border-top: 0.8px rgba(0, 0, 0, 0.2) solid;
@@ -132,6 +138,9 @@
     #dogName{
         border: 2px solid #0e5ba9;
     }
+    #dogId{
+        display:none;
+    }
     #box_form_field_name_surname{
         border-top: 0.8px rgba(0, 0, 0, 0.2) solid;
         padding-top: 20px;
@@ -157,16 +166,17 @@
     
                     <div id="form_field_dogName_line">
                         <div id="box_form_field_dogName" class="form_fields">
-                            <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptdogname'];?>: + response[i].adoptdogname + </div>
+                            <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptdogname'];?>:</div>
                                 <span class="requiredSymbol">*</span>
                             </span>
-                            <input type="text" name="dogName" class="form_input" id="dogName"><!-- required --> 
+                            <input type="text" name="dogName" class="form_input" id="dogName" value="<?php $_GET['name'] ?>"><!-- required --> 
+                            <input type="text" name="dogId" class="form_input" id="dogId" value="<?php $_GET['id'] ?>">
                         </div><!-- box_form_field_dogName --> 
                     </div><!-- end form_field_dogName_line --> 
                     
                     <div id="form_field_name_surname_line">
                         <div id="box_form_field_name_surname" class="form_fields">
-                            <span class="text_field_form" id="nameTextField"><div><?php echo $lang[$myLang]['adoptname'];?>: + response[i].adoptname + </div>
+                            <span class="text_field_form" id="nameTextField"><div><?php echo $lang[$myLang]['adoptname'];?>:</div>
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="text" name="name" class="form_input" id="name"><!-- required --> 
@@ -180,14 +190,14 @@
                 
                     <div id="form_field_phone_line">
                         <div class="form_fields">
-                            <span class="text_field_form" id="phoneTextField"><div><?php echo $lang[$myLang]['adoptphone'];?>: + response[i].adoptphone + </div></span>
+                            <span class="text_field_form" id="phoneTextField"><div><?php echo $lang[$myLang]['adoptphone'];?>:</div></span>
                             <input type="tel" name="phone" class="form_input" id="phone"><!-- optionnal --> 
                         </div><!-- end phone --> 
                     </div><!-- end form_field_phone_line -->    
 
                     <di id="form_field_mail_line">
                         <div class="form_fields">
-                            <span class="text_field_form" id="emailTextField"><div><?php echo $lang[$myLang]['adoptemail'];?>: + response[i].adoptemail + </div>
+                            <span class="text_field_form" id="emailTextField"><div><?php echo $lang[$myLang]['adoptemail'];?>:</div>
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="email" name="email" class="form_input" id="email"><!--optionnal --> 
@@ -196,7 +206,7 @@
 
                     <di id="form_field_adress_line">
                         <div class="form_fields">
-                            <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptaddress'];?>: + response[i].adoptaddress + </div>
+                            <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptaddress'];?>:</div>
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="text" name="adress" class="form_input" id="adress"><!-- required --> 
@@ -205,7 +215,7 @@
 
                     <di id="form_field_zipcode_line">
                         <div class="form_fields">
-                            <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptzip'];?>: + response[i].adoptzip + </div>
+                            <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptzip'];?>:</div>
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="text" name="zipcode" class="form_input" id="zipCode"><!-- required --> 
@@ -238,7 +248,7 @@
 <script>
     function fieldsVerification() {
     
-    var dogNameElem = document.querySelector("#dogName");
+    var dogIdElem = document.querySelector("#dogId");
     var userNameElem = document.querySelector("#name");
     // var userSurnameElem = document.querySelector("#surname");
     var userPhoneElem = document.querySelector("#phone"); //optionnal
@@ -246,7 +256,7 @@
     var userAdressElem = document.querySelector("#adress");
     var userZipCodeElem = document.querySelector("#zipCode");
     // var userCountryElem = document.querySelector("#country");
-        var dogName = dogNameElem.value;
+        var dogId = dogIdElem.value;
         var userName = userNameElem.value;
         // var userSurname = userSurnameElem.values;
         var userPhone = userPhoneElem.value;
@@ -269,8 +279,8 @@
                 // } else if (!isNaN(userSurname) ) {
                 //     alert("Please insert only letter as surname");
                     
-                } else if (userPhone !== "" && isNaN(userPhone) ) { 
-                    alert("Please insert only number as phone number.");
+                } else if (userPhone !== "" && userPhone < 20) { 
+                    alert("Please insert a number that is less than 20 characters.");
                             
                 } else if (userEmail.indexOf("@") === -1 || userEmail.indexOf(".") === -1) { /* true */
                     alert("Please check the format of your email adress");
@@ -291,7 +301,7 @@
                             , addressoftheadopter: userAdress
                             , zipcodeoftheadopter: userZipCode
                             // , "XXX": "userCountry"
-                            , dogtoadopt: dogName
+                            , dogtoadopt: dogId
                             }; 
         var forSend = JSON.stringify(adoptInfoForm);
         xhttp.send(forSend);
