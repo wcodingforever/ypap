@@ -546,9 +546,7 @@ if (ISSET($_REQUEST['lang'])) {
         scrollToTop.addEventListener("click", function(){
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
-        });
-
-        function getDogInfo(){
+        });    
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200){
@@ -567,7 +565,6 @@ if (ISSET($_REQUEST['lang'])) {
             }
             forSend = JSON.stringify(forSend);
             xhr.send(forSend);
-        }
 
     </script>
 </body>

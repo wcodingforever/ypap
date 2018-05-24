@@ -71,7 +71,8 @@ $lang = [
         "navdonate" => "Donations",
         "navstories" => "Stories",
         "navcontact" => "Contact Us",
-        "navnewsletter" => "Newsletters"
+        "navnewsletter" => "Newsletters",
+        "navdogs" => "Our Dogs"
     ],
     "ko"		=> [
         "gender"		=> "성별",
@@ -144,7 +145,8 @@ $lang = [
         "navdonate" => "기부",
         "navstories" => "입양 스토리",
         "navcontact" => "연락",
-        "navnewsletter" => "뉴스레터"
+        "navnewsletter" => "뉴스레터",
+        "navdogs" => "보유견"
     ],
     "fr"		=> [
         "gender"		=> "Sexe",
@@ -217,7 +219,8 @@ $lang = [
         "navdonate" => "Don",
         "navstories" => "Histoires",
         "navcontact" => "Nous contacter",
-        "navnewsletter" => "Newsletters"
+        "navnewsletter" => "Newsletters",
+        "navdogs" => "Chiens"
     ],
     "ru"		=> [
         "gender"		=> "Пол",
@@ -290,7 +293,8 @@ $lang = [
         "navdonate" => "Пожертвование",
         "navstories" => "Истории",
         "navcontact" => "Свяжитесь с нами",
-        "navnewsletter" => "Новости"
+        "navnewsletter" => "Новости",
+        "navdogs" => "Собаки на усыновление"
     ],
     "sv"		=> [
         "gender"		=> "Kön",
@@ -364,7 +368,8 @@ $lang = [
         "navdonate" => "Donationer",
         "navstories" => "Historier",
         "navcontact" => "Kontakta oss",
-        "navnewsletter" => "Nyhetsbrev"
+        "navnewsletter" => "Nyhetsbrev",
+        "navdogs" => "Våra hundar"
     ]
 ]
 ?>
