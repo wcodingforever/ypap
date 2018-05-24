@@ -1,12 +1,18 @@
 <?php
-$import= file_get_contents('lang.php');
-$myLang = $_REQUEST['lang'];
+include 'lang.php';
+if (ISSET($_REQUEST['lang'])) {
+    $myLang = $_REQUEST['lang'];
+ }
+ else{
+    $myLang = 'en';
+ }
 ?><!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <title>Document</title>
     <style>
         /* * {
@@ -81,26 +87,26 @@ $myLang = $_REQUEST['lang'];
         <div id="pleasenote">Please note that all fields are mandatory!</div>
         <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
         <div class="inputwrapper" id="flightdatewrapper">
-            <div class="fielddesc"><?php echo $lang[$myLang]['flightdate'];?>: + response[i].flightdate + </div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['flightdate'];?>: </div>
             <input type="date" id="flightdate">
         </div>
         <div class="inputwrapper" id="destinationwrapper">
-            <div class="fielddesc"><?php echo $lang[$myLang]['destination'];?>: + response[i].destination + </div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['destination'];?>: </div>
             <input type="text" id="destination">
         </div>
         <div class="inputwrapper" id="namewrapper">
-            <div class="fielddesc"><?php echo $lang[$myLang]['travelername'];?>: + response[i].travelername + </div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['travelername'];?>: </div>
             <input type="text" id="name">
         </div>
         <div class="inputwrapper" id="phonenumwrapper">
-            <div class="fielddesc"><?php echo $lang[$myLang]['travelerphone'];?>: + response[i].travelerphone + </div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['travelerphone'];?>: </div>
             <input type="text" id="phonenum">
         </div>
         <div class="inputwrapper" id="emailwrapper">
-            <div class="fielddesc"><?php echo $lang[$myLang]['traveleremail'];?>: + response[i].traveleremail + </div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['traveleremail'];?>: </div>
             <input type="text" id="email">
         </div>
-        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>: + response[i].submitmessage + "></div>
+        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>: "></div>
     </div>
 
     <script>
@@ -163,7 +169,13 @@ $myLang = $_REQUEST['lang'];
             var flightBuddyAjax = new XMLHttpRequest();
             flightBuddyAjax.onreadystatechange = function() {
                 if (flightBuddyAjax.readyState === 4 && flightBuddyAjax.status === 200) {
-                    alert("Thank you. Your application has been submitted.");
+                    
+                    if (flightBuddyAjax.responseText === "ERROR") {
+                        alert("There was an error. Your application has not been submitted.");
+                    }
+                    else if(flightBuddyAjax.responseText === "OK"){
+                        alert("Thank you. Your application has been submitted.");
+                    }
                 }
             }
             var outGoingFlightBuddyInfo = JSON.stringify(flightBuddyFormInfo);

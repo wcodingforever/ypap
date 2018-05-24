@@ -1,7 +1,4 @@
-<?php
-$import= file_get_contents('lang.php');
-$myLang = $_REQUEST['lang'];
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -144,9 +141,12 @@ $myLang = $_REQUEST['lang'];
         }
 
         #menudiv{
+            height: 510px;
+            width: 100%;
             font-size: 1.5em;
-            margin: 30px;
+            padding: 30px;
             display: none;
+            z-index: 10px;
         }
 
         .menuoptions {
@@ -177,7 +177,6 @@ $myLang = $_REQUEST['lang'];
     <div id="navigationbar"><!--navigation mobile-->
         <div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div>
         <select id="chooseLang"><!--mobile lang. options-->
-            <option class="langOptions">Languages</option>
             <option class="langOptions" id="menuenglish">English</option>
             <option class="langOptions" id="menukorean">한국어</option>
             <option class="langOptions" id="menurussian">Русский</option>
@@ -190,48 +189,32 @@ $myLang = $_REQUEST['lang'];
     </div>
 
     <div id="menudiv"><!--mobile menu options-->
-        <div class="menuoptions"><a href="aboutus.html">About Us</a></div>
-        <div class="menuoptions"><a href="flightbuddy.html">Flight Buddy</a></div>
-        <div class="menuoptions"><a href="foster.html">Foster</a></div>
-        <div class="menuoptions"><a href="volunteer.html">Volunteer</a></div>
-        <div class="menuoptions"><a href="donation.html">Donations</a></div>
-        <div class="menuoptions"><a href="stories.html">Stories</a></div>
-        <div class="menuoptions"><a href="contactus.html">Contact Us</a></div>
-        <div class="menuoptions"><a href="newsletters.html">News Letters</a></div>
+        <div class="menuoptions"><div><a href="aboutus.html"><?php echo $lang[$myLang]['navabout'];?>: + response[i].navabout + </a></div></div>
+        <div class="menuoptions"><div><a href="flightbuddy.html"><?php echo $lang[$myLang]['navflight'];?>: + response[i].navflight + </a></div></div>
+        <div class="menuoptions"><div><a href="foster.php"><?php echo $lang[$myLang]['navfoster'];?>: + response[i].navfoster + </a></div></div>
+        <div class="menuoptions"><div><a href="volunteer.php"><?php echo $lang[$myLang]['navvolunteer'];?>: + response[i].navvolunteer + </a></div></div>
+        <div class="menuoptions"><div><a href="donations.php"><?php echo $lang[$myLang]['navdonate'];?>: + response[i].navdonate + </a></div></div>
+        <div class="menuoptions"><div><a href="stories.html"><?php echo $lang[$myLang]['navstories'];?>: + response[i].navstories + </a></div></div>
+        <div class="menuoptions"><div><a href="contactus.php"><?php echo $lang[$myLang]['navcontact'];?>: + response[i].navcontact + </a></div></div>
+        <div class="menuoptions"><div><a href="newsletters.php"><?php echo $lang[$myLang]['navnewsletter'];?>: + response[i].navnewsletter + </a></div></div>
     </div>
-    <input type="hidden" id="hiddenlang" name="languagesetting" value="en">
+
     <script>
         var menuOptions = document.querySelectorAll(".menuoptions");
         var mobileMenu = document.querySelector("#menudiv");
         var mobileMenuButton = document.querySelector("#mobilemenubutton");
-        var langOptions = document.querySelector(".langOptions");
-        var dropdownElem = document.querySelector("#chooseLang");
-        // var langChangeDevice = 
-        dropdownElem.addEventListener("change", languageSwitch);
-        var hiddenLanguage = document.querySelector("#hiddenlang");
-        var langToSet = "";
+        var menuEnglishElem = document.querySelector("#menuenglish");
+        var menuKoreanElem = document.querySelector("#menukorean");
+        var menuRussianElem = document.querySelector("#menurussian");
+        var menuFrenchElem = document.querySelector("#menufrench");
+        var menuSwedishElem = document.querySelector("#menuswedish");
 
-        function languageSwitch() {
-            var currentLang = this.value;
-            if (currentLang === "English") {
-                var langToSet = "en";
-            }
-            if (currentLang === "한국어") {
-                var langToSet = "ko";
-            }
-            if (currentLang === "Русский") {
-                var langToSet = "ru";
-            }
-            if (currentLang === "Français") {
-                var langToSet = "fr";
-            }
-            if (currentLang === "Svenska") {
-                var langToSet = "sv";
-            }
-            hiddenLanguage.value = langToSet;
-            window.location.replace("dogshelter.php?lang=" + langToSet);
-            // console.log(langToSet);
-        };
+        // menuEnglishElem.addEventListener("Click");
+        // menuKoreanElem.addEventListener("Click");
+        // menuRussianElem.addEventListener("Click");
+        // menuFrenchElem.addEventListener("Click");
+        // menuSwedishElem.addEventListener("Click");
+
 
         for (var i = 0; i < menuOptions.length; i++) {
             var thisThing = menuOptions[i];
@@ -251,6 +234,8 @@ $myLang = $_REQUEST['lang'];
         mobileMenuButton.addEventListener("click", function(){
             if (mobileMenu.style.display === "block"){
                 mobileMenu.style.display = "none";
+
+
             }
             else {
                 mobileMenu.style.display = "block";

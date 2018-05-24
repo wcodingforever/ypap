@@ -1,12 +1,18 @@
 <?php
-$import= file_get_contents('lang.php');
-$myLang = $_REQUEST['lang'];
+include 'lang.php';
+if (ISSET($_REQUEST['lang'])) {
+    $myLang = $_REQUEST['lang'];
+ }
+ else{
+    $myLang = 'en';
+ }
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <title>Document</title>
     <style>
         /* * {
@@ -63,14 +69,14 @@ $myLang = $_REQUEST['lang'];
     </div>
     <div id="bottomwrapper">
         <div class="inputwrapper" id="namewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['newslettername'];?>: + response[i].newslettername + </div></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['newslettername'];?>: </div></div>
             <input type="text" id="name">
         </div>
         <div class="inputwrapper" id="emailwrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['newsletteremail'];?>: + response[i].newsletteremail + </div></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['newsletteremail'];?>: </div></div>
             <input type="text" id="email">
         </div>
-        <div id="submitbuttonwrapper"><input id="signupbutton" type="button" value="<div><?php echo $lang[$myLang]['signupmessage'];?>: + response[i].signupmessage + </div>"></div>
+        <div id="submitbuttonwrapper"><input id="signupbutton" type="button" value="<div><?php echo $lang[$myLang]['submitmessage'];?>: </div>"></div>
     </div>
     <script>
         //The variables pointing towards each input field.

@@ -1,12 +1,18 @@
 <?php
-$import= file_get_contents('lang.php');
-$myLang = $_REQUEST['lang'];
+include 'lang.php';
+if (ISSET($_REQUEST['lang'])) {
+    $myLang = $_REQUEST['lang'];
+ }
+ else{
+    $myLang = 'en';
+ }
 ?><!DOCTYPE html>
 <html lang="en">
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <!-- TITLE FOR DONATE -->
     <title>Donate!</title>
     <style>
@@ -48,27 +54,28 @@ $myLang = $_REQUEST['lang'];
     </div>
     <div>
         <div class="inputwrapper" id="donationnamediv">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationname'];?>: + response[i].donationname + </div></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationname'];?>: </div></div>
             <input type="text" placeholder="Leave the field empty if you want to donate anonymously">
         </div>
         <div class="inputwrapper" id="donationemaildiv">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationemail'];?>: + response[i].donationemail + </div></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationemail'];?>: </div></div>
             <input type="text" placeholder="Leave the field empty if you want to donate anonymously">
         </div>
         <div class="inputwrapper" id="donationamountdiv">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationamount'];?>: + response[i].donationamount + </div></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationamount'];?>: </div></div>
             <input type="text" placeholder="1.00">
         </div>
         <div class="inputwrapper" id="donationcurrencydiv">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationcurrency'];?>: + response[i].donationcurrency + </div></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['donationcurrency'];?>: </div></div>
             <select id="donationcurrency">
                 <option>USD</option>
                 <option>KRW</option>
                 <option>EUR</option>
             </select>
         </div>
-        <div id="donatebuttonwrapper"><button><div><?php echo $lang[$myLang]['donatebutton'];?>: + response[i].donatebutton + </div></button></div>
+        <div id="donatebuttonwrapper"><button><div><?php echo $lang[$myLang]['donatebutton'];?>: </div></button></div>
         <div id="paypaldonate">Or donate with a PayPal<br>
+
             <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EP3GTQ4M9YPZU"><img src="https://i2.wp.com/deadlaugh.com/wp-content/uploads/2017/03/PayPal-Donate-Button-High-Quality-PNG.png"></a>
         </div>
     </div>
@@ -126,7 +133,7 @@ $myLang = $_REQUEST['lang'];
                 }
                 
                 else{
-                    alert("If not anonynously fill out both name and email");
+                    alert("If not anonymously fill out both name and email");
                 }
             }
         });

@@ -1,6 +1,11 @@
 <?php
-$import= file_get_contents('lang.php');
-$myLang = $_REQUEST['lang'];
+include 'lang.php';
+if (ISSET($_REQUEST['lang'])) {
+    $myLang = $_REQUEST['lang'];
+ }
+ else{
+    $myLang = 'en';
+ }
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +13,7 @@ $myLang = $_REQUEST['lang'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <title>Our Dogs</title>
     <style>
 @media screen and (min-width: 481px) { 
@@ -371,10 +377,11 @@ $myLang = $_REQUEST['lang'];
                         // };
                     }
                 };
-            
+            var currentLang = <?php $myLang ?>;
             xhttp.open("POST", "getdogprofile.php");
                 var messageObj = {
-                    whattoget: "all"
+                    whattoget: "all",
+                    lang: currentLang 
                 }
             var forSend = JSON.stringify(messageObj);
             xhttp.send(forSend);  

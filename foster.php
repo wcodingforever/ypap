@@ -1,12 +1,18 @@
 <?php
-$import= file_get_contents('lang.php');
-$myLang = $_REQUEST['lang'];
+include 'lang.php';
+if (ISSET($_REQUEST['lang'])) {
+    $myLang = $_REQUEST['lang'];
+ }
+ else{
+    $myLang = 'en';
+ }
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <title>Document</title>
     <style>
         /* * {
@@ -104,34 +110,34 @@ $myLang = $_REQUEST['lang'];
         <div id="pleasenote">Please note that all fields marked with a <span class="requiredfield">*</span> are mandatory!</div>
         <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
         <div class="inputwrapper" id="namewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fostername'];?>: + response[i].fostername + </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fostername'];?>: </div> <span class="requiredfield">*</span></div>
             <input type="text" id="name">
         </div>
         <div class="inputwrapper" id="phonenumwrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterphone'];?>: + response[i].fosterphone + </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterphone'];?>: </div> <span class="requiredfield">*</span></div>
             <input type="text" id="phonenum">
         </div>
         <div class="inputwrapper" id="emailwrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosteremail'];?>: + response[i].fosteremail + </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosteremail'];?>: </div> <span class="requiredfield">*</span></div>
             <input type="text" id="email">
         </div>
         <div class="inputwrapper" id="addresswrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosteraddress'];?>: + response[i].fosteraddress + </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosteraddress'];?>: </div> <span class="requiredfield">*</span></div>
             <input type="text" id="address">
         </div>
         <div class="inputwrapper" id="startdatewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterstartdate'];?>: + response[i].fosterstartdate + </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterstartdate'];?>: </div> <span class="requiredfield">*</span></div>
             <input type="date" id="startdate">
         </div>
         <div class="inputwrapper" id="enddatewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['forsterenddate'];?>: + response[i].fosterenddate + </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterenddate'];?>: </div> <span class="requiredfield">*</span></div>
             <input type="date" id="enddate">
         </div>
         <div class="inputwrapper" id="otherinfowrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterother'];?>: + response[i].fosterother + </div></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterother'];?>: </div></div>
             <textarea name="otherinfo" id="otherinfo" rows="5"></textarea>
         </div>
-        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<div><?php echo $lang[$myLang]['submitmessage'];?>: + response[i].submitmessage + </div>"></div>
+        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>: "></div>
     </div>
     <script>
         //The variables pointing towards each input field.
