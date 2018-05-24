@@ -146,7 +146,7 @@ if (ISSET($_REQUEST['lang'])) {
     </div>
     <script>
         //The variables pointing towards each input field.
-        var applicantName = document.querySelector("#namewrapper");
+        var applicantName = document.querySelector("#name");
         var phoneNumber = document.querySelector("#phonenum");
         var emailAddress = document.querySelector("#email");
         var homeAddress = document.querySelector("#address");
@@ -230,7 +230,7 @@ if (ISSET($_REQUEST['lang'])) {
                 }
             }
             var outGoingFosterInfo = JSON.stringify(fosterFormInfo);
-            fosterAjax.open("POST", "sendflightform.php");
+            fosterAjax.open("POST", "sendfosterform.php");
             fosterAjax.send(outGoingFosterInfo);
         }
     </script>
