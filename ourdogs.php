@@ -1,6 +1,9 @@
 <?php
-$import= file_get_contents('lang.php');
+include 'lang.php';
 $myLang = $_REQUEST['lang'];
+if ($myLang === "") {
+    $myLang = "en";
+}
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -371,10 +374,11 @@ $myLang = $_REQUEST['lang'];
                         // };
                     }
                 };
-            
+            var currentLang = <?php $myLang ?>;
             xhttp.open("POST", "getdogprofile.php");
                 var messageObj = {
-                    whattoget: "all"
+                    whattoget: "all",
+                    lang: currentLang 
                 }
             var forSend = JSON.stringify(messageObj);
             xhttp.send(forSend);  

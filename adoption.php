@@ -1,6 +1,9 @@
 <?php
-$import= file_get_contents('lang.php');
-$myLang = $_REQUEST['lang']; 
+include 'lang.php';
+$myLang = $_REQUEST['lang'];
+if ($myLang === "") {
+    $myLang = "en";
+}
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
