@@ -1,6 +1,9 @@
 <?php
+    include 'databaseDictionary.php';
+
     $receiveMsg = file_get_contents("php://input");
     $receive = json_decode($receiveMsg);
+    $myLang = $receive->lang;
     ////////////////////////////////////////////// Server conf
     $servername = 'localhost';
 	$username = 'root';
@@ -10,7 +13,6 @@
     // $username = 'alex';
     // $password = 'deleteme';
     // $dbname = 'dogadoptions';
-    $response = "OK";
     if($receive->whattoget !== "" ){
 	    $connection = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8mb4", $username, $password);
         //////////////////////////////////////////////
@@ -32,7 +34,6 @@
                 $stmt = null;
             }
             catch(PDOException $e) {
-                $response = "ERROR";
             }
         }
         elseif ($receive->whattoget === "all") {
@@ -47,7 +48,37 @@
                 $stmt->execute();
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                $resultStr = json_encode($result
+                for ($i=0; $i < count($result); $i++) { 
+                    $breeds = explode(" ", $result[$i]["breed"]);
+                    $translate = [];
+                    for ($j=0; $j < count($breeds); $j++) { 
+                        array_push($translate, $dic[$myLang]["breed"][$breeds[$j]]);
+                    }
+                    $translate = implode(" ", $translate);
+
+                    if (ISSET($result[$i]["spayed"])) {
+                        $spayedTrans = $dic[$myLang]["spayed"][$result[$i]["spayed"]];
+                    }
+                    else{
+                        $spayedTrans = "Unknown";
+                    }
+                
+
+                    $return[$i] = [
+                        "id"          => $result[$i]["id"],
+                        "name"        => $result[$i]["name"],
+                        "gender"      => $dic[$myLang]["gender"][$result[$i]["gender"]],
+                        "age"         => $result[$i]["age"],
+                        "spayed"      => $spayedTrans,
+                        "weight"      => $result[$i]["weight"],
+                        "breed"       => $translate,
+                        "arrivaldate" => $result[$i]["arrivaldate"],
+                        "notes"       => $result[$i]["notes"],
+                        "picture"     => $result[$i]["picture"]
+                    ];
+                };
+
+                $resultStr = json_encode($return
                     // Need these options to get around odd characters in the data. (latin1 vs utf8)
                     // , JSON_PARTIAL_OUTPUT_ON_ERROR
                 );
@@ -77,17 +108,14 @@
                         break;
                     }
                 }
-                else echo($resultStr);
+                else echo($resultStr); 
 
                 $connection = null;
                 $stmt = null;
             }
             catch(PDOException $e) {
-                $response = "ERROR";
             }
         }
     }
-    else $response = "ERROR";
 
-    echo $response;
 ?>
