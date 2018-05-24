@@ -17,35 +17,45 @@ if (ISSET($_REQUEST['lang'])) {
 
     <link href="https://fonts.googleapis.com/css?family=Lora:700" rel="stylesheet">
 <style>
+
     /* * {outline: 1px solid red} */
+
     * {box-sizing:border-box}
     
+
     body{
         margin: 0px;
         padding:0px;
         height: 100vh;
         width: 100vw;
+
     }
+
     #slideshowdesktop {
         max-width: 900px;
         height: 400px;
         position: relative;
         margin: auto;
     }
+
     .allslides {
         height:400px;
     }
+
     .imgstyle {
         width: 100%;
         height:100%;
     }
+
     #aboutusarea, #slideshowmobile,  .seemorebutton, .menudiv, .donateArea, .seemoretext {
         display:none;
     }
+
     #mydots {
         text-align: center;
         height: 80px;
     }
+
     .dotstyle {
         display: inline-block;
         cursor: pointer;
@@ -54,7 +64,9 @@ if (ISSET($_REQUEST['lang'])) {
         background-color: lightgray;
         border-radius: 50%;
         margin: 10px 4px;
+
     }
+
     #next, #previous {
         cursor: pointer;
         position: absolute;
@@ -69,9 +81,11 @@ if (ISSET($_REQUEST['lang'])) {
         border-radius: 0 3px 3px 0;
         font-size: 30px;
     }
+
     #next {
         right: 0;
     }
+
     .slidertext {
         position: absolute;
         top: 50%;
@@ -80,40 +94,54 @@ if (ISSET($_REQUEST['lang'])) {
         font-size: 1.3em;
         color: #1D4872;
         font-family: 'Lora', serif;
+
     }
+
     #bottommenuwrapper {
         height: 250px;
         align-items: center;
         display: inline-flex;
         width: 100%;
         justify-content: space-around;
+
     }
+
     .bottommenu {
         height: 200px;
         width: 210px;
         border:1px solid black;
     }
+
     .active, .dotstyle:hover {
         background-color: #717171;
     }
+
     #previous:hover, #next:hover {
     background-color: rgba(0,0,0,0.8);
     }
+
     .mobileonly {
         display: none;
     }
+
     #scrollbutton {
         color: white;
     }
+
+
+
+
 @media screen and (max-width:481px) {
+
+
     #aboutusarea{
+
     text-align: center;
     line-height: 25px;
     font-size: 18px;
     display: block;
     }
-    #abouttextstyle {
-    }
+
     #slideshowmobile{
         height:300px;
         width: 100%;
@@ -121,6 +149,8 @@ if (ISSET($_REQUEST['lang'])) {
         overflow: hidden;
         display: block;
     }
+
+
     .donateArea{
         font-size: large;
         position: fixed;
@@ -137,14 +167,17 @@ if (ISSET($_REQUEST['lang'])) {
         text-shadow: 2px 3px 10px #000;
         display:block;
     }
+
     .donateArea > a {
         color: white;
         text-decoration: none; 
     }
+
     .donateArea > a:visited {
         color: white;
         text-decoration: none; 
     }
+
     .menudiv {
         display: inline-flex;
         align-items: center;
@@ -153,6 +186,7 @@ if (ISSET($_REQUEST['lang'])) {
         height: 90px;
         font-size: 1.3em;
     }
+
     .seemorebutton {
         width: 35px;
         height: 35px;
@@ -161,15 +195,25 @@ if (ISSET($_REQUEST['lang'])) {
         padding-top: 5px;
         display: block;
     }
+
+    .seemoretext {
+        padding: 5%;
+        font-family: sans-serif;
+        line-height: 130%;
+    }
+
     .imgstyle {
         max-width: 100%;
     }
+
     #mydots, #slideshowdesktop, #bottommenuwrapper {
         display:none;
     }
+
     .menuoptions {
         margin-left: 10px;
     }
+
     #scrollbutton {
         position: fixed;
         display: none; 
@@ -184,9 +228,11 @@ if (ISSET($_REQUEST['lang'])) {
         text-align: center;
         padding-top: 5px;
     }
+
     .mobileonly {
         display: block;
     }
+
     #previous, #next {
         /* display:block; */
         color:black;
@@ -194,7 +240,9 @@ if (ISSET($_REQUEST['lang'])) {
     #previous:hover, #next:hover {
     background-color: white;
     }
+
 }
+
 </style>
 
 </head>
@@ -312,6 +360,7 @@ if (ISSET($_REQUEST['lang'])) {
     </div>
     
     <script>
+
         var plusButton = document.querySelectorAll(".seemorebutton");
         var textInfo = document.querySelectorAll(".seemoretext");
         var mySlides = document.querySelectorAll(".allslides");
@@ -326,17 +375,22 @@ if (ISSET($_REQUEST['lang'])) {
         var mySlidesMobile = mobileSlider.querySelectorAll(".allslides"); 
         var dogImgs = mobileSlider.querySelectorAll("img"); 
         
+
         function hidePage() {
             for (var i = 0; i < mySlides.length; i++) {
                 var thisSlide = mySlides[i];
                 thisSlide.style.display = "none";
             } 
         }
+
         hidePage();
         mySlides[0].style.display = "block";
+
+
         var slideIndex = 0;
         showSlides();
         
+
         function showSlides() {
             var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
             if(width > 481){
@@ -353,6 +407,8 @@ if (ISSET($_REQUEST['lang'])) {
             if (slideIndex > mySlides.length) {slideIndex = 1} 
             mySlides[slideIndex-1].style.display = "block";
         };
+
+
         //for timeouts
         var myTime;
         function myFunction() {
@@ -368,10 +424,15 @@ if (ISSET($_REQUEST['lang'])) {
             }, 3000);
         }
         
+
         function myStopFunction() {
             clearInterval(myTime);
         }
+
+
+
         //make automatic slider
+
         function autoSlider(){
             for (var i = 0; i < mySlides.length; i++) {
                 var thisSlide = mySlides[i]
@@ -385,6 +446,8 @@ if (ISSET($_REQUEST['lang'])) {
              console.log("changed"); 
         }
         autoSlider();
+
+
         //buttons for next and previous slider
         nextButton.addEventListener("click", function(){
             console.log("clicked next");
@@ -393,7 +456,9 @@ if (ISSET($_REQUEST['lang'])) {
             clearInterval(myTime);
             setTimeout(myFunction, 5000);
             
+
         });
+
         previousButton.addEventListener("click", function(){
             console.log("clicked prev");
             showSlides();
@@ -402,41 +467,54 @@ if (ISSET($_REQUEST['lang'])) {
             setTimeout(myFunction, 5000);
             
         });
+
+
         //to choose the wanted page of slide by clicking the dots
         // thisDot.classname = thisDot.className.replace(" active", ""); ??
         
+
         for (var i = 0; i < myDots.length; i++){
             thisDot = myDots[i];
+
             thisDot.addEventListener("click", function(){
                 console.log("click", this);
                 var dotPosition = this.id.indexOf("dot"); 
                 var myId = this.id.substring(0, dotPosition); 
                 var myPage = document.querySelector("#" + myId + "page");
+
                 if(myPage.style.display === "none") {
                     hidePage();
                     myPage.style.display = "block";
                     // 
                     // clearTimeout(autoSlider, 0);
                 }
+
                 myStopFunction();
             });
         }
+
+
         //hide the see more text
+
         function hideText() {
             for (var i = 0; i < textInfo.length; i++) {
                 thisText = textInfo[i];
                 thisText.style.display = "none";
             } 
         }
+
         hideText();
+
         //find what menu and show more text
         for (var i =0; i < plusButton.length; i++){
             thisPlus = plusButton[i];
+
             thisPlus.addEventListener("click", function(){
                 console.log("click", this);
                 var plusPosition = this.id.indexOf("plus"); 
                 var myId = this.id.substring(0, plusPosition); 
                 var myText = document.querySelector("#" + myId + "text");
+
                 if(myText.style.display === "none") {
                     // hideText() do we want this?
                     myText.style.display = "block";
@@ -444,10 +522,14 @@ if (ISSET($_REQUEST['lang'])) {
                     else {
                         myText.style.display = "none";
                     }
+
             });
         }
+
+
         //scrollup button for mobile
         window.onscroll = function() {scrollUpFunction()};
+
         function scrollUpFunction(){
             if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 scrollToTop.style.display = "block";
@@ -456,16 +538,20 @@ if (ISSET($_REQUEST['lang'])) {
                 scrollToTop.style.display = "none";
             }
         };
+
+
         scrollToTop.addEventListener("click", function(){
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         });
+
         function getDogInfo(){
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200){
                     var thisDogInfo = JSON.parse(xhr.responseText);
                     for (var i = 0; i < thisDogInfo.length; i++) {
+
                         mySlidesMobile = '<div class="allslides" <img src=' + 
                         thisDogInfo[i].picture + '><div class="dogprofile">' +
                         thisDogInfo[i].id + " " + thisDogInfo[i].name + '</div></div>';
@@ -479,6 +565,7 @@ if (ISSET($_REQUEST['lang'])) {
             forSend = JSON.stringify(forSend);
             xhr.send(forSend);
         }
+
     </script>
 </body>
 </html>

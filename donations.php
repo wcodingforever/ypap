@@ -74,6 +74,7 @@ if (ISSET($_REQUEST['lang'])) {
         </div>
         <div id="donatebuttonwrapper"><button><div><?php echo $lang[$myLang]['donatebutton'];?>: </div></button></div>
         <div id="paypaldonate">Or donate with a PayPal<br>
+
             <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EP3GTQ4M9YPZU"><img src="https://i2.wp.com/deadlaugh.com/wp-content/uploads/2017/03/PayPal-Donate-Button-High-Quality-PNG.png"></a>
         </div>
     </div>
@@ -131,7 +132,7 @@ if (ISSET($_REQUEST['lang'])) {
                 }
                 
                 else{
-                    alert("If not anonynously fill out both name and email");
+                    alert("If not anonymously fill out both name and email");
                 }
             }
         });
