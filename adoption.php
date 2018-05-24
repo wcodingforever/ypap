@@ -12,7 +12,7 @@ if (ISSET($_REQUEST['lang'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Adoption form</title>
+    <title>YPAP - Giving Dogs a Second Chance</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
@@ -20,6 +20,10 @@ if (ISSET($_REQUEST['lang'])) {
 <style>
  @media screen and (min-width:481px) {
     body{
+        margin: 0px;
+        padding:0px;
+        height: 100vh;
+        width: 100vw;
         font-family: Verdana;
     }
     #intro{
@@ -64,7 +68,8 @@ if (ISSET($_REQUEST['lang'])) {
     #submitButton{
         color: white;
         font-weight: bold;
-        background-color: #0e5ba9;
+        background-color: #1D4872;
+        color: white;
         width: 150px;
         height: 50px;
         margin-left: 9%;

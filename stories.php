@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <title>Document</title>
+    <title>YPAP - Giving Dogs a Second Chance</title>
     <style>
         /* * {
         outline: 1px solid red; 
@@ -48,7 +48,8 @@
             float: right;
             margin: 10px 30px 10px 0;
             border-radius: 5px;
-            background-color: lightblue;
+            background-color: #1D4872;
+            color: white;
             font-size: 1em;
         }
         @media screen and (min-width: 481px) {
