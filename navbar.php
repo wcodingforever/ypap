@@ -1,5 +1,13 @@
 
-    <style>
+    <?php
+include 'lang.php';
+if (ISSET($_REQUEST['lang'])) {
+    $myLang = $_REQUEST['lang'];
+ }
+ else{
+    $myLang = 'en';
+ }
+?><style>
         /* * {outline: 1px solid red} */
         body {
             padding: 0px;
@@ -203,7 +211,7 @@
                 var langToSet = "sv";
             }
             hiddenLanguage.value = langToSet;
-            window.location.replace("dogshelter.php?lang=" + langToSet);
+            window.location.replace("?lang=" + langToSet);
             // console.log(langToSet);
         };
         for (var i = 0; i < menuOptions.length; i++) {
