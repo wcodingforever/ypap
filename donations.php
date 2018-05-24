@@ -14,7 +14,7 @@ if (ISSET($_REQUEST['lang'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <!-- TITLE FOR DONATE -->
-    <title>Donate!</title>
+    <title>YPAP - Giving Dogs a Second Chance</title>
     <style>
         /* *{
             outline: 1px solid blue;
@@ -29,17 +29,18 @@ if (ISSET($_REQUEST['lang'])) {
             font-family: sans-serif;
         }
         img {
-            max-width: 100%;
-            max-height: 100%;
+            height: 30%;
+            width: 30%;
+            margin: 10px;
         }
         #everythingwrapper {
-            display: flex;
             justify-content: center;
+            align-items: center;
         }
         #paypaldonate img{
             cursor: pointer;
         }
-        #donatebuttonwrapper {
+        button {
             background-color: #1D4872;
             color: white;
         }

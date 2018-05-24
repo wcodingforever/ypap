@@ -22,7 +22,7 @@
         }
         img {
             max-width: 90%;
-            max-height: 90%;
+            max-height: 90%; 
             margin: 10px;
         }
         #text {
