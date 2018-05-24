@@ -189,11 +189,11 @@ $myLang = $_REQUEST['lang'];
     
                     <div id="form_field_name_surname_line">
                         <div id="box_form_field_name_surname" class="form_fields">
-                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactname'];?>: + response[i].contactname + </div>
+                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactname'];?>: </div>
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="text" name="name" class="form_input_name" id="name"><!-- required --> 
-                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactsurname'];?>: + response[i].contactsurname + </div>
+                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactsurname'];?>: </div>
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="text" name="surname" class="form_input_name" id="surname"><!-- required --> 
@@ -202,14 +202,14 @@ $myLang = $_REQUEST['lang'];
                 
                     <div id="form_field_phone_line">
                         <div class="form_fields">
-                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactphone'];?>: + response[i].contactphone + </div></span>
+                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactphone'];?>: </div></span>
                             <input type="tel" name="phone" class="form_input" id="phone"><!-- optionnal --> 
                         </div><!-- end phone --> 
                     </div><!-- end form_field_phone_line -->    
 
                     <di id="form_field_mail_line">
                         <div class="form_fields">
-                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactemail'];?>: + response[i].contactemail + </div>
+                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactemail'];?>: </div>
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="email" name="email" class="form_input" id="email"><!--optionnal --> 
@@ -218,29 +218,29 @@ $myLang = $_REQUEST['lang'];
 
                     <di id="form_field_mail_line">
                         <div class="form_fields">
-                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactsite'];?>: + response[i].contactsite + </div></span>
+                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactsite'];?>:  </div></span>
                             <input type="url" name="website" class="form_input" id="website" placeholder="http://www.websitename.com"><!-- optionnal --> 
                         </div><!-- end email -->
                     </div><!-- form_field_mail_line -->    
 
                     <div id="listSubject">
-                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactsubject'];?>: + response[i].contactsubject + </div>
+                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactsubject'];?>: </div>
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <select name="subject" id="list"><!-- required --> 
-                                <option><div><?php echo $lang[$myLang]['contactinformation'];?>: + response[i].contactinformation + </div></option>
-                                <option><div><?php echo $lang[$myLang]['contactadoption'];?>: + response[i].contactadoption + </div></option>
-                                <option><div><?php echo $lang[$myLang]['contactvolunteer'];?>: + response[i].contactvolunteer + </div></option>
-                                <option><div><?php echo $lang[$myLang]['contactfoster'];?>: + response[i].contactfoster + </div></option>
-                                <option><div><?php echo $lang[$myLang]['contactflight'];?>: + response[i].contactflight + </div></option>
-                                <option><div><?php echo $lang[$myLang]['contactdonation'];?>: + response[i].contactdonation + </div></option>
-                                <option><div><?php echo $lang[$myLang]['contactpartnership'];?>: + response[i].contactpartnership + </div></option>
-                                <option><div><?php echo $lang[$myLang]['contactother'];?>: + response[i].contactother + </div></option>
+                                <option><div><?php echo $lang[$myLang]['contactinformation'];?>: </div></option>
+                                <option><div><?php echo $lang[$myLang]['contactadoption'];?>: </div></option>
+                                <option><div><?php echo $lang[$myLang]['contactvolunteer'];?>: </div></option>
+                                <option><div><?php echo $lang[$myLang]['contactfoster'];?>: </div></option>
+                                <option><div><?php echo $lang[$myLang]['contactflight'];?>: </div></option>
+                                <option><div><?php echo $lang[$myLang]['contactdonation'];?>: </div></option>
+                                <option><div><?php echo $lang[$myLang]['contactpartnership'];?>: </div></option>
+                                <option><div><?php echo $lang[$myLang]['contactother'];?>: </div></option>
                             </select>
                     </div><!-- listSubject" -->  
 
                     <div id="form_field_texmess_line">
-                                <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactmessagefield'];?>: + response[i].contactmessagefield + </div>
+                                <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactmessagefield'];?>: </div>
                                     <span class="requiredSymbol">*</span>
                                 </span>
                                 <textarea name="messageContent" class="form_input" id="textarea_contact"></textarea><!-- required -->

@@ -153,6 +153,7 @@
     <div id="navigationbar"><!--navigation mobile-->
         <div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div>
         <select id="chooseLang"><!--mobile lang. options-->
+            <option class="langOptions">Languages</option>
             <option class="langOptions" id="menuenglish">English</option>
             <option class="langOptions" id="menukorean">한국어</option>
             <option class="langOptions" id="menurussian">Русский</option>
@@ -160,24 +161,51 @@
             <option class="langOptions" id="menuswedish">Svenska</option>
         </select>
         <div id="donatebutton">Please consider donating!</div>
-
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
     </div>
     <div id="menudiv"><!--mobile menu options-->
-        <div class="menuoptions"><div><a href="aboutus.php"><?php echo $lang[$myLang]['navabout'];?>: + response[i].navabout + </a></div></div>
-        <div class="menuoptions"><div><a href="flightbuddy.php"><?php echo $lang[$myLang]['navflight'];?>: + response[i].navflight + </a></div></div>
-        <div class="menuoptions"><div><a href="foster.php"><?php echo $lang[$myLang]['navfoster'];?>: + response[i].navfoster + </a></div></div>
-        <div class="menuoptions"><div><a href="volunteer.php"><?php echo $lang[$myLang]['navvolunteer'];?>: + response[i].navvolunteer + </a></div></div>
-        <div class="menuoptions"><div><a href="donations.php"><?php echo $lang[$myLang]['navdonate'];?>: + response[i].navdonate + </a></div></div>
-        <div class="menuoptions"><div><a href="stories.php"><?php echo $lang[$myLang]['navstories'];?>: + response[i].navstories + </a></div></div>
-        <div class="menuoptions"><div><a href="contactus.php"><?php echo $lang[$myLang]['navcontact'];?>: + response[i].navcontact + </a></div></div>
-        <div class="menuoptions"><div><a href="newsletters.php"><?php echo $lang[$myLang]['navnewsletter'];?>: + response[i].navnewsletter + </a></div></div>
+        <div class="menuoptions"><div><a href="aboutus.html"><?php echo $lang[$myLang]['navabout'];?>:</a></div></div>
+        <div class="menuoptions"><div><a href="flightbuddy.html"><?php echo $lang[$myLang]['navflight'];?>:</a></div></div>
+        <div class="menuoptions"><div><a href="foster.php"><?php echo $lang[$myLang]['navfoster'];?>:</a></div></div>
+        <div class="menuoptions"><div><a href="volunteer.php"><?php echo $lang[$myLang]['navvolunteer'];?>:</a></div></div>
+        <div class="menuoptions"><div><a href="donations.php"><?php echo $lang[$myLang]['navdonate'];?>:</a></div></div>
+        <div class="menuoptions"><div><a href="stories.html"><?php echo $lang[$myLang]['navstories'];?>:</a></div></div>
+        <div class="menuoptions"><div><a href="contactus.php"><?php echo $lang[$myLang]['navcontact'];?>:</a></div></div>
+        <div class="menuoptions"><div><a href="newsletters.php"><?php echo $lang[$myLang]['navnewsletter'];?>:</a></div></div>
     </div>
-
+    <input type="hidden" id="hiddenlang" name="languagesetting" value="en">
     <script>
         var menuOptions = document.querySelectorAll(".menuoptions");
         var mobileMenu = document.querySelector("#menudiv");
         var mobileMenuButton = document.querySelector("#mobilemenubutton");
+        var langOptions = document.querySelector(".langOptions");
+        var dropdownElem = document.querySelector("#chooseLang");
+        // var langChangeDevice = 
+        dropdownElem.addEventListener("change", languageSwitch);
+        var hiddenLanguage = document.querySelector("#hiddenlang");
+        var langToSet = "";
+
+        function languageSwitch() {
+            var currentLang = this.value;
+            if (currentLang === "English") {
+                var langToSet = "en";
+            }
+            if (currentLang === "한국어") {
+                var langToSet = "ko";
+            }
+            if (currentLang === "Русский") {
+                var langToSet = "ru";
+            }
+            if (currentLang === "Français") {
+                var langToSet = "fr";
+            }
+            if (currentLang === "Svenska") {
+                var langToSet = "sv";
+            }
+            hiddenLanguage.value = langToSet;
+            window.location.replace("dogshelter.php?lang=" + langToSet);
+            // console.log(langToSet);
+        };
         for (var i = 0; i < menuOptions.length; i++) {
             var thisThing = menuOptions[i];
             thisThing.addEventListener("mouseover", hoverBlue);

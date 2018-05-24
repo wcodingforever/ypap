@@ -15,7 +15,7 @@
                 $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                 $stmt = $connection->prepare("
                     SELECT `id`, `content`, `picture`
-                    FROM `stories`
+                    FROM `story`
                     ORDER BY `uploaddate` DESC LIMIT 5;
                     ");
 
@@ -41,7 +41,7 @@
                 $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                 $stmt = $connection->prepare("
                     SELECT `id`, `content`, `picture`, `uploaddate`
-                    FROM `stories`
+                    FROM `story`
                     ORDER BY `uploaddate` DESC LIMIT :downfrom, :downto;
                     ");
                 ////////////////////////////////////////// Bind Params

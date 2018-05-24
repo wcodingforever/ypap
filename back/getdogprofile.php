@@ -18,7 +18,7 @@
             try{
 	    		$stmt = $connection->prepare("
                     SELECT `id`, `picture`, `name` 
-                    FROM `dogs` 
+                    FROM `dog` 
                     WHERE `status` = 1
                     ORDER BY `arrivaldate` DESC LIMIT 10;
                     ");
@@ -39,7 +39,7 @@
             try{
 	    		$stmt = $connection->prepare("
                     SELECT `id`, `name`, `gender`, `age`, `spayed`, `weight`, `breed`, `arrivaldate`, `notes`, `picture`
-                    FROM `dogs`
+                    FROM `dog`
                     WHERE `status` = 1
                     ORDER BY `arrivaldate`;
                     ");

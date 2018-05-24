@@ -337,7 +337,6 @@ $myLang = $_REQUEST['lang'];
                                         "</div>" +
                                         "<div class = 'dogInfoTwo'>" +
                                             "<div><?php echo $lang[$myLang]['arrivaldate'];?>:" + response[i].arrivaldate + "</div><br>" +
-                                            "<div><?php echo $lang[$myLang]['status'];?>:<?php echo $lang[$myLang]['available'];?></div><br>" +
                                             "<div>ID:" + response[i].id + "</div><br>" +
                                             "<div><?php echo $lang[$myLang]['spayed'];?>:" + response[i].spayed + "</div>" +
                                         "</div>" +
