@@ -130,14 +130,14 @@ if (ISSET($_REQUEST['lang'])) {
             <input type="date" id="startdate">
         </div>
         <div class="inputwrapper" id="enddatewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['forsterenddate'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterenddate'];?>: </div> <span class="requiredfield">*</span></div>
             <input type="date" id="enddate">
         </div>
         <div class="inputwrapper" id="otherinfowrapper">
             <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterother'];?>: </div></div>
             <textarea name="otherinfo" id="otherinfo" rows="5"></textarea>
         </div>
-        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<div><?php echo $lang[$myLang]['submitmessage'];?>: </div>"></div>
+        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>: "></div>
     </div>
     <script>
         //The variables pointing towards each input field.
