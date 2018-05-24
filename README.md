@@ -22,19 +22,19 @@
 # DatabaseTables
     #TODO
         php verification for breed in and breed out
-    dogs: id|name|gender(0,1)|age|spayed(0,1)|weight|breed(space seperated)|arrivaldate|notes(NULL/1000)|picture(NULL/1000)|status|
+    dog: id|name|gender(0,1)|age|spayed(0,1)|weight|breed(space seperated)|arrivaldate|notes(NULL/1000)|picture(NULL/1000)|status|
     
         -age is varchar ('Adult', 'puppy', 10, etc.)
         -when there are no information it returns 'null'
     
-    stories: id|uploaddate|content(2000)|picture(1000)|
+    story: id|uploaddate|content(2000)|picture(1000)|
     mappingmultiple: id|storyid|dogid|
 
     flightbuddy: id|name|flightdate|destination|phone|email|
 
     mailinglist: id|name|email|
 
-    donations: id|name|email|donatetime|amount|currency|
+    donation: id|name|email|donatetime|amount|currency|
 
     fosterform: id|pickupdate(NOW())|dropoffdate|name|phone|email|address|preferences|
 
