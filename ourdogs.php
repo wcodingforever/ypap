@@ -285,7 +285,7 @@ $myLang = $_REQUEST['lang'];
         font-size: 110%;
         font-weight: bold;
         border-radius: 5%;
-        background-color: #7ea83f;
+        background-color: #1D4872;
         color: white;
         border-color: #7ea83f;
     }

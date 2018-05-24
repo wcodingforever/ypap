@@ -44,6 +44,11 @@ $myLang = $_REQUEST['lang'];
         input, textarea {
             outline: 1px solid black;
         }
+
+        #submitbutton {
+            background-color: #1D4872;
+            color: white;
+        }
         @media screen and (min-width: 481px) {
             input, textarea {
                 outline: none;

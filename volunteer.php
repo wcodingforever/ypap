@@ -118,6 +118,8 @@ form{
     font-size: 1em;
     position: relative;
     top: -1.2em;
+    background-color: #1D4872;
+    color: white;
 }
 #inputContainer{
     background: #f1f1f1;

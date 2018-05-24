@@ -59,7 +59,8 @@ $myLang = $_REQUEST['lang'];
     #submitButton{
         color: white;
         font-weight: bold;
-        background-color: #0e5ba9;
+        background-color: #1D4872;
+        color: white;
         width: 150px;
         height: 50px;
         margin-left: 9%;

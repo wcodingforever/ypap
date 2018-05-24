@@ -54,6 +54,11 @@ $myLang = $_REQUEST['lang'];
         #submitbuttonwrapper {
             margin: 20px;
         }
+
+        #submitbutton {
+            background-color: #1D4872;
+            color: white;
+        }
         @media screen and (min-width: 481px) {
             #otherinfo {
                 width: 400px;

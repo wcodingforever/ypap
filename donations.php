@@ -34,6 +34,10 @@ $myLang = $_REQUEST['lang'];
         #paypaldonate img{
             cursor: pointer;
         }
+        #donatebuttonwrapper {
+            background-color: #1D4872;
+            color: white;
+        }
         @media screen and (max-width: 481px){
         }
     </style>

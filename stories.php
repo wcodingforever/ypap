@@ -51,7 +51,8 @@ $myLang = $_REQUEST['lang'];
             float: right;
             margin: 10px 30px 10px 0;
             border-radius: 5px;
-            background-color: lightblue;
+            background-color: #1D4872;
+            color: white;
             font-size: 1em;
         }
         @media screen and (min-width: 481px) {
