@@ -17,7 +17,7 @@
         try{
             $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $stmt = $connection->prepare("
-                INSERT INTO `donations`
+                INSERT INTO `donation`
                     (`name`, `email`, `donatetime`, `amount`, `currency`)
                 VALUES
                     (:NameWhodonated, :emailWhoDonated, now(), :HowMuchDonated, :cur);
