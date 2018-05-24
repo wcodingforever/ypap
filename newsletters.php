@@ -63,14 +63,14 @@ $myLang = $_REQUEST['lang'];
     </div>
     <div id="bottomwrapper">
         <div class="inputwrapper" id="namewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['newslettername'];?>: + response[i].newslettername + </div></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['newslettername'];?>: </div></div>
             <input type="text" id="name">
         </div>
         <div class="inputwrapper" id="emailwrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['newsletteremail'];?>: + response[i].newsletteremail + </div></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['newsletteremail'];?>: </div></div>
             <input type="text" id="email">
         </div>
-        <div id="submitbuttonwrapper"><input id="signupbutton" type="button" value="<div><?php echo $lang[$myLang]['signupmessage'];?>: + response[i].signupmessage + </div>"></div>
+        <div id="submitbuttonwrapper"><input id="signupbutton" type="button" value="<div><?php echo $lang[$myLang]['submitmessage'];?>: </div>"></div>
     </div>
     <script>
         //The variables pointing towards each input field.
