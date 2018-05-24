@@ -115,34 +115,34 @@ if (ISSET($_REQUEST['lang'])) {
         <div id="pleasenote">Please note that all fields marked with a <span class="requiredfield">*</span> are mandatory!</div>
         <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
         <div class="inputwrapper" id="namewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fostername'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fostername'];?>: <span class="requiredfield">*</span></div>
             <input type="text" id="name">
         </div>
         <div class="inputwrapper" id="phonenumwrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterphone'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosterphone'];?>: <span class="requiredfield">*</span></div>
             <input type="text" id="phonenum">
         </div>
         <div class="inputwrapper" id="emailwrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosteremail'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosteremail'];?>: <span class="requiredfield">*</span></div>
             <input type="text" id="email">
         </div>
         <div class="inputwrapper" id="addresswrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosteraddress'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosteraddress'];?>: <span class="requiredfield">*</span></div>
             <input type="text" id="address">
         </div>
         <div class="inputwrapper" id="startdatewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterstartdate'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosterstartdate'];?>: <span class="requiredfield">*</span></div>
             <input type="date" id="startdate">
         </div>
         <div class="inputwrapper" id="enddatewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterenddate'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosterenddate'];?>: <span class="requiredfield">*</span></div>
             <input type="date" id="enddate">
         </div>
         <div class="inputwrapper" id="otherinfowrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterother'];?>: </div></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosterother'];?>: </div>
             <textarea name="otherinfo" id="otherinfo" rows="5"></textarea>
         </div>
-        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>: "></div>
+        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>"></div>
     </div>
     <script>
         //The variables pointing towards each input field.
