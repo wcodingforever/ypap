@@ -303,7 +303,7 @@ if (ISSET($_REQUEST['lang'])) {
     
     </div>
     <script>
-        // function loadInfo() {
+            var currentLang = <?php echo("\"".$myLang."\""); ?>;
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState === 4 && xhttp.status === 200) {
@@ -330,9 +330,9 @@ if (ISSET($_REQUEST['lang'])) {
                                             "<img class = 'modalDogPicture' src='" + response[i].picture + "'>" +
                                         "</div>" +
                                         "<div class = 'dogNameModal'>"  + response[i].name + "</div>" +
-                                        "<form action='adoption.php?name=" + response[i].name + "&" + "id=" + response[i].id + "'>" +
+                                        "<a href='adoption.php?name=" + response[i].name + "&" + "id=" + response[i].id + "'>" +
                                             "<input class = 'adoptButton' type='submit' value='<?php echo $lang[$myLang]['adopt'];?>' />" +
-                                        "</form>" +
+                                        "</a>" +
                                     "<div class='popupInfoDiv'>" +
                                         "<div class = 'dogInfoOne'>" +
                                             "<div><?php echo $lang[$myLang]['gender'];?>:" + response[i].gender + "</div><br>" +
@@ -366,19 +366,23 @@ if (ISSET($_REQUEST['lang'])) {
                         }
                     });
                     
-                    var adoptButton = document.querySelector(".adoptButton");
-                    adoptButton.addEventListener('click', function() {
-                            // NEED TO GET PROPER HTML ADDRESS//
-                        window.location.replace("adoptionform.html");
-                    });
-                        // adoptButton.onclick = function() {
-                        //     // NEED TO GET PROPER HTML ADDRESS//
-                        // window.location.replace("adoptionform.html");
-                        // };
+                    // var adoptButton = document.querySelector(".adoptButton");
+                    // adoptButton.addEventListener('click', function() {
+                    //     this
+                    // //     xhttp.onreadystatechange = function () {
+                    // // if (xhttp.readyState === 4 && xhttp.status === 200) {
+                    // // var response = xhttp.responseText;
+                    //         // NEED TO GET PROPER HTML ADDRESS//
+                    //     window.location.replace("adoptionform.php?lang="+"'"+currentLang+"'");
+                    // });
+                    //     // adoptButton.onclick = function() {
+                    //     //     // NEED TO GET PROPER HTML ADDRESS//
+                    //     // window.location.replace("adoptionform.html");
+                    //     // };
                     }
                 };
-            var currentLang = <?php $myLang ?>;
-            xhttp.open("POST", "getdogprofile.php");
+            
+            xhttp.open("POST", "back/getdogprofile.php");
                 var messageObj = {
                     whattoget: "all",
                     lang: currentLang 

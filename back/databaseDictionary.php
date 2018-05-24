@@ -1,6 +1,6 @@
 <?php
 $dic = [
-    en => ["gender" => ['Male','Female'],
+    "en" => ["gender" => ['Male','Female'],
            "spayed" => ['No', 'Yes'],
            "breed" => [
                 'jindo' => 'Jindo',
@@ -11,7 +11,7 @@ $dic = [
             ]
     ],
 
-    ko => ["gender" => ['수컷','암컷'],
+    "ko" => ["gender" => ['수컷','암컷'],
             "spayed" => ['x', 'o'],
             "breed" => [
                 'jindo' => '진돗개',
@@ -22,7 +22,7 @@ $dic = [
             ]
     ],
 
-    fr => ["gender" => ['Mâle','Femelle'],
+    "fr" => ["gender" => ['Mâle','Femelle'],
             "spayed" => ['Non', 'Oui'],
             "breed" => [
                 'jindo' => 'Jindo',
@@ -33,7 +33,7 @@ $dic = [
             ]
     ],
 
-    ru => ["gender" => ['Кобель','Сука'],
+    "ru" => ["gender" => ['Кобель','Сука'],
             "spayed" => ['Нет', 'Да'],
             "breed" => [
                 'jindo' => 'Чиндо',
@@ -44,13 +44,13 @@ $dic = [
             ]
     ],
 
-    sv => ["gender" => ['Hane', 'Hona'],
+    "sv" => ["gender" => ['Hane', 'Hona'],
             "spayed" => ['Nej', 'Ja'],
             "breed" => [
-                'jindo' => 'Koreansk Jindo'
-                'pitbull' => 'Pitbull'
-                'shiba' => 'Shiba'
-                'terrier' => 'Terrier'
+                'jindo' => 'Koreansk Jindo',
+                'pitbull' => 'Pitbull',
+                'shiba' => 'Shiba',
+                'terrier' => 'Terrier',
                 'mixed' => 'Blandras'
             ]
     ],
