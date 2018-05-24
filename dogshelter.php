@@ -174,6 +174,7 @@ $myLang = $_REQUEST['lang'];
     </style>
 </head>
 <body>
+    <?php include 'navbar.php';?>
     <div id="navigationbar"><!--navigation mobile-->
         <div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div>
         <select id="chooseLang"><!--mobile lang. options-->

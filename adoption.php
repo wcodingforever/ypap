@@ -1,6 +1,6 @@
 <?php
 $import= file_get_contents('lang.php');
-$myLang = $_REQUEST['lang'];
+$myLang = $_REQUEST['lang']; 
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,6 +156,7 @@ $myLang = $_REQUEST['lang'];
 
 <html>
     <body>
+        <?php include 'navbar.php';?>
         <div id="form_container">
             <div id="intro_form_container">
                     <h3 id="intro">You made your decision to adopt one of your dog? <br><br>

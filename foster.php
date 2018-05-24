@@ -11,7 +11,7 @@ $myLang = $_REQUEST['lang'];
     <style>
         /* * {
             outline: 1px solid red;
-        } */
+        } */ 
         body {
             margin: 0px;
             padding: 0px;
@@ -69,6 +69,7 @@ $myLang = $_REQUEST['lang'];
     </style>
 </head>
 <body>
+    <?php include 'navbar.php';?>
     <div id="everythingwrapper">
         <div id="imgwrapper"><img id="fosterimage" src="https://ypaprescue.files.wordpress.com/2018/05/kakaotalk_20180507_153251433-e1525766428832.jpg?w=330&h=240&crop=1"></div>
         <!-- Below is the text taken straight from the YPAP page. -->

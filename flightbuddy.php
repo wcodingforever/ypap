@@ -1,7 +1,7 @@
 <?php
 $import= file_get_contents('lang.php');
 $myLang = $_REQUEST['lang'];
-?><!DOCTYPE html>
+?><!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,6 +56,7 @@ $myLang = $_REQUEST['lang'];
     </style>
 </head>
 <body>
+    <?php include 'navbar.php';?>
     <div id="everythingwrapper">
         <div id="flightbuddyimage"><img src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
         <!-- Below is the text taken straight from the YPAP page. -->
