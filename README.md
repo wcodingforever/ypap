@@ -48,7 +48,7 @@
 # php API
     #TODO adjust db nulls/datatypes
 
-    getdogprofile.php DB:dogs
+    getdogprofile.php DB:dog
         receive: whattoget
             value: sample
                 return: .id, .picture, .name (LIFO)LIM15
@@ -58,7 +58,7 @@
                     .spayed, .weight, .breed, 
                     .arrivaldate, .notes, .picture, (FIFO)
 
-    getdogstories.php DB:stories
+    getdogstories.php DB:story
         #ask Ilya about initial request
         receive: initialrequest
             value: yes
@@ -68,7 +68,7 @@
                 return: id, content, picture, uploaddate (LIFO)LIM((number,number+5)
         READ console for mistakes
     
-    donorinfo.php DB:donations
+    donorinfo.php DB:donation
         receive: namewhodonated, emailwhodonated, howmuhdonated, currency
             value: TBD
                 return: (nothing)

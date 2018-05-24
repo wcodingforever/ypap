@@ -51,9 +51,9 @@ body{
     margin: 0;
 }
 #hero_wrapper{
-    width: 100%;
+    width: 23%;
     position: absolute;
-    top: -282px;
+    margin-left: 12%;
 }
 #donateTitle{
     color: blue;
@@ -238,8 +238,8 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
                     <div class="title" id="form_title">
                         Want to participate? <br> Please write a form.
                     </div>
-                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteername'];?>: + response[i].volunteername + </div> </span> <input id="name" name="name" type="text"><span id="required"> (Required)</span></div>
-                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteerphone'];?>: + response[i].volunteerphone + </div></span>
+                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteername'];?>: </div> </span> <input id="name" name="name" type="text"><span id="required"> (Required)</span></div>
+                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['fosterphone'];?>: </div></span>
                         <!-- country codes (ISO 3166) and Dial codes. -->
                         <select name="phone" id="countryCode">
                             <option data-countryCode="KR" value="82">Korea South (+82)</option>
@@ -460,29 +460,28 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
                         </select> 
                         <input id="phoneNumber" name="phone" type="tel"><span id="required"> (Required)</span>
                     </div>
-                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteeremail'];?>: + response[i].volunteeremail + </div></span> <input id="email" name="email" type="email"><span id="required"> (Required)</span></div>
+                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteeremail'];?>: </div></span> <input id="email" name="email" type="email"><span id="required"> (Required)</span></div>
                     <div class="field">
-                        <div class="f_title"><span><div><?php echo $lang[$myLang]['volunteertype'];?>: + response[i].volunteertype + </div></span></div>
+                        <div class="f_title"><span><div><?php echo $lang[$myLang]['volunteertype'];?>: </div></span></div>
                         <div id="workType_text">Please choose 1 or 2 work types.</div>
                             <div id="workTypes">
-                                <label for="cleaning"><div><?php echo $lang[$myLang]['volunteerclean'];?>: + response[i].volunteerclean + </div></label><input id="cleaning" name="workType" type="checkbox" value="cleaning">
-                                <label for="driving"><div><?php echo $lang[$myLang]['volunteerdrive'];?>: + response[i].volunteerdrive + </div></label><input id="driving" name="workType" type="checkbox" value="driving">
-                                <label for="administration"><div><?php echo $lang[$myLang]['volunteeradmin'];?>: + response[i].volunteeradmin + </div></label><input id="administration" name="workType" type="checkbox" value="administration">
-                                <label for="courier"><div><?php echo $lang[$myLang]['volunteerflight'];?>: + response[i].volunteerflight + </div></label><input id="courier" name="workType" type="checkbox" value="courier">
-                                <label for="donate"><div><?php echo $lang[$myLang]['volunteerdonate'];?>: + response[i].volunteerdonate + </div></label><input id="donate" name="workType" type="checkbox" value="donate">
-                                <label for="others"><div><?php echo $lang[$myLang]['volunteerother'];?>: + response[i].volunteerother + </div></label><input id="others" name="workType" type="checkbox" value="others">
+                                <label for="cleaning"><div><?php echo $lang[$myLang]['volunteerclean'];?>: </div></label><input id="cleaning" name="workType" type="checkbox" value="cleaning">
+                                <label for="driving"><div><?php echo $lang[$myLang]['volunteerdrive'];?>: </div></label><input id="driving" name="workType" type="checkbox" value="driving">
+                                <label for="administration"><div><?php echo $lang[$myLang]['volunteeradmin'];?>: </div></label><input id="administration" name="workType" type="checkbox" value="administration">
+                                <label for="courier"><div><?php echo $lang[$myLang]['volunteerflight'];?>: </div></label><input id="courier" name="workType" type="checkbox" value="courier">
+                                <label for="donate"><div><?php echo $lang[$myLang]['volunteerdonate'];?>: </div></label><input id="donate" name="workType" type="checkbox" value="donate">
                             </div>
                     </div>
                     <div class="field">
-                        <div class="f_title"><span><div><?php echo $lang[$myLang]['volunteeravailability'];?>: + response[i].volunteeravilability + </div></span></div>
+                        <div class="f_title"><span><div><?php echo $lang[$myLang]['volunteeravailability'];?>: </div></span></div>
                         <div id="dateContainer">
                             <div>Please let us know when you can join our activities.</div>
-                            <div class="DT"><b><div><?php echo $lang[$myLang]['volunteerstart'];?>: + response[i].volunteerstart + </div></b> <input id="availability_startDT" name="availability" type="date"></div>
-                            <div class="DT"><b><div><?php echo $lang[$myLang]['volunteerend'];?>: + response[i].volunteerend + </div></b> <input id="availability_endDT" name="availability" type="date"></div>
+                            <div class="DT"><b><div><?php echo $lang[$myLang]['volunteerstart'];?>: </div></b> <input id="availability_startDT" name="availability" type="date"></div>
+                            <div class="DT"><b><div><?php echo $lang[$myLang]['volunteerend'];?>: </div></b> <input id="availability_endDT" name="availability" type="date"></div>
                         </div>
                     </div>
                     <br><br>
-                    <input id="submitButton" type="button" value="submit" value="<div><?php echo $lang[$myLang]['submitmessage'];?>: + response[i].submitmessage + </div>">
+                    <input id="submitButton" type="button" value=<?php echo $lang[$myLang]['submitmessage'];?>>
                 </div>
             </form>
         </div>

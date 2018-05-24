@@ -1,6 +1,11 @@
 <?php
-$import= file_get_contents('lang.php');
-$myLang = $_REQUEST['lang'];
+include 'lang.php';
+if (ISSET($_REQUEST['lang'])) {
+    $myLang = $_REQUEST['lang'];
+ }
+ else{
+    $myLang = 'en';
+ }
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -190,20 +195,16 @@ $myLang = $_REQUEST['lang'];
     
                     <div id="form_field_name_surname_line">
                         <div id="box_form_field_name_surname" class="form_fields">
-                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactname'];?>: </div>
+                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['fostername'];?>: </div>
                                 <span class="requiredSymbol">*</span>
                             </span>
-                            <input type="text" name="name" class="form_input_name" id="name"><!-- required --> 
-                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactsurname'];?>: </div>
-                                <span class="requiredSymbol">*</span>
-                            </span>
-                            <input type="text" name="surname" class="form_input_name" id="surname"><!-- required --> 
+                            <input type="text" name="name" class="form_input_name" id="name"><!-- required -->  
                         </div><!-- box_form_field_name_surname --> 
                     </div><!-- end form_field_name_surname_line --> 
                 
                     <div id="form_field_phone_line">
                         <div class="form_fields">
-                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['contactphone'];?>: </div></span>
+                            <span class="fieldNameForm"><div><?php echo $lang[$myLang]['fosterphone'];?>: </div></span>
                             <input type="tel" name="phone" class="form_input" id="phone"><!-- optionnal --> 
                         </div><!-- end phone --> 
                     </div><!-- end form_field_phone_line -->    
@@ -248,7 +249,7 @@ $myLang = $_REQUEST['lang'];
                     </div><!-- form_field_texmess_line -->
 
                 </div><!-- fields_form_box -->        
-                <input type="button" value="<div><?php echo $lang[$myLang]['submitmessage'];?>: + response[i].submitmessage + </div>" id="submitButton" onclick="fieldsVerification()">
+                <input type="button" value=<?php echo $lang[$myLang]['submitmessage'];?> id="submitButton" onclick="fieldsVerification()">
         </div><!-- from container -->
 
 </body>
