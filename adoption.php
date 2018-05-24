@@ -213,7 +213,7 @@ if (ISSET($_REQUEST['lang'])) {
 
                     <di id="form_field_adress_line">
                         <div class="form_fields">
-                            <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptaddress'];?>:</div>
+                            <span class="text_field_form"><div><?php echo $lang[$myLang]['fosteraddress'];?>:</div>
                                 <span class="requiredSymbol">*</span>
                             </span>
                             <input type="text" name="adress" class="form_input" id="adress"><!-- required --> 
@@ -239,7 +239,7 @@ if (ISSET($_REQUEST['lang'])) {
                     </div><!-- form_field_adress_line -->
 
                 </div><!-- fields_form_box -->        
-                <input type="button" value="<div><?php echo $lang[$myLang]['submitmessage'];?>: + response[i].submitmessage + </div>" id="submitButton" onclick="fieldsVerification()">
+                <input type="button" value=<?php echo $lang[$myLang]['submitmessage'];?> id="submitButton" onclick="fieldsVerification()">
         </div><!-- from container -->
 
 
