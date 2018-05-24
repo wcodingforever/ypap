@@ -28,7 +28,7 @@ if (ISSET($_REQUEST['lang'])) {
             justify-content: center;
             align-items: center;
         }
-        img {
+        #theflightbuddypic {
             max-width: 90%;
             max-height: 90%;
             margin: 10px;
@@ -58,7 +58,7 @@ if (ISSET($_REQUEST['lang'])) {
             input, textarea {
                 outline: none;
             }
-            img {
+            #theflightbuddypic {
                 max-width: 40%;
                 max-height: 40%;
                 margin: 10px;
@@ -69,7 +69,7 @@ if (ISSET($_REQUEST['lang'])) {
 <body>
     <?php include 'navbar.php';?>
     <div id="everythingwrapper">
-        <div id="flightbuddyimage"><img src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
+        <div id="flightbuddyimage"><img id="theflightbuddypic" src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
         <!-- Below is the text taken straight from the YPAP page. -->
         <div id="text">
             <h2>Become a Flight Buddy!</h2>
