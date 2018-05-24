@@ -1,5 +1,4 @@
-
-    <?php
+<?php
 include 'lang.php';
 if (ISSET($_REQUEST['lang'])) {
     $myLang = $_REQUEST['lang'];
