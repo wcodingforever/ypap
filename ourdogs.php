@@ -12,7 +12,7 @@ $myLang = $_REQUEST['lang'];
     <style>
 @media screen and (min-width: 481px) { 
     .body {
-        display: flex;
+        display: flex; 
         align-items: center;
         margin: 0px;
     }
@@ -292,6 +292,7 @@ $myLang = $_REQUEST['lang'];
 </style>
 </head>
 <body>
+    <?php include 'navbar.php';?>
     <div class = "dogProfile">
     
     </div>
@@ -335,7 +336,6 @@ $myLang = $_REQUEST['lang'];
                                         "</div>" +
                                         "<div class = 'dogInfoTwo'>" +
                                             "<div><?php echo $lang[$myLang]['arrivaldate'];?>:" + response[i].arrivaldate + "</div><br>" +
-                                            "<div><?php echo $lang[$myLang]['status'];?>:<?php echo $lang[$myLang]['available'];?></div><br>" +
                                             "<div>ID:" + response[i].id + "</div><br>" +
                                             "<div><?php echo $lang[$myLang]['spayed'];?>:" + response[i].spayed + "</div>" +
                                         "</div>" +

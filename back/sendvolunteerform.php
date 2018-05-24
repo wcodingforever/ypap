@@ -21,7 +21,7 @@ if(( $name !== "")&& ( $phone !== "") && ( $email !== "" )){
 
         $dataCon = new PDO('mysql:host='.  $servername. ';dbname=' .$dbname. ';', $username, $pw);
 
-        $sql = "INSERT INTO `volunteers` (`name`, `phone`, `email`, `workType1`, `workType2`, `availability`) 
+        $sql = "INSERT INTO `volunteer` (`name`, `phone`, `email`, `workType1`, `workType2`, `availability`) 
                     VALUES ( :name , :phone, :email , :workType1, :workType2, :availability);";
 
         $sta = $dataCon -> prepare($sql);
@@ -51,10 +51,10 @@ if(( $name !== "")&& ( $phone !== "") && ( $email !== "" )){
         $sta = null;
 
     }catch(PDOException $e){
-        $response = "ERORR";
+        $response = "ERROR";
     }
 }else{
-    $response = "ERORR";
+    $response = "ERROR";
 }
 
 echo $response;

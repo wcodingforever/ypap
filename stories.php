@@ -10,7 +10,7 @@ $myLang = $_REQUEST['lang'];
     <title>Document</title>
     <style>
         /* * {
-        outline: 1px solid red;
+        outline: 1px solid red; 
         } */
         body {
             margin: 0px;
@@ -63,6 +63,7 @@ $myLang = $_REQUEST['lang'];
     </style>
 </head>
 <body>
+    <?php include 'navbar.php';?>
     <div id="everythingwrapper">
         <!-- <div class="storytextwrapper">
             <div class="storyimagewrapper"><img class="storyimage" src ="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
