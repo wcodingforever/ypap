@@ -13,6 +13,7 @@ if (ISSET($_REQUEST['lang'])) {
             margin: 0px;
             width: 100vw; 
             height: 100vh;
+            font-family: sans-serif;
         }
         #navigationbar {
             height: 160px;
@@ -43,16 +44,17 @@ if (ISSET($_REQUEST['lang'])) {
         #menudiv {
             width: 100%;
             height: 50px;
-            display: inline-flex;
+            line-height: 25px;
+            display: flex;
             align-items: center;
             justify-content: space-around;
-            font-size: 20px;
-            display: block;
+            font-size: 16px;
+            /* display: block; */
         }
 
         .menuoptions {
-            width:110px;
-            height: 100%;
+            /* width: 110px; */
+            height: 50px;
             text-align: center;
             line-height: 45px;
             display: inline-flex;
@@ -158,7 +160,7 @@ if (ISSET($_REQUEST['lang'])) {
         }
     </style>
     <div id="navigationbar"><!--navigation mobile-->
-        <div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div>
+        <a href="homepage.php"><div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div></a>
         <select id="chooseLang"><!--mobile lang. options-->
             <option class="langOptions">Languages</option>
             <option class="langOptions" id="menuenglish">English</option>
@@ -171,14 +173,15 @@ if (ISSET($_REQUEST['lang'])) {
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
     </div>
     <div id="menudiv"><!--mobile menu options-->
-        <div class="menuoptions"><div><a href="aboutus.php"><?php echo $lang[$myLang]['navabout'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="flightbuddy.php"><?php echo $lang[$myLang]['navflight'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="foster.php"><?php echo $lang[$myLang]['navfoster'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="volunteer.php"><?php echo $lang[$myLang]['navvolunteer'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="donations.php"><?php echo $lang[$myLang]['navdonate'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="stories.php"><?php echo $lang[$myLang]['navstories'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="contactus.php"><?php echo $lang[$myLang]['navcontact'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="newsletters.php"><?php echo $lang[$myLang]['navnewsletter'];?>: </a></div></div>
+        <a href="aboutus.php"><div class="menuoptions"><?php echo $lang[$myLang]['navabout'];?></div></a>
+        <a href="ourdogs.php"><div class="menuoptions"><?php echo $lang[$myLang]['navdogs'];?></div></a>
+        <a href="flightbuddy.php"><div class="menuoptions"><?php echo $lang[$myLang]['navflight'];?></div></a>
+        <a href="foster.php"><div class="menuoptions"><?php echo $lang[$myLang]['navfoster'];?></div></a>
+        <a href="volunteer.php"><div class="menuoptions"><?php echo $lang[$myLang]['navvolunteer'];?></div></a>
+        <a href="donations.php"><div class="menuoptions"><?php echo $lang[$myLang]['navdonate'];?></div></a>
+        <a href="stories.php"><div class="menuoptions"><?php echo $lang[$myLang]['navstories'];?></div></a>
+        <a href="contactus.php"><div class="menuoptions"><?php echo $lang[$myLang]['navcontact'];?></div></a>
+        <a href="newsletters.php"><div class="menuoptions"><?php echo $lang[$myLang]['navnewsletter'];?></div></a>
     </div>
     <input type="hidden" id="hiddenlang" name="languagesetting" value="en">
     <script>
@@ -187,7 +190,7 @@ if (ISSET($_REQUEST['lang'])) {
         var mobileMenuButton = document.querySelector("#mobilemenubutton");
         var langOptions = document.querySelector(".langOptions");
         var dropdownElem = document.querySelector("#chooseLang");
-        // var langChangeDevice = 
+
         dropdownElem.addEventListener("change", languageSwitch);
         var hiddenLanguage = document.querySelector("#hiddenlang");
         var langToSet = "";
