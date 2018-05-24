@@ -181,8 +181,8 @@ if (ISSET($_REQUEST['lang'])) {
                             <span class="text_field_form"><div><?php echo $lang[$myLang]['adoptdogname'];?>:</div>
                                 <span class="requiredSymbol">*</span>
                             </span>
-                            <input type="text" name="dogName" class="form_input" id="dogName" value="<?php $_GET['name'] ?>"><!-- required --> 
-                            <input type="text" name="dogId" class="form_input" id="dogId" value="<?php $_GET['id'] ?>">
+                            <input type="text" name="dogName" class="form_input" id="dogName" value="<?php echo ($_REQUEST['name']); ?>"><!-- required --> 
+                            <input type="text" name="dogId" class="form_input" id="dogId" value="<?php echo ($_REQUEST['id']); ?>">
                         </div><!-- box_form_field_dogName --> 
                     </div><!-- end form_field_dogName_line --> 
                     
