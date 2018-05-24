@@ -223,7 +223,6 @@ if (ISSET($_REQUEST['lang'])) {
                 EndDate: endDate.value,
                 OtherInfo: otherInfo.value,
             };
-            console.log(fosterFormInfo);
             var fosterAjax = new XMLHttpRequest();
             fosterAjax.onreadystatechange = function() {
                 if (fosterAjax.readyState === 4 && fosterAjax.status === 200) {
