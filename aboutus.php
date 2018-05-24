@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <title>Document</title>
+    <title>YPAP - Giving Dogs a Second Chance</title>
     <style>
         /* * {
             outline: 1px solid red;
@@ -20,9 +20,9 @@
             justify-content: center;
             align-items: center;
         }
-        img {
+        #theaboutuspicture {
             max-width: 90%;
-            max-height: 90%;
+            max-height: 90%; 
             margin: 10px;
         }
         #text {
@@ -34,7 +34,7 @@
                 display: flex;
                 justify-content: center;
             } */
-            img {
+            #theaboutuspicture {
                 max-width: 40%;
                 max-height: 40%;
                 margin: 10px;
@@ -45,7 +45,7 @@
 <body>
     <?php include 'navbar.php';?>
     <div id="everythingwrapper">
-        <div id="aboutusimage"><img src="https://puranaturalspet.com/blog/wp-content/uploads/2017/09/Home-Dog.jpg"></div>
+        <div id="aboutusimage"><img id="theaboutuspicture" src="https://puranaturalspet.com/blog/wp-content/uploads/2017/09/Home-Dog.jpg"></div>
         <!-- Below is the text, made up to sound kind of right. -->
         <div id="text">
             <h3>YPAP is made up of people like you, all with a common goal of helping neglected and abandoned dogs.</h3>

@@ -14,7 +14,7 @@ if (ISSET($_REQUEST['lang'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <title>Our Dogs</title>
+    <title>YPAP - Giving Dogs a Second Chance</title>
     <style>
 @media screen and (min-width: 481px) { 
     .body {
@@ -290,7 +290,7 @@ if (ISSET($_REQUEST['lang'])) {
         font-size: 110%;
         font-weight: bold;
         border-radius: 5%;
-        background-color: #7ea83f;
+        background-color: #1D4872;
         color: white;
         border-color: #7ea83f;
     }
