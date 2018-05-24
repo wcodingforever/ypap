@@ -9,7 +9,9 @@ $myLang = $_REQUEST['lang'];
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact us</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
 <style>
  @media screen and (min-width:481px) {
     body{
@@ -161,7 +163,7 @@ $myLang = $_REQUEST['lang'];
     #submitButton{
         color: white;
         font-weight: bold;
-        background-color: #0e5ba9;
+        background-color: #1D4872;
         width: 100px;
         height: 50px;
         margin: auto;

@@ -1,19 +1,4 @@
-<?php
-include 'lang.php';
-if (ISSET($_REQUEST['lang'])) {
-    $myLang = $_REQUEST['lang'];
- }
- else{
-    $myLang = 'en';
- }
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
     <style>
         /* * {outline: 1px solid red} */
         body {
@@ -37,14 +22,17 @@ if (ISSET($_REQUEST['lang'])) {
             margin-left: 20px;
             margin-top: 10px;
         }
+
         #logostyle {
             height: 100px;
             width: 100px;
             border-radius: 20px;
         }
+
         #mobilemenubutton {
             display: none;
         }
+
         #menudiv {
             width: 100%;
             height: 50px;
@@ -54,6 +42,7 @@ if (ISSET($_REQUEST['lang'])) {
             font-size: 20px;
             display: block;
         }
+
         .menuoptions {
             width:110px;
             height: 100%;
@@ -87,6 +76,14 @@ if (ISSET($_REQUEST['lang'])) {
             height: 75px;
             line-height: 75px;
             /* outline: 1px solid red; */
+        }
+
+        a:visited {
+            color: #1D4872
+        }
+
+        a:link {
+            text-decoration: none;
         }
 
         @media screen and (max-width: 481px) {
@@ -126,13 +123,16 @@ if (ISSET($_REQUEST['lang'])) {
                 margin: 30px;
                 display: none;
                 z-index: 10px;
-                
+
             }
+
             .menuoptions {
                 margin-bottom: 20px;
                 border-bottom: 1px solid #1D4872;
                 width: 300px;
+                color: #1D4872;
             }
+
             #chooseLang {
             display: inline-block;
             border: 1px solid #0e5ba9;
@@ -150,8 +150,6 @@ if (ISSET($_REQUEST['lang'])) {
             }
         }
     </style>
-</head>
-<body>
     <div id="navigationbar"><!--navigation mobile-->
         <div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div>
         <select id="chooseLang"><!--mobile lang. options-->
@@ -210,14 +208,14 @@ if (ISSET($_REQUEST['lang'])) {
         };
         for (var i = 0; i < menuOptions.length; i++) {
             var thisThing = menuOptions[i];
-            thisThing.addEventListener("mouseover", hoverBlue);
-            thisThing.addEventListener("mouseout", backToGrey);
+            thisThing.addEventListener("mouseover", hoverGrey);
+            thisThing.addEventListener("mouseout", backToWhite);
             }
-        function backToGrey(){
+        function backToWhite(){
             this.style.backgroundColor = "white";
         }
-        function hoverBlue(){ 
-            this.style.backgroundColor = "#99E8F9";
+        function hoverGrey(){ 
+            this.style.backgroundColor = "rgb(208,208,208)";
         }
         mobileMenuButton.addEventListener("click", function(){
             if (mobileMenu.style.display === "block"){
@@ -228,6 +226,3 @@ if (ISSET($_REQUEST['lang'])) {
             }
         });
     </script>
-    
-</body>
-</html>

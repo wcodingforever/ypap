@@ -247,7 +247,7 @@ if (ISSET($_REQUEST['lang'])) {
 
 </head>
 <body>
-    
+    <?php include 'navbar.php';?>
     <div>
         <div id="slideshowdesktop"><!--desktop-->
             <div class="allslides" id="firstpage">
