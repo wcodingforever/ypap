@@ -1,9 +1,11 @@
 <?php
 include 'lang.php';
-$myLang = $_REQUEST['lang'];
-if ($myLang === "") {
-    $myLang = "en";
-}
+if (ISSET($_REQUEST['lang'])) {
+    $myLang = $_REQUEST['lang'];
+ }
+ else{
+    $myLang = 'en';
+ }
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
