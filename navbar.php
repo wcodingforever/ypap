@@ -49,7 +49,7 @@ if (ISSET($_REQUEST['lang'])) {
             align-items: center;
             justify-content: space-around;
             font-size: 16px;
-            /* display: block; */
+            margin-bottom: 10px;
         }
 
         .menuoptions {
