@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <style>
         /* * {outline: 1px solid red} */
         body {
@@ -21,14 +22,17 @@
             margin-left: 20px;
             margin-top: 10px;
         }
+
         #logostyle {
             height: 100px;
             width: 100px;
             border-radius: 20px;
         }
+
         #mobilemenubutton {
             display: none;
         }
+
         #menudiv {
             width: 100%;
             height: 50px;
@@ -38,6 +42,7 @@
             font-size: 20px;
             display: block;
         }
+
         .menuoptions {
             width:110px;
             height: 100%;
@@ -71,6 +76,14 @@
             height: 75px;
             line-height: 75px;
             /* outline: 1px solid red; */
+        }
+
+        a:visited {
+            color: #1D4872
+        }
+
+        a:link {
+            text-decoration: none;
         }
 
         @media screen and (max-width: 481px) {
@@ -110,13 +123,16 @@
                 margin: 30px;
                 display: none;
                 z-index: 10px;
-                
+
             }
+
             .menuoptions {
                 margin-bottom: 20px;
                 border-bottom: 1px solid #1D4872;
                 width: 300px;
+                color: #1D4872;
             }
+
             #chooseLang {
             display: inline-block;
             border: 1px solid #0e5ba9;
@@ -134,8 +150,6 @@
             }
         }
     </style>
-</head>
-<body>
     <div id="navigationbar"><!--navigation mobile-->
         <div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div>
         <select id="chooseLang"><!--mobile lang. options-->
@@ -150,12 +164,12 @@
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
     </div>
     <div id="menudiv"><!--mobile menu options-->
-        <div class="menuoptions"><div><a href="aboutus.html"><?php echo $lang[$myLang]['navabout'];?>: + response[i].navabout + </a></div></div>
-        <div class="menuoptions"><div><a href="flightbuddy.html"><?php echo $lang[$myLang]['navflight'];?>: + response[i].navflight + </a></div></div>
+        <div class="menuoptions"><div><a href="aboutus.php"><?php echo $lang[$myLang]['navabout'];?>: + response[i].navabout + </a></div></div>
+        <div class="menuoptions"><div><a href="flightbuddy.php"><?php echo $lang[$myLang]['navflight'];?>: + response[i].navflight + </a></div></div>
         <div class="menuoptions"><div><a href="foster.php"><?php echo $lang[$myLang]['navfoster'];?>: + response[i].navfoster + </a></div></div>
         <div class="menuoptions"><div><a href="volunteer.php"><?php echo $lang[$myLang]['navvolunteer'];?>: + response[i].navvolunteer + </a></div></div>
         <div class="menuoptions"><div><a href="donations.php"><?php echo $lang[$myLang]['navdonate'];?>: + response[i].navdonate + </a></div></div>
-        <div class="menuoptions"><div><a href="stories.html"><?php echo $lang[$myLang]['navstories'];?>: + response[i].navstories + </a></div></div>
+        <div class="menuoptions"><div><a href="stories.php"><?php echo $lang[$myLang]['navstories'];?>: + response[i].navstories + </a></div></div>
         <div class="menuoptions"><div><a href="contactus.php"><?php echo $lang[$myLang]['navcontact'];?>: + response[i].navcontact + </a></div></div>
         <div class="menuoptions"><div><a href="newsletters.php"><?php echo $lang[$myLang]['navnewsletter'];?>: + response[i].navnewsletter + </a></div></div>
     </div>
@@ -184,6 +198,3 @@
             }
         });
     </script>
-    
-</body>
-</html>

@@ -9,6 +9,7 @@ $myLang = $_REQUEST['lang'];
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact us</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 
 <style>
