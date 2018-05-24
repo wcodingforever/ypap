@@ -1,6 +1,6 @@
 <?php
 $lang = [
-    en		=> [
+    "en"		=> [
         "gender"	    => "Gender",
         "breed"		    => "Breed",
         "age"		    => "Age",
@@ -73,7 +73,7 @@ $lang = [
         "navcontact" => "Contact Us",
         "navnewsletter" => "Newsletters"
     ],
-    ko		=> [
+    "ko"		=> [
         "gender"		=> "성별",
         "breed"		    => "품종",
         "age"		    => "나이",
@@ -146,7 +146,7 @@ $lang = [
         "navcontact" => "연락",
         "navnewsletter" => "뉴스레터"
     ],
-    fr		=> [
+    "fr"		=> [
         "gender"		=> "Sexe",
         "breed"		    => "Race",
         "age"		    => "Âge",
@@ -219,7 +219,7 @@ $lang = [
         "navcontact" => "Nous contacter",
         "navnewsletter" => "Newsletters"
     ],
-    ru		=> [
+    "ru"		=> [
         "gender"		=> "Пол",
         "breed"		    => "Порода",
         "age"		    => "Возраст",
@@ -292,7 +292,7 @@ $lang = [
         "navcontact" => "Свяжитесь с нами",
         "navnewsletter" => "Новости"
     ],
-    sv		=> [
+    "sv"		=> [
         "gender"		=> "Kön",
         "breed"		    => "Ras",
         "age"		    => "Ålder",
