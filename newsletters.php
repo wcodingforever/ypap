@@ -18,7 +18,7 @@ $myLang = $_REQUEST['lang'];
             font-family: sans-serif;
         }
         #newsletterimage {
-            display: flex;
+            display: flex; 
             justify-content: center;
             align-items: center;
         }
@@ -53,6 +53,7 @@ $myLang = $_REQUEST['lang'];
     </style>
 </head>
 <body>
+    <?php include 'navbar.php';?>
     <div id="everythingwrapper">
         <div id="newsletterimage"><img src="https://i.pinimg.com/originals/94/82/8c/94828c92162ce22515b7807e81356416.jpg"></div>
         <!-- Below is the text, made up to sound kind of right. -->

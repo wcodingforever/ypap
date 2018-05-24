@@ -12,7 +12,7 @@ $myLang = $_REQUEST['lang'];
 @media screen and (max-width: 640px){
     body{
         height: 4000px;
-    }
+    } 
     div#textBox{
         margin: 1em 1.2em;
     }
@@ -137,6 +137,7 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
 </style>
 </head>
 <body>
+    <?php include 'navbar.php';?>
     <img id="hero_wrapper" src="https://ypaprescue.files.wordpress.com/2017/03/img_5209.jpg?w=1230&#038;h=1230&#038;crop=1">
     <div id="wrapper">
         <div id="textBox">

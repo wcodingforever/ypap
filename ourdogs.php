@@ -12,7 +12,7 @@ $myLang = $_REQUEST['lang'];
     <style>
 @media screen and (min-width: 481px) { 
     .body {
-        display: flex;
+        display: flex; 
         align-items: center;
         margin: 0px;
     }
@@ -292,6 +292,7 @@ $myLang = $_REQUEST['lang'];
 </style>
 </head>
 <body>
+    <?php include 'navbar.php';?>
     <div class = "dogProfile">
     
     </div>

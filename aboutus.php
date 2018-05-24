@@ -45,6 +45,7 @@ $myLang = $_REQUEST['lang'];
     </style>
 </head>
 <body>
+    <?php include 'navbar.php';?>
     <div id="everythingwrapper">
         <div id="aboutusimage"><img src="https://puranaturalspet.com/blog/wp-content/uploads/2017/09/Home-Dog.jpg"></div>
         <!-- Below is the text, made up to sound kind of right. -->

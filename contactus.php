@@ -4,7 +4,7 @@ $myLang = $_REQUEST['lang'];
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact us</title>
@@ -178,6 +178,7 @@ $myLang = $_REQUEST['lang'];
 
 <html>
     <body>
+        <?php include 'navbar.php';?>
         <div id="form_container">
             <div id="intro_form_container">
                     <h3 id="intro">Contact us by e-mail</h3>

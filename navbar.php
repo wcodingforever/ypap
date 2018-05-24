@@ -96,6 +96,8 @@ $myLang = $_REQUEST['lang'];
                 font-size: 1.5em;
                 margin: 30px;
                 display: none;
+                z-index: 10px;
+                
             }
             .menuoptions {
                 margin-bottom: 20px;
