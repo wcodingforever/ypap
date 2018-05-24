@@ -164,14 +164,14 @@
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
     </div>
     <div id="menudiv"><!--mobile menu options-->
-        <div class="menuoptions"><div><a href="aboutus.html"><?php echo $lang[$myLang]['navabout'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="flightbuddy.html"><?php echo $lang[$myLang]['navflight'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="foster.php"><?php echo $lang[$myLang]['navfoster'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="volunteer.php"><?php echo $lang[$myLang]['navvolunteer'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="donations.php"><?php echo $lang[$myLang]['navdonate'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="stories.html"><?php echo $lang[$myLang]['navstories'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="contactus.php"><?php echo $lang[$myLang]['navcontact'];?>: </a></div></div>
-        <div class="menuoptions"><div><a href="newsletters.php"><?php echo $lang[$myLang]['navnewsletter'];?>: </a></div></div>
+        <div class="menuoptions"><div><a href="aboutus.html"><?php echo $lang[$myLang]['navabout'];?></a></div></div>
+        <div class="menuoptions"><div><a href="flightbuddy.html"><?php echo $lang[$myLang]['navflight'];?></a></div></div>
+        <div class="menuoptions"><div><a href="foster.php"><?php echo $lang[$myLang]['navfoster'];?></a></div></div>
+        <div class="menuoptions"><div><a href="volunteer.php"><?php echo $lang[$myLang]['navvolunteer'];?></a></div></div>
+        <div class="menuoptions"><div><a href="donations.php"><?php echo $lang[$myLang]['navdonate'];?></a></div></div>
+        <div class="menuoptions"><div><a href="stories.html"><?php echo $lang[$myLang]['navstories'];?></a></div></div>
+        <div class="menuoptions"><div><a href="contactus.php"><?php echo $lang[$myLang]['navcontact'];?></a></div></div>
+        <div class="menuoptions"><div><a href="newsletters.php"><?php echo $lang[$myLang]['navnewsletter'];?></a></div></div>
     </div>
     <input type="hidden" id="hiddenlang" name="languagesetting" value="en">
     <script>
