@@ -208,14 +208,14 @@
         };
         for (var i = 0; i < menuOptions.length; i++) {
             var thisThing = menuOptions[i];
-            thisThing.addEventListener("mouseover", hoverBlue);
-            thisThing.addEventListener("mouseout", backToGrey);
+            thisThing.addEventListener("mouseover", hoverGrey);
+            thisThing.addEventListener("mouseout", backToWhite);
             }
-        function backToGrey(){
+        function backToWhite(){
             this.style.backgroundColor = "white";
         }
-        function hoverBlue(){ 
-            this.style.backgroundColor = "#99E8F9";
+        function hoverGrey(){ 
+            this.style.backgroundColor = "rgb(208,208,208)";
         }
         mobileMenuButton.addEventListener("click", function(){
             if (mobileMenu.style.display === "block"){
