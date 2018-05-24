@@ -6,7 +6,6 @@
 	$username = 'root';
 	$password = '';
     $dbname = 'dogadoptions';
-    $response = "OK";
 
     //////////////////////////////////////////////
     if($receive->initialrequest !== ""){
@@ -33,7 +32,6 @@
                 $stmt = null;
             }
             catch(PDOException $e) {
-                $response = "ERROR";
             }
         }
         elseif ($receive->initialrequest > 0){
@@ -61,15 +59,8 @@
                 $stmt = null;
             }
             catch(PDOException $e) {
-                $response = "ERROR";
             }
         }
-        else{
-            $response = "ERROR";
-        }
-    }else{
-        $response = "ERROR";
     }
-    echo $response;
     
 ?>
