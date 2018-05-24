@@ -28,7 +28,7 @@ if (ISSET($_REQUEST['lang'])) {
             justify-content: center;
             align-items: center;
         }
-        img {
+        #subscribeimg {
             max-width: 90%;
             max-height: 90%;
             margin: 10px;
@@ -47,7 +47,7 @@ if (ISSET($_REQUEST['lang'])) {
             margin: 20px;
         }
         @media screen and (min-width: 481px) {
-            img {
+            #subscribeimg {
                 max-width: 40%;
                 max-height: 40%;
                 margin: 10px;
@@ -61,8 +61,7 @@ if (ISSET($_REQUEST['lang'])) {
 <body>
     <?php include 'navbar.php';?>
     <div id="everythingwrapper">
-        <div id="newsletterimage"><img src="https://i.pinimg.com/originals/94/82/8c/94828c92162ce22515b7807e81356416.jpg"></div>
-        <!-- Below is the text, made up to sound kind of right. -->
+        <div id="newsletterimage"><img id="subscribeimg" src="https://i.pinimg.com/originals/94/82/8c/94828c92162ce22515b7807e81356416.jpg"></div>
         <div id="text">
             Want to stay up-to-date with everything that's happening at the Yongin Pound? Subscribe to our newsletter and get regular updates on volunteer opportunities and news about our cuddly friends!
         </div>
@@ -76,7 +75,7 @@ if (ISSET($_REQUEST['lang'])) {
             <div class="fielddesc"><div><?php echo $lang[$myLang]['newsletteremail'];?>: </div></div>
             <input type="text" id="email">
         </div>
-        <div id="submitbuttonwrapper"><input id="signupbutton" type="button" value="<div><?php echo $lang[$myLang]['submitmessage'];?>: </div>"></div>
+        <div id="submitbuttonwrapper"><input id="signupbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>:"></div>
     </div>
     <script>
         //The variables pointing towards each input field.
