@@ -13,13 +13,13 @@ if (ISSET($_REQUEST['lang'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <title>Document</title>
+    <title>YPAP - Giving Dogs a Second Chance</title>
     <style>
         /* * {
             outline: 1px solid red;
         } */
         body {
-            margin: 0px;
+            margin: 0px; 
             padding: 0px;
             font-family: sans-serif;
         }
@@ -43,8 +43,14 @@ if (ISSET($_REQUEST['lang'])) {
         input, textarea {
             outline: 1px solid black;
         }
+
         #submitbuttonwrapper {
             margin: 20px;
+        }
+
+        #signupbutton {
+            background-color: #1D4872;
+            color: white;
         }
         @media screen and (min-width: 481px) {
             #subscribeimg {
@@ -57,7 +63,7 @@ if (ISSET($_REQUEST['lang'])) {
             }
         }
     </style>
-</head>
+</head> 
 <body>
     <?php include 'navbar.php';?>
     <div id="everythingwrapper">
@@ -68,11 +74,11 @@ if (ISSET($_REQUEST['lang'])) {
     </div>
     <div id="bottomwrapper">
         <div class="inputwrapper" id="namewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['newslettername'];?>: </div></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['newslettername'];?>: + response[i].newslettername + </div></div>
             <input type="text" id="name">
         </div>
         <div class="inputwrapper" id="emailwrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['newsletteremail'];?>: </div></div>
+            <div class="fielddesc"><div><?php echo $lang[$myLang]['newsletteremail'];?>: + response[i].newsletteremail + </div></div>
             <input type="text" id="email">
         </div>
         <div id="submitbuttonwrapper"><input id="signupbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>:"></div>

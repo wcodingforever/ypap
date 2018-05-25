@@ -13,7 +13,7 @@ if (ISSET($_REQUEST['lang'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <title>Document</title>
+    <title>YPAP - Giving Dogs a Second Chance</title>
     <style>
         /* * {
             outline: 1px solid red;
@@ -58,6 +58,11 @@ if (ISSET($_REQUEST['lang'])) {
         }
         #submitbuttonwrapper {
             margin: 20px;
+        }
+
+        #submitbutton {
+            background-color: #1D4872;
+            color: white;
         }
         @media screen and (min-width: 481px) {
             #otherinfo {
@@ -110,38 +115,38 @@ if (ISSET($_REQUEST['lang'])) {
         <div id="pleasenote">Please note that all fields marked with a <span class="requiredfield">*</span> are mandatory!</div>
         <!-- Below are the divs for entering applicant information! Inside each wrapper div is a line of text describing the input field, and the textbox.-->
         <div class="inputwrapper" id="namewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fostername'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fostername'];?>: <span class="requiredfield">*</span></div>
             <input type="text" id="name">
         </div>
         <div class="inputwrapper" id="phonenumwrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterphone'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosterphone'];?>: <span class="requiredfield">*</span></div>
             <input type="text" id="phonenum">
         </div>
         <div class="inputwrapper" id="emailwrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosteremail'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosteremail'];?>: <span class="requiredfield">*</span></div>
             <input type="text" id="email">
         </div>
         <div class="inputwrapper" id="addresswrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosteraddress'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosteraddress'];?>: <span class="requiredfield">*</span></div>
             <input type="text" id="address">
         </div>
         <div class="inputwrapper" id="startdatewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterstartdate'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosterstartdate'];?>: <span class="requiredfield">*</span></div>
             <input type="date" id="startdate">
         </div>
         <div class="inputwrapper" id="enddatewrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterenddate'];?>: </div> <span class="requiredfield">*</span></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosterenddate'];?>: <span class="requiredfield">*</span></div>
             <input type="date" id="enddate">
         </div>
         <div class="inputwrapper" id="otherinfowrapper">
-            <div class="fielddesc"><div><?php echo $lang[$myLang]['fosterother'];?>: </div></div>
+            <div class="fielddesc"><?php echo $lang[$myLang]['fosterother'];?>: </div>
             <textarea name="otherinfo" id="otherinfo" rows="5"></textarea>
         </div>
-        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>: "></div>
+        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>"></div>
     </div>
     <script>
         //The variables pointing towards each input field.
-        var applicantName = document.querySelector("#namewrapper");
+        var applicantName = document.querySelector("#name");
         var phoneNumber = document.querySelector("#phonenum");
         var emailAddress = document.querySelector("#email");
         var homeAddress = document.querySelector("#address");
@@ -225,7 +230,7 @@ if (ISSET($_REQUEST['lang'])) {
                 }
             }
             var outGoingFosterInfo = JSON.stringify(fosterFormInfo);
-            fosterAjax.open("POST", "sendflightform.php");
+            fosterAjax.open("POST", "sendfosterform.php");
             fosterAjax.send(outGoingFosterInfo);
         }
     </script>
