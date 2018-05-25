@@ -284,6 +284,7 @@ if (ISSET($_REQUEST['lang'])) {
                 //                 alert("Please check the format of your email adress");
         } else {
             alert("Thank you!");
+            location.reload();
           }
 };//end of fieldsVerification function
 </script>
