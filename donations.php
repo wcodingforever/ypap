@@ -72,7 +72,7 @@ if (ISSET($_REQUEST['lang'])) {
             input, select{
                 width: 350px;
                 border-radius: 3px;
-                padding: 7px;
+                padding: 2px;
                 margin: 12px 0px 10px 10px;
                 border: 1px solid grey;
             }

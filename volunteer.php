@@ -15,39 +15,42 @@ if (ISSET($_REQUEST['lang'])) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <title>YPAP - Giving Dogs a Second Chance</title>
 <style>
-@media screen and (max-width: 481px){
-    body{
-        height: 4000px;
-    } 
-    div#textBox{
-        margin: 1em 1.2em;
-    }
-    div.text{
-        margin: 0;
-        margin-right: 2.3em;
-    }
-    img#hero_wrapper{
-        position: relative;
-        top: 0em;
-        left: -9.2em;
-        width: 91%;
-
-    }
-    div#wrapper{
-        position: relative;
-        top: -12em;
-    }
-    #form{
-        margin: 0;
-    }
-    div#form_title{
-        margin-bottom: 1em;
-        font-size: 1.6em;
-    }
-    div#inputContainer{
-        width: auto;
-        padding: 1em 2em;
-    }
+    @media screen and (max-width: 481px){
+        body{
+            height: 4000px;
+        } 
+        div#textBox{
+            margin: 1em 1.2em;
+        }
+        div.text{
+            margin: 0;
+            margin-right: 2.3em;
+        }
+        img#hero_wrapper{
+            position: relative;
+            top: 0em;
+            left: -9.2em;
+            width: 91%;
+        
+        }
+        div#wrapper{
+            position: relative;
+            top: -12em;
+        }
+        #form{
+            margin: 0;
+        }
+        div#form_title{
+            margin-bottom: 1em;
+            font-size: 1.6em;
+        }
+        div#inputContainer{
+            width: auto;
+            padding: 1em 2em;
+        }
+        select#chooseLang {
+            padding : 2px;
+        }
     }
     body{
         margin: 0;

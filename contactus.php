@@ -83,9 +83,6 @@ if (ISSET($_REQUEST['lang'])) {
         border-radius: 3px;
         border: 1.5px rgb(169, 169, 169) solid;
     }
-    select{
-        color: #0e5ba9;
-    }
     #submitButton{
         color: white;
         font-weight: bold;
