@@ -200,6 +200,35 @@ if (ISSET($_REQUEST['lang'])) {
             enddate.setAttribute("min", todayDate);
         }
         getEndDate();
+
+        //Below is only called when the submit button is clicked and all the conditions are met!
+        function submitInformation() {
+            //Below is the package of all the information in the fields.
+            var fosterFormInfo = {
+                Name: applicantName.value,
+                PhoneNumber: phoneNumber.value,
+                Email: emailAddress.value,
+                Address: homeAddress.value,
+                StartDate: startDate.value,
+                EndDate: endDate.value,
+                OtherInfo: otherInfo.value,
+            };
+            var fosterAjax = new XMLHttpRequest();
+            fosterAjax.onreadystatechange = function() {
+                if (fosterAjax.readyState === 4 && fosterAjax.status === 200) {
+                    if (fosterAjax.responseText === "ERROR") {
+                        alert("There was an error. Your application has not been submitted.");
+                    }
+                    else{
+                        alert("Thank you. Your application has been submitted.");
+                        location.reload();
+                    }
+                }
+            }
+            var outGoingFosterInfo = JSON.stringify(fosterFormInfo);
+            fosterAjax.open("POST", "back/sendfosterform.php");
+            fosterAjax.send(outGoingFosterInfo);
+        };
         
         //Add event listener to the button, making sure it can only submit when all fields have been filled out
         submitButton.addEventListener("click", function() {
@@ -222,28 +251,7 @@ if (ISSET($_REQUEST['lang'])) {
                 else submitInformation(); //This calls the function that submits the entered information to the php!
             }
         })
-        //Below is only called when the submit button is clicked and all the conditions are met!
-        function submitInformation() {
-            //Below is the package of all the information in the fields.
-            var fosterFormInfo = {
-                Name: applicantName.value,
-                PhoneNumber: phoneNumber.value,
-                Email: emailAddress.value,
-                Address: homeAddress.value,
-                StartDate: startDate.value,
-                EndDate: endDate.value,
-                OtherInfo: otherInfo.value,
-            };
-            var fosterAjax = new XMLHttpRequest();
-            fosterAjax.onreadystatechange = function() {
-                if (fosterAjax.readyState === 4 && fosterAjax.status === 200) {
-                    alert("Thank you. Your application has been submitted.");
-                }
-            }
-            var outGoingFosterInfo = JSON.stringify(fosterFormInfo);
-            fosterAjax.open("POST", "sendfosterform.php");
-            fosterAjax.send(outGoingFosterInfo);
-        }
+        
     </script>
 </body>
 </html>

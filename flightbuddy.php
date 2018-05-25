@@ -176,11 +176,11 @@ if (ISSET($_REQUEST['lang'])) {
         function submitInformation() {
             //Below is the package of all the information in the fields.
             var flightBuddyFormInfo = {
-                FlightDate: departureDate.value,
-                Destination: destinationCity.value,
-                Name: travelerName.value,
-                PhoneNumber: phoneNumber.value,
-                Email: emailAddress.value
+                flightdateofthebuddy: departureDate.value,
+                destinationofthebuddy: destinationCity.value,
+                nameofthebuddy: travelerName.value,
+                phoneofthebuddy: phoneNumber.value,
+                emailofthebuddy: emailAddress.value
             };
             var flightBuddyAjax = new XMLHttpRequest();
             flightBuddyAjax.onreadystatechange = function() {
@@ -191,11 +191,12 @@ if (ISSET($_REQUEST['lang'])) {
                     }
                     else if(flightBuddyAjax.responseText === "OK"){
                         alert("Thank you. Your application has been submitted.");
+                        location.reload();
                     }
                 }
             }
             var outGoingFlightBuddyInfo = JSON.stringify(flightBuddyFormInfo);
-            flightBuddyAjax.open("POST", "sendflightform.php");
+            flightBuddyAjax.open("POST", "back/sendflightform.php");
             flightBuddyAjax.send(outGoingFlightBuddyInfo);
         }
     </script>

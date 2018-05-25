@@ -15,7 +15,7 @@ if (ISSET($_REQUEST['lang'])) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <title>YPAP - Giving Dogs a Second Chance</title>
 <style>
-@media screen and (max-width: 640px){
+@media screen and (max-width: 481px){
     body{
         height: 4000px;
     } 
@@ -29,7 +29,9 @@ if (ISSET($_REQUEST['lang'])) {
     img#hero_wrapper{
         position: relative;
         top: 0em;
-        width: 100%;
+        left: -9.2em;
+        width: 91%;
+
     }
     div#wrapper{
         position: relative;

@@ -67,10 +67,20 @@ if (ISSET($_REQUEST['lang'])) {
 
     }
 
+    #buttondiv {
+        width: 1013px;
+        height: 75px;
+        position: absolute;
+        margin: auto;
+        z-index: 1;
+        top: 65%;
+        left: 127px;
+    }
+
     #next, #previous {
         cursor: pointer;
         position: absolute;
-        top: 85%;
+        top: 50%;
         width: auto;
         margin-top: -22px;
         padding: 16px;
@@ -309,6 +319,12 @@ if (ISSET($_REQUEST['lang'])) {
         display: block;
     }
 
+    #buttondiv {
+        width: 100%;
+        left: 0;
+
+    }
+
     #previous, #next {
         /* display:block; */
         color:black;
@@ -391,7 +407,7 @@ if (ISSET($_REQUEST['lang'])) {
             We have a number of rescued animals that have been adopted and are waiting to get to their forever homes.
             Can you help us get them there by being a flight volunteer?
             We organize everything and there is no cost for you.
-            <a href="">Read more</a>
+            <a href="flightbuddy.php?lang=<?php echo($myLang); ?>">Read more</a>
         </div>
 
         <div class="menudiv">
@@ -400,7 +416,7 @@ if (ISSET($_REQUEST['lang'])) {
         </div>
 
         <div class="seemoretext" id="fostertext" >Fostering is temporarily caring for a dog as if it were your own. Fosters are people who have time and love to give, but can’t commit to a dog forever.
-            <a href="">Read more</a>
+            <a href="foster.php?lang=<?php echo($myLang); ?>">Read more</a>
         </div>
 
         <div class="menudiv">
@@ -409,7 +425,7 @@ if (ISSET($_REQUEST['lang'])) {
         </div>
 
         <div class="seemoretext" id="volunteertext">Want to get involved? Cleaning Anyone living locally, please join us at the pound in Yongin City, about 45 minutes outside of Seoul. You don’t have to have experience, all you need is common sense and a love of animals!
-            <a href="">Read more</a>
+            <a href="volunteer.php?lang=<?php echo($myLang); ?>">Read more</a>
         </div>
 
         <div class="menudiv">
@@ -418,7 +434,7 @@ if (ISSET($_REQUEST['lang'])) {
         </div>
 
         <div class="seemoretext" id="adoptiontext">YPAP selects a limited number of dogs each month to check their suitability for adoption.
-            <a href="">Read more</a>
+            <a href="ourdogs.php?lang=<?php echo($myLang); ?>">Read more</a>
         </div>
 
         <div id="scrollbutton"><i class="fas fa-angle-up"></i></div><!--scrollup button-->
@@ -530,7 +546,8 @@ if (ISSET($_REQUEST['lang'])) {
             showSlides();
             slideIndex + 1;
             clearInterval(myTime);
-            setTimeout(myFunction, 5000);
+            // setTimeout(myFunction, 10000);
+            
             
 
         });
@@ -540,7 +557,6 @@ if (ISSET($_REQUEST['lang'])) {
             showSlides();
             slideIndex - 1;
             clearInterval(myTime);
-            setTimeout(myFunction, 5000);
             
         });
 

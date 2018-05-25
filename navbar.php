@@ -97,6 +97,9 @@ if (ISSET($_REQUEST['lang'])) {
             border-radius: 5px;
             /* outline: 1px solid red; */
         }
+        #donatebutton:hover{
+            cursor:pointer;
+        }
 
         #donationplease {
             outline: 1px solid red;
@@ -197,7 +200,7 @@ if (ISSET($_REQUEST['lang'])) {
                 }
             ?>
         </select>
-        <div id="donatebutton">Please consider donating!<i class="far fa-heart"></i></div>
+        <a href="donations.php?lang=<?php echo("$myLang"); ?>"><div id="donatebutton"><?php echo $lang[$myLang]['navdonate'];?><i class="far fa-heart"></i></div></a>
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
     </div>
     <div id="menudiv"><!--mobile menu options-->
