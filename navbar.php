@@ -18,6 +18,7 @@ if (ISSET($_REQUEST['lang'])) {
         #navigationbar {
             height: 160px;
             width: 100%;
+            margin-bottom: 20px;
         }
         #logodiv{
             background-color: #1D4872;
@@ -67,13 +68,14 @@ if (ISSET($_REQUEST['lang'])) {
             display: inline-flex;
             border: 1px solid #0e5ba9;
             border-radius: 3px;
-            width: 80px;
+            width: 100px;
             height: 30px;
             vertical-align: top;
             font-family: sans-serif;
             font-weight: bold;
-            margin-top: 3%;
+            margin-top: 10%;
             margin-right: 20%;
+            margin-left: 10%;
         }
 
         #donatebutton {
@@ -81,7 +83,7 @@ if (ISSET($_REQUEST['lang'])) {
             right: 5%;
             top: 3%;
             text-align: center;
-            width: 200px;
+            width: 201px;
             height: 75px;
             line-height: 75px;
             color: white;
@@ -136,10 +138,12 @@ if (ISSET($_REQUEST['lang'])) {
             }
             #menudiv{
                 font-size: 1.5em;
-                margin: 30px;
+                padding: 30px;
                 display: none;
                 z-index: 10px;
-
+                height:670px;
+                width: 100%;
+                background-color: white;
             }
 
             .menuoptions {
@@ -176,7 +180,7 @@ if (ISSET($_REQUEST['lang'])) {
             <option class="langOptions" id="menufrench">Français</option>
             <option class="langOptions" id="menuswedish">Svenska</option>
         </select>
-        <a href="donations.php"><div id="donatebutton"></div></a>
+        <div id="donatebutton">Please consider donating!<i class="far fa-heart"></i></div>
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
     </div>
     <div id="menudiv"><!--mobile menu options-->

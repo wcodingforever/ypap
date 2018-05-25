@@ -41,7 +41,10 @@ if (ISSET($_REQUEST['lang'])) {
             margin: 15px;
         }
         input, textarea {
-            outline: 1px solid black;
+            border-radius: 3px;
+            padding: 7px;
+            margin: 12px 0px 10px 10px;
+            border: 1px solid grey;
         }
 
         #submitbuttonwrapper {
@@ -49,9 +52,18 @@ if (ISSET($_REQUEST['lang'])) {
         }
 
         #signupbutton {
+            color: white;
+            font-weight: bold;
             background-color: #1D4872;
             color: white;
-        }
+            width: 150px;
+            height: 50px;
+            border: 1px solid grey;
+            margin: auto;
+            border-radius: 3px;
+            padding: 7px;
+            }
+            
         @media screen and (min-width: 481px) {
             #subscribeimg {
                 max-width: 40%;

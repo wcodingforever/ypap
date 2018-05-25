@@ -19,39 +19,64 @@ if (ISSET($_REQUEST['lang'])) {
         /* *{
             outline: 1px solid blue;
         } */
-        input{
+        input, select{
             width: 350px;
             height: 40px;
+            border-radius: 3px;
+            padding: 7px;
+            margin: 12px 0px 10px 10px;
+            border: 1px solid grey;
         }
         body {
             margin: 0px;
             padding: 0px;
             font-family: sans-serif;
         }
-        img {
-            height: 30%;
-            width: 30%;
-            margin: 10px;
-        }
-        #everythingwrapper {
+
+        #donationimage {
+            display: flex;
             justify-content: center;
             align-items: center;
         }
+
+        #thedonationpic {
+            max-width: 90%;
+            max-height: 90%;
+            margin: 10px;
+        }
+
         #paypaldonate img{
             cursor: pointer;
         }
         button {
+            color: white;
+            font-weight: bold;
             background-color: #1D4872;
             color: white;
+            width: 150px;
+            height: 50px;
+            border: 1px solid grey;
+            margin: 20px;
+            border-radius: 3px;
+            padding: 7px;
         }
-        @media screen and (max-width: 481px){
+
+        #flightbuddyimage {
+            text-align: center;
+        }
+        @media screen and (min-width: 481px){
+            #thedonationpic{
+                max-width: 40%;
+                max-width: 40%;
+                margin: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <?php include 'navbar.php';?>
     <div id="everythingwrapper">
-        <div id="flightbuddyimage"><img src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
+        <div id="donationimage"><img id ="thedonationpic" src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
         <!-- Below is the text taken straight from the YPAP page. -->
         <div id="text">
             The most effective way you can make a difference in the lives of these dogs is by sponsoring one. You can eliminate one or more animal’s pain and suffering today through a monthly sponsorship. You can make a direct, personal, and positive impact by sponsoring a dog today.

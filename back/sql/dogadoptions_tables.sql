@@ -36,7 +36,7 @@ CREATE TABLE `adoption` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `dogs`
+-- Table structure for table `dog`
 --
 
 DROP TABLE IF EXISTS `dog`;
@@ -45,9 +45,9 @@ DROP TABLE IF EXISTS `dog`;
 CREATE TABLE `dog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` int(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` int(1) DEFAULT NULL,
   `age` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `spayed` int(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `spayed` int(1) DEFAULT NULL,
   `weight` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `breed` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `arrivaldate` date NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `dog` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `donations`
+-- Table structure for table `donation`
 --
 
 DROP TABLE IF EXISTS `donation`;
@@ -70,7 +70,7 @@ CREATE TABLE `donation` (
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `donatetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `amount` int COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` int(11) NOT NULL,
   `currency` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -111,7 +111,7 @@ CREATE TABLE `fosterform` (
   `endDate` datetime NOT NULL,
   `otherInfo` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +145,7 @@ CREATE TABLE `mappingmultiple` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `stories`
+-- Table structure for table `story`
 --
 
 DROP TABLE IF EXISTS `story`;
@@ -161,7 +161,7 @@ CREATE TABLE `story` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `volunteers`
+-- Table structure for table `volunteer`
 --
 
 DROP TABLE IF EXISTS `volunteer`;
@@ -172,11 +172,11 @@ CREATE TABLE `volunteer` (
   `name` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `workType1` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `workType2` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `availability` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `workType1` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `workType2` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `availability` varchar(60) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -188,4 +188,4 @@ CREATE TABLE `volunteer` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-22 17:40:39
+-- Dump completed on 2018-05-25  0:23:05
