@@ -187,13 +187,15 @@ if (ISSET($_REQUEST['lang'])) {
     </style>
     <div id="navigationbar"><!--navigation mobile-->
         <a href="homepage.php"><div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div></a>
-        <select id="chooseLang"><!--mobile lang. options-->
-            <option class="langOptions">Languages</option>
-            <option class="langOptions" id="menuenglish">English</option>
-            <option class="langOptions" id="menukorean">한국어</option>
-            <option class="langOptions" id="menurussian">Русский</option>
-            <option class="langOptions" id="menufrench">Français</option>
-            <option class="langOptions" id="menuswedish">Svenska</option>
+        <select id="chooseLang" value="Submit"><!--mobile lang. options-->
+            <?php
+                foreach ($lang as $thisLangKey => $thisLang) {
+                    $thisLangName = $thisLang['languageName'];
+                    echo ("<option class='langOptions' id='menu" . strtolower($thisLangName) . "'");
+                    if ($thisLangKey === $myLang) echo (" selected");
+                    echo (">" . $thisLangName . "</option>");
+                }
+            ?>
         </select>
         <div id="donatebutton">Please consider donating!<i class="far fa-heart"></i></div>
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
@@ -237,16 +239,16 @@ if (ISSET($_REQUEST['lang'])) {
             if (currentLang === "English") {
                 var langToSet = "en";
             }
-            if (currentLang === "한국어") {
+            else if (currentLang === "한국어") {
                 var langToSet = "ko";
             }
-            if (currentLang === "Русский") {
+            else if (currentLang === "Русский") {
                 var langToSet = "ru";
             }
-            if (currentLang === "Français") {
+            else if (currentLang === "Français") {
                 var langToSet = "fr";
             }
-            if (currentLang === "Svenska") {
+            else if (currentLang === "Svenska") {
                 var langToSet = "sv";
             }
             hiddenLanguage.value = langToSet;
