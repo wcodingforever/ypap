@@ -160,7 +160,8 @@ if (ISSET($_REQUEST['lang'])) {
                     var donateAjax = new XMLHttpRequest();
                     donateAjax.onreadystatechange = function() {
                         if (donateAjax.readyState === 4 && donateAjax.status === 200) {
-                            alert("Thank you. Your application has been submitted.");
+                            alert("Thank you. Your donation has been submitted.");
+                            location.reload();
                         }
                     }
                     var forSend = JSON.stringify(forSend);
