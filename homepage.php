@@ -70,7 +70,7 @@ if (ISSET($_REQUEST['lang'])) {
     #next, #previous {
         cursor: pointer;
         position: absolute;
-        top: 50%;
+        top: 85%;
         width: auto;
         margin-top: -22px;
         padding: 16px;
@@ -83,16 +83,20 @@ if (ISSET($_REQUEST['lang'])) {
     }
 
     #next {
-        right: 0;
+        right: 49px;
+    }
+    #previous {
+        left: 62px;
     }
 
     .slidertext {
         position: absolute;
-        top: 50%;
-        left: 30%;
-        width: 500px;
-        font-size: 1.3em;
-        color: #1D4872;
+        top: 75%;
+        left: 20%;
+        width: 450px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, .75);
+        color: white;
         font-family: 'Lora', serif;
     }
 
@@ -130,6 +134,16 @@ if (ISSET($_REQUEST['lang'])) {
     #scrollbutton {
         color: white;
     }
+
+    .fadepic {
+        animation-name: fade;
+        animation-duration: 2s;
+        }
+
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
 
 
 
@@ -253,18 +267,18 @@ if (ISSET($_REQUEST['lang'])) {
     <?php include 'navbar.php';?>
     <div>
         <div id="slideshowdesktop"><!--desktop-->
-            <div class="allslides" id="firstpage">
+            <div class="allslides fadepic"  id="firstpage">
                 <img class="imgstyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-9/26229511_2021356694806575_3366688819793774633_n.jpg?_nc_cat=0&oh=407b9e40f48f3e1c2aa22ec931f9d56f&oe=5B8B48CA">
                 <div class="slidertext">Can you give a dog a forever home?
                     YPAP sends dogs to new homes every week!</div>
             </div>
 
-            <div class="allslides" id="secondpage" >
+            <div class="allslides fadepic" id="secondpage" >
                 <img  class="imgstyle"  src="https://ypaprescue.files.wordpress.com/2017/03/img_5209.jpg?w=660&h=480&crop=1">
                 <div class="slidertext">The Yongin Animal Protection Association has given these animals a second chance. Now we, the international rescue community, are joining them to help find families for the unwanted and abandoned dogs of Korea.</div>
             </div>
 
-            <div class="allslides" id="thirdpage">
+            <div class="allslides fadepic" id="thirdpage">
                 <img class="imgstyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-9/27867916_2040843862857858_2627467305295489260_n.jpg?_nc_cat=0&oh=1d180199deec192e42d50a8a8063fb12&oe=5B94418B">
                 <div class="slidertext">Flying from Korea to Canada, the U.S., or Europe?<br>
                     We have a number of rescued animals that have been adopted and are waiting to get to their forever homes.</div>
