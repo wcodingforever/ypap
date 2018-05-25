@@ -83,7 +83,7 @@ if (ISSET($_REQUEST['lang'])) {
 <body>
     <?php include 'navbar.php';?>
     <div id="everythingwrapper">
-        <div id="donationimage"><img id ="thedonationpic" src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
+        <div id="donationimage"><img id ="thedonationpic" src="https://www.dcpawsrescue.org/wp-content/uploads/2015/01/DONATIONDOG-200x300.jpg"></div>
         <!-- Below is the text taken straight from the YPAP page. -->
         <div id="text">
             The most effective way you can make a difference in the lives of these dogs is by sponsoring one. You can eliminate one or more animal’s pain and suffering today through a monthly sponsorship. You can make a direct, personal, and positive impact by sponsoring a dog today.
