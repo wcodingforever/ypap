@@ -32,15 +32,19 @@ if (ISSET($_REQUEST['lang'])) {
             padding: 0px;
             font-family: sans-serif;
         }
-        img {
-            height: 30%;
-            width: 30%;
-            margin: 10px;
-        }
-        #everythingwrapper {
+
+        #donationimage {
+            display: flex;
             justify-content: center;
             align-items: center;
         }
+
+        #thedonationpic {
+            max-width: 90%;
+            max-height: 90%;
+            margin: 10px;
+        }
+
         #paypaldonate img{
             cursor: pointer;
         }
@@ -60,14 +64,19 @@ if (ISSET($_REQUEST['lang'])) {
         #flightbuddyimage {
             text-align: center;
         }
-        @media screen and (max-width: 481px){
+        @media screen and (min-width: 481px){
+            #thedonationpic{
+                max-width: 40%;
+                max-width: 40%;
+                margin: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <?php include 'navbar.php';?>
     <div id="everythingwrapper">
-        <div id="flightbuddyimage"><img src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
+        <div id="donationimage"><img id ="thedonationpic" src="https://ypaprescue.files.wordpress.com/2017/03/slide3-e1489734714235.jpg"></div>
         <!-- Below is the text taken straight from the YPAP page. -->
         <div id="text">
             The most effective way you can make a difference in the lives of these dogs is by sponsoring one. You can eliminate one or more animal’s pain and suffering today through a monthly sponsorship. You can make a direct, personal, and positive impact by sponsoring a dog today.
