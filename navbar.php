@@ -97,6 +97,9 @@ if (ISSET($_REQUEST['lang'])) {
             border-radius: 5px;
             /* outline: 1px solid red; */
         }
+        #donatebutton:hover{
+            cursor:pointer;
+        }
 
         #donationplease {
             outline: 1px solid red;
@@ -186,7 +189,7 @@ if (ISSET($_REQUEST['lang'])) {
         }
     </style>
     <div id="navigationbar"><!--navigation mobile-->
-        <a href="homepage.php"><div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div></a>
+        <a href="homepage.php?lang=<?php echo($myLang); ?>"><div id="logodiv"><img id="logostyle" src="https://scontent.ficn1-1.fna.fbcdn.net/v/t1.0-1/p200x200/14183908_1770779633197617_2897900196827827557_n.jpg?_nc_cat=0&oh=c13c6f9ed243a5160d34fa95007d071e&oe=5B85E2A6"></div></a>
         <select id="chooseLang"><!--mobile lang. options-->
             <option class="langOptions">Languages</option>
             <option class="langOptions" id="menuenglish">English</option>
@@ -195,7 +198,7 @@ if (ISSET($_REQUEST['lang'])) {
             <option class="langOptions" id="menufrench">Français</option>
             <option class="langOptions" id="menuswedish">Svenska</option>
         </select>
-        <div id="donatebutton">Please consider donating!<i class="far fa-heart"></i></div>
+        <a href="donations.php?lang=<?php echo("$myLang"); ?>"><div id="donatebutton"><?php echo $lang[$myLang]['navdonate'];?><i class="far fa-heart"></i></div></a>
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
     </div>
     <div id="menudiv"><!--mobile menu options-->

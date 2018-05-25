@@ -15,7 +15,7 @@ if (ISSET($_REQUEST['lang'])) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <title>YPAP - Giving Dogs a Second Chance</title>
 <style>
-@media screen and (max-width: 640px){
+@media screen and (max-width: 481px){
     body{
         height: 4000px;
     } 
@@ -29,7 +29,9 @@ if (ISSET($_REQUEST['lang'])) {
     img#hero_wrapper{
         position: relative;
         top: 0em;
-        width: 100%;
+        left: -9.2em;
+        width: 91%;
+
     }
     div#wrapper{
         position: relative;
@@ -467,7 +469,7 @@ if (ISSET($_REQUEST['lang'])) {
                     <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteeremail'];?>: </div></span> <input id="email" name="email" type="email"><span id="required"> *</span></div>
                     <div class="field">
                         <div class="f_title"><span><div><?php echo $lang[$myLang]['volunteertype'];?>: </div></span></div>
-                        <div id="workType_text">Please choose 1 or 2 work types.</div>
+                        <div id="workType_text">Please choose 1 or 2 types of work.</div>
                             <div id="workTypes">
                                 <label for="cleaning"><div><?php echo $lang[$myLang]['volunteerclean'];?>: </div></label><input id="cleaning" name="workType" type="checkbox" value="cleaning">
                                 <label for="driving"><div><?php echo $lang[$myLang]['volunteerdrive'];?>: </div></label><input id="driving" name="workType" type="checkbox" value="driving">
@@ -502,8 +504,8 @@ if (ISSET($_REQUEST['lang'])) {
     }
     function countSelectedWorkTypes(){
         var listOfInputOfWorkTypes = document.querySelectorAll("input:checked");
-        if(listOfInputOfWorkTypes.length >= 3){
-            alert("You can't select more than 3 worke types.");
+        if(listOfInputOfWorkTypes.length > 2){
+            alert("You can't select more than 2 types of work.");
             this.checked = false;
         }
     }
@@ -516,7 +518,7 @@ if (ISSET($_REQUEST['lang'])) {
             var startDTObj = new Date(this.value);
             var todayDTObj = new Date();
             if( startDTObj <= todayDTObj){
-                alert("Unvaild date.  Please select available dates again.");
+                alert("Invaild date.  Please select available dates again.");
             } 
         }else{ 
             var startDT = document.getElementById("availability_startDT").value;
@@ -529,7 +531,7 @@ if (ISSET($_REQUEST['lang'])) {
                 var startDTObj = new Date(startDT);
                 var endDTObj = new Date(endDT);
                 if(startDTObj > endDTObj){
-                    alert("Valid period. Please select available dates again.");
+                    alert("Invalid period. Please select available dates again.");
                     this.value = "";
                 }
             }
@@ -547,7 +549,7 @@ if (ISSET($_REQUEST['lang'])) {
         phoneInput = Number(phoneInput);
     
         if(!(Number.isInteger(phoneInput))||phoneInput < 0 ){
-            alert("Unvalid phone number. Please check the phone number.");
+            alert("Invalid phone number. Please check the phone number.");
         }
     }
     
@@ -635,7 +637,7 @@ if (ISSET($_REQUEST['lang'])) {
                     var response = xhr.responseText;
                     inputContainer.style = "color: red; height: 16em; display: flex; justify-content: center; align-items: center;";
                     if( response === "OK"){
-                        inputContainer.innerHTML = "Thank you for applying! We'll contact with you soon.";
+                        inputContainer.innerHTML = "Thank you for applying! We'll contact you soon.";
                     }else{
                         inputContainer.innerHTML = "ERORR: Failed to store user data. Please try again.";
                     }
