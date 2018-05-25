@@ -136,7 +136,10 @@ if (ISSET($_REQUEST['lang'])) {
         color: white;
         border-color: #1D4872;
         border-radius: 3%;
-    } 
+    }
+    .infoButton:hover, .adoptButton:hover {
+        cursor: pointer;
+    }
     .close {
         color: white;
         float: right;
