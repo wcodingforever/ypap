@@ -66,7 +66,7 @@ if (ISSET($_REQUEST['lang'])) {
         }
         @media screen and (min-width: 481px){
             #thedonationpic{
-                max-width: 64%;
+                max-width: 40%;
                 margin: 10px;
             }
             input, select{
