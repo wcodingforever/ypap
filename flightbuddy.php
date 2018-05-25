@@ -111,7 +111,7 @@ if (ISSET($_REQUEST['lang'])) {
             <div class="fielddesc"><?php echo $lang[$myLang]['traveleremail'];?>: </div>
             <input type="text" id="email">
         </div>
-        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>: "></div>
+        <div id="submitbuttonwrapper"><input id="submitbutton" type="button" value="<?php echo $lang[$myLang]['submitmessage'];?>"></div>
     </div>
 
     <script>
