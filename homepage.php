@@ -399,7 +399,7 @@ if (ISSET($_REQUEST['lang'])) {
 
     <div>
         <div class="menudiv"><!--mobile-->
-            <div class="menuoptions">Flight buddy</div>
+            <div class="menuoptions"><?php echo $lang[$myLang]['navflight'];?></div>
             <div class="seemorebutton" id="flightplus"><i class="fas fa-plus"></i></div>
         </div>
 
@@ -411,7 +411,7 @@ if (ISSET($_REQUEST['lang'])) {
         </div>
 
         <div class="menudiv">
-            <div class="menuoptions">Foster</div>
+            <div class="menuoptions"><?php echo $lang[$myLang]['navfoster'];?></div>
             <div class="seemorebutton" id="fosterplus"><i class="fas fa-plus"></i></div>
         </div>
 
@@ -420,7 +420,7 @@ if (ISSET($_REQUEST['lang'])) {
         </div>
 
         <div class="menudiv">
-            <div class="menuoptions">Volunteer</div>
+            <div class="menuoptions"><?php echo $lang[$myLang]['navvolunteer'];?></div>
             <div class="seemorebutton" id="volunteerplus"><i class="fas fa-plus"></i></div>
         </div>
 
@@ -429,7 +429,7 @@ if (ISSET($_REQUEST['lang'])) {
         </div>
 
         <div class="menudiv">
-            <div class="menuoptions">Adoption</div>
+            <div class="menuoptions"><?php echo $lang[$myLang]['navdogs'];?></div>
             <div class="seemorebutton" id="adoptionplus"><i class="fas fa-plus"></i></div>
         </div>
 
@@ -442,7 +442,7 @@ if (ISSET($_REQUEST['lang'])) {
         <div class="menudiv"></div><!--make space for donate button at the bottom-->
 
         <div class="donateArea">
-            <a href="donations.php">Donate<i class="far fa-heart"></i></a></div>
+            <a href="donations.php"><?php echo $lang[$myLang]['navdonate'];?> <i class="far fa-heart"></i></a></div>
     </div>
 
     <div id="bottommenuwrapper"><!--desktop-->
