@@ -52,16 +52,22 @@ if (ISSET($_REQUEST['lang'])) {
             font-size: 16px;
             margin-bottom: 10px;
         }
+        #mobilemenudiv {
+            display: none;
+        }
 
         .menuoptions {
             /* width: 110px; */
             height: 50px;
             text-align: center;
-            line-height: 45px;
+            /* line-height: 45px; */
             display: inline-flex;
             width: 140px;
             align-items: center;
             justify-content: center;
+        }
+        .mobilemenuoptions {
+            display: none;
         }
 
         #chooseLang {
@@ -136,7 +142,10 @@ if (ISSET($_REQUEST['lang'])) {
                 display: block;
                 
             }
-            #menudiv{
+            #menudiv {
+                display: none;
+            }
+            #mobilemenudiv{
                 font-size: 1.5em;
                 padding: 30px;
                 display: none;
@@ -152,16 +161,23 @@ if (ISSET($_REQUEST['lang'])) {
                 width: 300px;
                 color: #1D4872;
             }
+            .mobilemenuoptions {
+                margin-bottom: 20px;
+                border-bottom: 1px solid #1D4872;
+                width: 300px;
+                color: #1D4872;
+                display: block;
+            }
 
             #chooseLang {
-            display: inline-block;
-            border: 1px solid #0e5ba9;
-            border-radius: 3px;
-            width: 80px;
-            height: 30px;
-            margin-bottom: 8px;
-            font-family: sans-serif;
-            font-weight: bold;
+                display: inline-block;
+                border: 1px solid #0e5ba9;
+                border-radius: 3px;
+                width: 80px;
+                height: 30px;
+                margin-bottom: 8px;
+                font-family: sans-serif;
+                font-weight: bold;
             }
 
             #donatebutton {
@@ -193,10 +209,21 @@ if (ISSET($_REQUEST['lang'])) {
         <a href="contactus.php?lang=<?php echo($myLang); ?>"><div class="menuoptions"><?php echo $lang[$myLang]['navcontact'];?></div></a>
         <a href="newsletters.php?lang=<?php echo($myLang); ?>"><div class="menuoptions"><?php echo $lang[$myLang]['navnewsletter'];?></div></a>
     </div>
+    <div id="mobilemenudiv"><!--mobile menu options-->
+        <a href="aboutus.php?lang=<?php echo($myLang); ?>"><div class="mobilemenuoptions"><?php echo $lang[$myLang]['navabout'];?></div></a>
+        <a href="ourdogs.php?lang=<?php echo($myLang); ?>"><div class="mobilemenuoptions"><?php echo $lang[$myLang]['navdogs'];?></div></a>
+        <a href="flightbuddy.php?lang=<?php echo($myLang); ?>"><div class="mobilemenuoptions"><?php echo $lang[$myLang]['navflight'];?></div></a>
+        <a href="foster.php?lang=<?php echo($myLang); ?>"><div class="mobilemenuoptions"><?php echo $lang[$myLang]['navfoster'];?></div></a>
+        <a href="volunteer.php?lang=<?php echo($myLang); ?>"><div class="mobilemenuoptions"><?php echo $lang[$myLang]['navvolunteer'];?></div></a>
+        <a href="donations.php?lang=<?php echo($myLang); ?>"><div class="mobilemenuoptions"><?php echo $lang[$myLang]['navdonate'];?></div></a>
+        <a href="stories.php?lang=<?php echo($myLang); ?>"><div class="mobilemenuoptions"><?php echo $lang[$myLang]['navstories'];?></div></a>
+        <a href="contactus.php?lang=<?php echo($myLang); ?>"><div class="mobilemenuoptions"><?php echo $lang[$myLang]['navcontact'];?></div></a>
+        <a href="newsletters.php?lang=<?php echo($myLang); ?>"><div class="mobilemenuoptions"><?php echo $lang[$myLang]['navnewsletter'];?></div></a>
+    </div>
     <input type="hidden" id="hiddenlang" name="languagesetting" value="en">
     <script>
         var menuOptions = document.querySelectorAll(".menuoptions");
-        var mobileMenu = document.querySelector("#menudiv");
+        var mobileMenu = document.querySelector("#mobilemenudiv");
         var mobileMenuButton = document.querySelector("#mobilemenubutton");
         var langOptions = document.querySelector(".langOptions");
         var dropdownElem = document.querySelector("#chooseLang");
