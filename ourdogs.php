@@ -330,7 +330,7 @@ if (ISSET($_REQUEST['lang'])) {
                                             "<img class = 'modalDogPicture' src='" + response[i].picture + "'>" +
                                         "</div>" +
                                         "<div class = 'dogNameModal'>"  + response[i].name + "</div>" +
-                                        "<a href='adoption.php?name=" + response[i].name + "&" + "id=" + response[i].id + "'>" +
+                                        "<a href='adoption.php?lang=<?php echo($myLang); ?>&name=" + response[i].name + "&" + "id=" + response[i].id + "'>" +
                                             "<input class = 'adoptButton' type='submit' value='<?php echo $lang[$myLang]['adopt'];?>' />" +
                                         "</a>" +
                                     "<div class='popupInfoDiv'>" +
