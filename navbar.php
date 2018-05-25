@@ -7,7 +7,7 @@ if (ISSET($_REQUEST['lang'])) {
     $myLang = 'en';
  }
 ?><style>
-        * {outline: 1px solid red}
+        /* * {outline: 1px solid red} */
         body {
             padding: 0px;
             margin: 0px;
