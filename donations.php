@@ -20,8 +20,7 @@ if (ISSET($_REQUEST['lang'])) {
             outline: 1px solid blue;
         } */
         input, select{
-            width: 350px;
-            height: 40px;
+            width: 90vw;
             border-radius: 3px;
             padding: 7px;
             margin: 12px 0px 10px 10px;
@@ -47,6 +46,7 @@ if (ISSET($_REQUEST['lang'])) {
 
         #paypaldonate img{
             cursor: pointer;
+            max-width: 90%;
         }
         button {
             color: white;
@@ -69,6 +69,13 @@ if (ISSET($_REQUEST['lang'])) {
                 max-width: 40%;
                 max-width: 40%;
                 margin: 10px;
+            }
+            input, select{
+                width: 350px;
+                border-radius: 3px;
+                padding: 7px;
+                margin: 12px 0px 10px 10px;
+                border: 1px solid grey;
             }
         }
     </style>
@@ -103,10 +110,10 @@ if (ISSET($_REQUEST['lang'])) {
                 <option>EUR</option>
             </select>
         </div>
-        <div id="donatebuttonwrapper"><button><div><?php echo $lang[$myLang]['donatebutton'];?>: </div></button></div>
-        <div id="paypaldonate">Or donate with a PayPal<br>
+        <div id="donatebuttonwrapper"><button><div><?php echo $lang[$myLang]['donatebutton'];?></div></button></div>
+        <div id="paypaldonate">Or donate with PayPal<br>
 
-            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EP3GTQ4M9YPZU"><img src="https://i2.wp.com/deadlaugh.com/wp-content/uploads/2017/03/PayPal-Donate-Button-High-Quality-PNG.png"></a>
+            <img src="https://i2.wp.com/deadlaugh.com/wp-content/uploads/2017/03/PayPal-Donate-Button-High-Quality-PNG.png">
         </div>
     </div>
     <script>
