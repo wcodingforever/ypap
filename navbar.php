@@ -7,7 +7,7 @@ if (ISSET($_REQUEST['lang'])) {
     $myLang = 'en';
  }
 ?><style>
-        /* * {outline: 1px solid red} */
+        * {outline: 1px solid red}
         body {
             padding: 0px;
             margin: 0px;
@@ -59,7 +59,7 @@ if (ISSET($_REQUEST['lang'])) {
             text-align: center;
             line-height: 45px;
             display: inline-flex;
-            width: 150px;
+            width: 140px;
             align-items: center;
             justify-content: center;
         }
@@ -86,7 +86,14 @@ if (ISSET($_REQUEST['lang'])) {
             width: 201px;
             height: 75px;
             line-height: 75px;
+            color: white;
+            background-color: #1D4872;
+            border-radius: 5px;
             /* outline: 1px solid red; */
+        }
+
+        #donationplease {
+            outline: 1px solid red;
         }
 
         a:visited {
