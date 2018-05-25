@@ -7,7 +7,7 @@ if (ISSET($_REQUEST['lang'])) {
     $myLang = 'en';
  }
 ?><style>
-        /* * {outline: 1px solid red} */
+        * {outline: 1px solid red}
         body {
             padding: 0px;
             margin: 0px;
@@ -58,7 +58,7 @@ if (ISSET($_REQUEST['lang'])) {
             text-align: center;
             line-height: 45px;
             display: inline-flex;
-            width: 150px;
+            width: 140px;
             align-items: center;
             justify-content: center;
         }
@@ -84,7 +84,14 @@ if (ISSET($_REQUEST['lang'])) {
             width: 200px;
             height: 75px;
             line-height: 75px;
+            color: white;
+            background-color: #1D4872;
+            border-radius: 5px;
             /* outline: 1px solid red; */
+        }
+
+        #donationplease {
+            outline: 1px solid red;
         }
 
         a:visited {
@@ -169,7 +176,7 @@ if (ISSET($_REQUEST['lang'])) {
             <option class="langOptions" id="menufrench">Français</option>
             <option class="langOptions" id="menuswedish">Svenska</option>
         </select>
-        <div id="donatebutton">Please consider donating!</div>
+        <a href="donations.php"><div id="donatebutton"></div></a>
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
     </div>
     <div id="menudiv"><!--mobile menu options-->
