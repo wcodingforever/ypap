@@ -4,6 +4,14 @@ $json = file_get_contents("php://input");
 $obj = json_decode($json, true);
 $response = "OK";
 
+// var obj = {};
+//     obj.name = name;
+//     obj.phone = phone;
+//     obj.email = email;
+//     obj.workType1 = workType1;
+//     obj.workType2 = workType2;
+//     obj.availability = availability;
+
 $name = $obj["name"];
 $phone = $obj["phone"];
 $email = $obj["email"];

@@ -238,7 +238,7 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
                     <div class="title" id="form_title">
                         Want to participate? <br> Please write a form.
                     </div>
-                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteername'];?>: </div> </span> <input id="name" name="name" type="text"><span id="required"> (Required)</span></div>
+                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteername'];?>: </div> </span> <input id="name" name="name" type="text"><span id="required"> *</span></div>
                     <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['fosterphone'];?>: </div></span>
                         <!-- country codes (ISO 3166) and Dial codes. -->
                         <select name="phone" id="countryCode">
@@ -458,9 +458,9 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
                         	<option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
                         	<!-- </otgroup> -->
                         </select> 
-                        <input id="phoneNumber" name="phone" type="tel"><span id="required"> (Required)</span>
+                        <input id="phoneNumber" name="phone" type="tel"><span id="required"> *</span>
                     </div>
-                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteeremail'];?>: </div></span> <input id="email" name="email" type="email"><span id="required"> (Required)</span></div>
+                    <div class="field"><span class="f_title"><div><?php echo $lang[$myLang]['volunteeremail'];?>: </div></span> <input id="email" name="email" type="email"><span id="required"> *</span></div>
                     <div class="field">
                         <div class="f_title"><span><div><?php echo $lang[$myLang]['volunteertype'];?>: </div></span></div>
                         <div id="workType_text">Please choose 1 or 2 work types.</div>
@@ -531,7 +531,21 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
             }
         }
     }
-    var phoneInputs = document.querySelectorAll("input[name='phone']");
+    var phoneInput = document.querySelector("input[name='phone']");
+    phoneInput.addEventListener("change", isValidPhoneNum);
+    //CHK if it is a valid phone number or not!
+
+    function isValidPhoneNum(){
+        var phoneInput = this.value;
+        //The recommanded format(placeholder) is "0000 - 0000 - 00000";
+        //So, to validate the input, remove all "-" and " " in the input!!
+        phoneInput = phoneInput.replace(/[ -]/g, ""); 
+        phoneInput = Number(phoneInput);
+    
+        if(!(Number.isInteger(phoneInput))||phoneInput < 0 ){
+            alert("Unvalid phone number. Please check the phone number.");
+        }
+    }
     
     var emailInput = document.getElementById("email");
     emailInput.addEventListener("change", isValidEmail);
@@ -545,7 +559,9 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
     function sendForm(){
         //Check if there is any empty field.
         var name = document.querySelector("input[name = 'name']").value; 
-        var phone = document.querySelector("input[name = 'phone']").value; 
+        var countryCode = document.querySelector("#countryCode").value;
+        var leftPhoneNum = document.querySelector("input[name = 'phone']").value; 
+        var phoneNumber = "";
         var email = document.querySelector("input[name = 'email']").value; 
         var workTypes = document.querySelectorAll("input[name = 'workType']:checked");
         var workType1 = "";
@@ -569,7 +585,11 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
                 ii)Both, availability_startDT, availability_endDT were provided:
                 availible => availability_startDT ~ availability_endDT
         */
-        //1)Work type
+        //1)Phone number; Country code +  the left phone number(in which  all '-', ' '(space) were removed.)
+        leftPhoneNum = leftPhoneNum.replace(/[ -]/g, "");
+        var phoneNumber = "+" + countryCode + " " +  leftPhoneNum;
+
+        //2)Work type
         if(workTypes.length === 1){
             workType1 = workTypes[0].value;
             workType2 = "";
@@ -578,7 +598,7 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
             workType1 = workTypes[0].value;
             workType2 = workTypes[1].value;
         }
-        //2)Availability
+        //3)Availability
         //If two dates were not chosen or same,
         if(availabilityDTs[0].value === availabilityDTs[1].value){
             availability = availability_startDT;
@@ -589,20 +609,21 @@ input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
         }
     
         //In the case where any of the required fields were not inserted..
-        if(name === ""||phone === "" || email === ""){
+        if(name === ""||leftPhoneNum === "" || email === ""){
             alert("Please insert all required datas.");
         }
         //If all required data were required, 
         else{
             var obj = {};
             obj.name = name;
-            obj.phone = phone;
+            obj.phone = phoneNumber;
             obj.email = email;
             obj.workType1 = workType1;
             obj.workType2 = workType2;
             obj.availability = availability;
         
             var json = JSON.stringify(obj);
+            
             var xhr = new XMLHttpRequest();
             var inputContainer = document.getElementById("inputContainer");
             xhr.onreadystatechange = function () {
