@@ -47,10 +47,16 @@
             border: 1px solid grey;
             float: right;
             margin: 10px 30px 10px 0;
-            border-radius: 5px;
+            color: white;
+            font-weight: bold;
             background-color: #1D4872;
             color: white;
-            font-size: 1em;
+            width: 150px;
+            height: 50px;
+            border: 1px solid grey;
+            margin: auto;
+            border-radius: 3px;
+            padding: 7px;
         }
         @media screen and (min-width: 481px) {
             .storyimage {
