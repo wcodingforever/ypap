@@ -73,9 +73,9 @@ if (ISSET($_REQUEST['lang'])) {
             vertical-align: top;
             font-family: sans-serif;
             font-weight: bold;
-            margin-top: 10%;
+            margin-top: 5%;
             margin-right: 20%;
-            margin-left: 10%;
+            margin-left: 3%;
         }
 
         #donatebutton {
