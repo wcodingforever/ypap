@@ -129,7 +129,7 @@ if (ISSET($_REQUEST['lang'])) {
                 }
             }
             var outGoingNewsLetterInfo = JSON.stringify(newsLetterSignUpInfo);
-            newsLetterAjax.open("POST", "mailingsignupinfo.php");
+            newsLetterAjax.open("POST", "back/mailingsignupinfo.php");
             newsLetterAjax.send(outGoingNewsLetterInfo);
         }
     </script>

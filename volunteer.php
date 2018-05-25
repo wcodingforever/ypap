@@ -184,7 +184,7 @@ if (ISSET($_REQUEST['lang'])) {
                 <div class="title">Driving</div>
                 <p>YPAP is always seeking drivers to assist with transporting dogs around the Seoul area.</p>
                 <p>We need drivers who can help us transport dogs from the pound to foster homes, to the vet, and sometimes to the airport.</p>
-                <p>If you have a valid driving license and would be willing to help, please <a>Contact Us</a>.</p>
+                <p>If you have a valid driving license and would be willing to help, please <a href="contactus.php">Contact Us</a>.</p>
             </div>
 
 
@@ -194,7 +194,7 @@ if (ISSET($_REQUEST['lang'])) {
 
                 <p>We are looking for people who can help us process and organize the foster and adoption applications, as well as arranging pound visits, fundraising, or volunteer sessions.</p>
 
-                <p>If you are interested in getting involved in the admin side of YPAP, please <a>Contact Us.</a></p>
+                <p>If you are interested in getting involved in the admin side of YPAP, please <a href="contactus.php">Contact Us.</a></p>
             </div>
 
             <div class="text">
@@ -204,11 +204,11 @@ if (ISSET($_REQUEST['lang'])) {
                 <p>Usually only <b>DIRECT</b> flights work for sending an animal on a plane due to long flight times and airline regulations.</p>
                 <p>If you are not flying direct, please let us know and we can try to arrange a dog to fly IN CABIN with you, under the seat.</p>
                 <p>Most commonly we need flights to SFO, LAX, JFK, SEA, ORD, IAD, YVR, YYZ, VIE, MUC.</p>
-                <p>If you are flying in the future, please <a>Contact Us.</a></p>
+                <p>If you are flying in the future, please <a href="contactus.php">Contact Us.</a></p>
             </div>
 
             <div class="text">
-                <div class="title" id="donateTitle"><ins>Donate</ins></div>
+                <div class="title">Donate</div>
                 <p>Donations made to YPAP go entirely towards helping as many abandoned animals as we can.</p>
 
                 <p>Monetary donations are used to pay for vaccinations, medical treatment, and airfare for freedom flights.</p>
@@ -220,7 +220,7 @@ if (ISSET($_REQUEST['lang'])) {
 
                 <p>Not just money is needed! You can donate old blankets (without stuffing), towels, dog food, newspapers, and cleaning supplies.</p>
 
-                <p>If you would like to send a care parcel to the pound, please <a>Contact Us</a> for the address.</p>
+                <p>If you would like to send a care parcel to the pound, please <a href="contactus.php">Contact Us</a> for the address.</p>
             </div>
 
             <div class="text">
@@ -641,7 +641,7 @@ if (ISSET($_REQUEST['lang'])) {
                     }
                 }
             }
-            xhr.open("POST", "sendvolunteerform.php");
+            xhr.open("POST", "back/sendvolunteerform.php");
             xhr.send(json);
         }
     }
