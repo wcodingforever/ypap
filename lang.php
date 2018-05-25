@@ -1,6 +1,7 @@
 <?php
 $lang = [
     "en"		=> [
+        "languageName"  => "English",
         "gender"	    => "Gender",
         "breed"		    => "Breed",
         "age"		    => "Age",
@@ -75,6 +76,7 @@ $lang = [
         "navdogs" => "Our Dogs"
     ],
     "ko"		=> [
+        "languageName"  => "한국어",
         "gender"		=> "성별",
         "breed"		    => "품종",
         "age"		    => "나이",
@@ -149,6 +151,7 @@ $lang = [
         "navdogs" => "보유견"
     ],
     "fr"		=> [
+        "languageName"  => "Français",
         "gender"		=> "Sexe",
         "breed"		    => "Race",
         "age"		    => "Âge",
@@ -223,6 +226,7 @@ $lang = [
         "navdogs" => "Chiens"
     ],
     "ru"		=> [
+        "languageName"  => "Русский",
         "gender"		=> "Пол",
         "breed"		    => "Порода",
         "age"		    => "Возраст",
@@ -297,6 +301,7 @@ $lang = [
         "navdogs" => "Собаки на усыновление"
     ],
     "sv"		=> [
+        "languageName"  => "Svenska",
         "gender"		=> "Kön",
         "breed"		    => "Ras",
         "age"		    => "Ålder",
