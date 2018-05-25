@@ -51,9 +51,9 @@ if (ISSET($_REQUEST['lang'])) {
         margin: 0;
     }
     #hero_wrapper{
-        width: 23%;
+        width: 35%;
         position: absolute;
-        margin-left: 12%;
+        margin-left: 35%;
     }
     #donateTitle{
         color: blue;
@@ -122,16 +122,19 @@ if (ISSET($_REQUEST['lang'])) {
         font-weight: bold;
         background-color: #1D4872;
         color: white;
-        width: 100px;
+        width: 150px;
         height: 50px;
+        border: 1px solid grey;
         margin: auto;
         border-radius: 3px;
+        padding: 7px;
     }
-    #inputContainer{
-        background: #f1f1f1;
-        height: auto;
-        padding: 2em 3em;
-        width: 35em;
+    #inputContainer, input, select{
+        border-radius: 3px;
+        padding: 7px;
+        margin: 12px 0px 10px 10px;
+        border: 1px solid grey;
+
     }
     #countryCode{
         width: 10em;
