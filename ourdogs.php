@@ -243,9 +243,6 @@ if (ISSET($_REQUEST['lang'])) {
     .popupInfoDiv {
         display: flex;
     }
-    /* .additionalInfo {
-        background:rgba(128, 128, 128, 0.856);
-    } */
     .myModal {
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
@@ -365,20 +362,6 @@ if (ISSET($_REQUEST['lang'])) {
                         $(this).closest(".myModal").hide();
                         }
                     });
-                    
-                    // var adoptButton = document.querySelector(".adoptButton");
-                    // adoptButton.addEventListener('click', function() {
-                    //     this
-                    // //     xhttp.onreadystatechange = function () {
-                    // // if (xhttp.readyState === 4 && xhttp.status === 200) {
-                    // // var response = xhttp.responseText;
-                    //         // NEED TO GET PROPER HTML ADDRESS//
-                    //     window.location.replace("adoptionform.php?lang="+"'"+currentLang+"'");
-                    // });
-                    //     // adoptButton.onclick = function() {
-                    //     //     // NEED TO GET PROPER HTML ADDRESS//
-                    //     // window.location.replace("adoptionform.html");
-                    //     // };
                     }
                 };
             

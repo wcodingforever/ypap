@@ -40,21 +40,22 @@
                 $stmt = $connection->prepare("
                     SELECT `id`, `content`, `picture`, `uploaddate`
                     FROM `story`
-                    ORDER BY `uploaddate` DESC LIMIT :downfrom, :downto;
+                    ORDER BY `uploaddate` 
+                    DESC LIMIT :downfrom, :downto;
                     ");
                 ////////////////////////////////////////// Bind Params
                 $downdrombind = $receive->initialrequest;
-                $downtobind = $downdrombind + 5;
+                $downtobind = $downdrombind;
 
-                $stmt->bindParam(':downfrom', $downdrombind);
-                $stmt->bindParam(':downto', $downtobind);
+                $stmt->bindParam(':downfrom', intVal($downdrombind), PDO::PARAM_INT);
+                $stmt->bindParam(':downto', intVal($downtobind), PDO::PARAM_INT);
                 //////////////////////////////////////////
                 $stmt->execute();
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+                
                 $result = json_encode($result);
                 echo($result);
-            
+
                 $connection = null;
                 $stmt = null;
             }
@@ -62,5 +63,5 @@
             }
         }
     }
-    
+
 ?>
