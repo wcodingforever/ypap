@@ -184,15 +184,15 @@ if (ISSET($_REQUEST['lang'])) {
         <div id="mobilemenubutton"><i class="fas fa-bars"></i></div>
     </div>
     <div id="menudiv"><!--mobile menu options-->
-        <a href="aboutus.php"><div class="menuoptions"><?php echo $lang[$myLang]['navabout'];?></div></a>
-        <a href="ourdogs.php"><div class="menuoptions"><?php echo $lang[$myLang]['navdogs'];?></div></a>
-        <a href="flightbuddy.php"><div class="menuoptions"><?php echo $lang[$myLang]['navflight'];?></div></a>
-        <a href="foster.php"><div class="menuoptions"><?php echo $lang[$myLang]['navfoster'];?></div></a>
-        <a href="volunteer.php"><div class="menuoptions"><?php echo $lang[$myLang]['navvolunteer'];?></div></a>
-        <a href="donations.php"><div class="menuoptions"><?php echo $lang[$myLang]['navdonate'];?></div></a>
-        <a href="stories.php"><div class="menuoptions"><?php echo $lang[$myLang]['navstories'];?></div></a>
-        <a href="contactus.php"><div class="menuoptions"><?php echo $lang[$myLang]['navcontact'];?></div></a>
-        <a href="newsletters.php"><div class="menuoptions"><?php echo $lang[$myLang]['navnewsletter'];?></div></a>
+        <a href="aboutus.php?lang=<?php echo($myLang); ?>"><div class="menuoptions"><?php echo $lang[$myLang]['navabout'];?></div></a>
+        <a href="ourdogs.php?lang=<?php echo($myLang); ?>"><div class="menuoptions"><?php echo $lang[$myLang]['navdogs'];?></div></a>
+        <a href="flightbuddy.php?lang=<?php echo($myLang); ?>"><div class="menuoptions"><?php echo $lang[$myLang]['navflight'];?></div></a>
+        <a href="foster.php?lang=<?php echo($myLang); ?>"><div class="menuoptions"><?php echo $lang[$myLang]['navfoster'];?></div></a>
+        <a href="volunteer.php?lang=<?php echo($myLang); ?>"><div class="menuoptions"><?php echo $lang[$myLang]['navvolunteer'];?></div></a>
+        <a href="donations.php?lang=<?php echo($myLang); ?>"><div class="menuoptions"><?php echo $lang[$myLang]['navdonate'];?></div></a>
+        <a href="stories.php?lang=<?php echo($myLang); ?>"><div class="menuoptions"><?php echo $lang[$myLang]['navstories'];?></div></a>
+        <a href="contactus.php?lang=<?php echo($myLang); ?>"><div class="menuoptions"><?php echo $lang[$myLang]['navcontact'];?></div></a>
+        <a href="newsletters.php?lang=<?php echo($myLang); ?>"><div class="menuoptions"><?php echo $lang[$myLang]['navnewsletter'];?></div></a>
     </div>
     <input type="hidden" id="hiddenlang" name="languagesetting" value="en">
     <script>

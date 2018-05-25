@@ -116,7 +116,66 @@ if (ISSET($_REQUEST['lang'])) {
     .bottommenu {
         height: 200px;
         width: 210px;
-        border:1px solid black;
+        border: 2px solid darkblue;
+        width: 30%;
+        text-align: center;
+        padding: 4%;
+        font-size: 275%;
+        color: darkblue;
+        box-shadow: 2px 2px #888888;
+        margin-top: -8%;
+    }
+    .bottommenu {
+        height: 200px;
+        width: 210px;
+        display: block;
+        position: relative;
+        border: 2px solid darkblue;
+        width: 30%;
+        text-align: center;
+        padding: 4%;
+        font-size: 275%;
+        color: darkblue;
+        box-shadow: 2px 2px #888888;
+        margin-top: -8%;
+    }
+    #bottommenuvolunteer::after {
+        content: "";
+        background: url("https://www.findresumetemplates.com/wp-content/uploads/2012/11/vonunteer-with-dog-at-an-animal-shelter.jpg");
+        opacity: 0.5;
+        background-size: 85%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;   
+    }
+    #bottommenuflightbuddy::after {
+        content: "";
+        background: url("https://3milliondogs.com/blog-assets-two/2015/04/IMG_0395.jpg");
+        opacity: 0.5;
+        background-size: 85%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;   
+        background-size: 85%;
+    }
+    #bottommenufoster::after {
+        content: "";
+        background: url("http://dog-harmony.org/wp-content/uploads/2016/04/image-foster.jpg");
+        opacity: 0.5;
+        background-size: 85%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;   
+        background-size: 85%;
     }
 
     .active, .dotstyle:hover {
@@ -371,9 +430,9 @@ if (ISSET($_REQUEST['lang'])) {
     </div>
 
     <div id="bottommenuwrapper"><!--desktop-->
-        <div class="bottommenu"></div>
-        <div class="bottommenu"></div>
-        <div class="bottommenu"></div>
+        <a href='volunteer.php?lang=<?php echo($myLang); ?>' class="bottommenu" id="bottommenuvolunteer"><?php echo $lang[$myLang]['navvolunteer'];?></a>
+        <a href='flightbuddy.php?lang=<?php echo($myLang); ?>' class="bottommenu" id="bottommenuflightbuddy"><?php echo $lang[$myLang]['navflight'];?></a>
+        <a href='foster.php?lang=<?php echo($myLang); ?>' class="bottommenu" id="bottommenufoster"><?php echo $lang[$myLang]['navfoster'];?></a>
     </div>
     
     <script>
