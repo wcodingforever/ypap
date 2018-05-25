@@ -19,9 +19,13 @@ if (ISSET($_REQUEST['lang'])) {
         /* *{
             outline: 1px solid blue;
         } */
-        input{
+        input, select{
             width: 350px;
             height: 40px;
+            border-radius: 3px;
+            padding: 7px;
+            margin: 12px 0px 10px 10px;
+            border: 1px solid grey;
         }
         body {
             margin: 0px;
@@ -41,8 +45,20 @@ if (ISSET($_REQUEST['lang'])) {
             cursor: pointer;
         }
         button {
+            color: white;
+            font-weight: bold;
             background-color: #1D4872;
             color: white;
+            width: 150px;
+            height: 50px;
+            border: 1px solid grey;
+            margin: 20px;
+            border-radius: 3px;
+            padding: 7px;
+        }
+
+        #flightbuddyimage {
+            text-align: center;
         }
         @media screen and (max-width: 481px){
         }

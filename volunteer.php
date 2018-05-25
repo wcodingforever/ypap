@@ -46,102 +46,106 @@ if (ISSET($_REQUEST['lang'])) {
         width: auto;
         padding: 1em 2em;
     }
-}
-body{
-    margin: 0;
-}
-#hero_wrapper{
-    width: 23%;
-    position: absolute;
-    margin-left: 12%;
-}
-#donateTitle{
-    color: blue;
-}
-a{
-    color: blue;
-    cursor: pointer;    
-}
-#main_title{
-    font-size: 2.4em;
-    font-weight: 600;
-    margin-bottom: 1em;
-}
-.title{
-    font-size: 1.8em;
-    font-weight: bold;
-    margin: 0.5em 0em;
-}
-#textBox{
-    margin: 1.2em 13em;
-}
-.text{
-    border-bottom: 1px solid #dbdbdb;
-}
-#wrapper{
-    background: white;
-    position: relative;
-    top: 19em;
-    padding-top: 1em;
-    margin-bottom: 11em;
-}
-form span{
-   color: blue; 
-}
-#workTypes label{
-    color: #b30ab3;
-    font-weight: bold;
-}
-form{
-    /* width: */
-    display: flex;
-    flex-direction: column;
-    margin-top: 4em;
-}
-.field{
-    margin: 1em 0em;
-}
-.f_title{
-    margin-bottom: 0.3em;
-    font-weight: bold;
-}
-#workType_text{
-    margin-bottom: 0.6em;
-}
-#form_title{
-    margin-bottom: 2.2em;
-    color: blue;
-}
-.DT{
-    display: inline-block;
-    margin-right: 3em;
-    margin-top: 0.5em;
-}
-#submitButton{
-    height: 1.5em;
-    width: 5em;
-    font-size: 1em;
-    position: relative;
-    top: -1.2em;
-    background-color: #1D4872;
-    color: white;
-}
-#inputContainer{
-    background: #f1f1f1;
-    height: auto;
-    padding: 2em 3em;
-    width: 35em;
-}
-#countryCode{
-    width: 10em;
-}
-input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
-    width: 16em;
-}
-#required{
-    color: red;
-    font-size: 0.8em;
-}
+    }
+    body{
+        margin: 0;
+    }
+    #hero_wrapper{
+        width: 35%;
+        position: absolute;
+        margin-left: 35%;
+    }
+    #donateTitle{
+        color: blue;
+    }
+    a{
+        color: blue;
+        cursor: pointer;    
+    }
+    #main_title{
+        font-size: 2.4em;
+        font-weight: 600;
+        margin-bottom: 1em;
+    }
+    .title{
+        font-size: 1.8em;
+        font-weight: bold;
+        margin: 0.5em 0em;
+    }
+    #textBox{
+        margin: 1.2em 13em;
+    }
+    .text{
+        border-bottom: 1px solid #dbdbdb;
+    }
+    #wrapper{
+        background: white;
+        position: relative;
+        top: 19em;
+        padding-top: 1em;
+        margin-bottom: 11em;
+    }
+    form span{
+    color: blue; 
+    }
+    #workTypes label{
+        color: #b30ab3;
+        font-weight: bold;
+    }
+    form{
+        /* width: */
+        display: flex;
+        flex-direction: column;
+        margin-top: 4em;
+    }
+    .field{
+        margin: 1em 0em;
+    }
+    .f_title{
+        margin-bottom: 0.3em;
+        font-weight: bold;
+    }
+    #workType_text{
+        margin-bottom: 0.6em;
+    }
+    #form_title{
+        margin-bottom: 2.2em;
+        color: blue;
+    }
+    .DT{
+        display: inline-block;
+        margin-right: 3em;
+        margin-top: 0.5em;
+    }
+    #submitButton{
+        color: white;
+        font-weight: bold;
+        background-color: #1D4872;
+        color: white;
+        width: 150px;
+        height: 50px;
+        border: 1px solid grey;
+        margin: auto;
+        border-radius: 3px;
+        padding: 7px;
+    }
+    #inputContainer, input, select{
+        border-radius: 3px;
+        padding: 7px;
+        margin: 12px 0px 10px 10px;
+        border: 1px solid grey;
+
+    }
+    #countryCode{
+        width: 10em;
+    }
+    input[type='text'], input[type='email'], input[type='date'], input[type='tel']{
+        width: 16em;
+    }
+    #required{
+        color: red;
+        font-size: 0.8em;
+    }
 </style>
 </head>
 <body>
