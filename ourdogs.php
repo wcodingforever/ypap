@@ -34,7 +34,7 @@ if (ISSET($_REQUEST['lang'])) {
         display:flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        margin-top: 10%;
+        margin-top: 2%;
     }
     .dogProfDiv {
         padding-left: 1%;
@@ -54,8 +54,8 @@ if (ISSET($_REQUEST['lang'])) {
         width: 53%;
         height: 87%;
         overflow: auto;
-        background-color: rgb(0,0,0);
-        background-color: rgba(192, 192, 192, 0.966);
+        background-color: rgba(0, 0, 0, .75);
+        color: white;
     }
     .modalDogPicture {
         height: 45vh;
@@ -74,11 +74,13 @@ if (ISSET($_REQUEST['lang'])) {
     }
     .dogNameModal {
         text-align: left;
-        margin-left: 30%;
-        color: #00337f;
+        margin-left: 6%;
+        color: white;
         font-family: Lato,sans-serif;
         font-size: 240%;
         font-weight: bold;
+        line-height: 45px;
+
     }
     .dogInfo {
         margin-left: 0%;
@@ -86,6 +88,11 @@ if (ISSET($_REQUEST['lang'])) {
         text-align: left;
         font-family: Lato,sans-serif;
     }
+
+    .dogInfo > div{
+        line-height: 25px;
+    }
+
     .dogInfoOne {
         margin-left: 6%;
         margin-right: 1%;
@@ -109,38 +116,40 @@ if (ISSET($_REQUEST['lang'])) {
         margin-top: 3%;
         margin-bottom: 10%;
         color: white;
-        background-color: #7ea83f;
-        width: 90%;
+        background-color: #1D4872;
+        width: 100%;
         height: 9vh;
         font-size: 150%;
         font-family: Lato,sans-serif;
         margin-bottom: 20%;
+        border-radius: 5px;
     }
     .adoptButton {
         margin-top: -5.5%;
         float: right;
-        margin-right: 29%;
-        height: 7%;
+        margin-right: 16%;
         width: 22%;
         font-size: 175%;
         font-weight: bold;
         border-radius: 5%;
-        background-color: #7ea83f;
+        background-color: #1D4872;
         color: white;
-        border-color: #7ea83f;
+        border-color: #1D4872;
         border-radius: 3%;
     } 
     .close {
-        color: #000000;
+        color: white;
         float: right;
         font-size: 28px;
         font-weight: bold;
         margin-right: 3%;
-        font-size: 45px;
+        font-size: 60px;
+        position: fixed;
+        left: 65%;
     }
     .close:hover,
     .close:focus {
-        color: #000;
+        color: #1D4872;
         text-decoration: none;
         cursor: pointer;
     }
@@ -169,7 +178,7 @@ if (ISSET($_REQUEST['lang'])) {
     }
     .dogProfile {
         margin-right: 5%;
-        margin-top: 30%;
+        margin-top: 10%;
         text-align: center;
         height: 65vh;
         width: 95vw;
@@ -232,13 +241,15 @@ if (ISSET($_REQUEST['lang'])) {
     .infoButton {
         margin-top: 3%;
         margin-bottom: 10%;
-        color: white;
-        background-color: #7ea83f;
         width: 99%;
         height: 9vh;
         font-size: 108%;
         font-family: Lato,sans-serif;
         margin-bottom: 20%;
+        background-color: #1D4872;
+        color: white;
+        border-color: white;
+        border-radius: 5px;
     }
     .popupInfoDiv {
         display: flex;
@@ -256,10 +267,10 @@ if (ISSET($_REQUEST['lang'])) {
         width: 100vw; /* Full width */
         height: 100%; /* Full height */
         overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(192, 192, 192, 0.966); /* Black w/ opacity */
+        background-color: rgba(0, 0, 0, .75); /* Black w/ opacity */
         max-height: calc(100vh - 80px);
         overflow-y: auto;
+        color:white;
     }
     .modalDogPicture {
         width: 100vw;
@@ -267,7 +278,7 @@ if (ISSET($_REQUEST['lang'])) {
     }
     /* The Close Button */
     .close {
-        color: #000000;
+        color: white;
         float: right;
         font-size: 28px;
         font-weight: bold;
@@ -289,10 +300,11 @@ if (ISSET($_REQUEST['lang'])) {
         width: 32%;
         font-size: 110%;
         font-weight: bold;
-        border-radius: 5%;
         background-color: #1D4872;
         color: white;
-        border-color: #7ea83f;
+        border-color: white;
+        border-radius: 5px;
+
     }
 }
 </style>
@@ -319,9 +331,9 @@ if (ISSET($_REQUEST['lang'])) {
                         "</div>" + 
                         "<div class = 'dogName'>" + response[i].name + "</div>" +
                         "<div class = 'dogInfo'>" +
-                                "<div><?php echo $lang[$myLang]['gender'];?>:" + response[i].gender + "</div>" +
-                                "<div><?php echo $lang[$myLang]['breed'];?>:" + response[i].breed + "</div>" +
-                                "<div><?php echo $lang[$myLang]['age'];?>:" + response[i].age + "</div>" +
+                                "<div><?php echo $lang[$myLang]['gender'];?>: " + response[i].gender + "</div>" +
+                                "<div><?php echo $lang[$myLang]['breed'];?>: " + response[i].breed + "</div>" +
+                                "<div><?php echo $lang[$myLang]['age'];?>: " + response[i].age + "</div>" +
                                 "<button class = 'infoButton'><?php echo $lang[$myLang]['learnmore'];?></button><br>" +
 
                                 "<div class='myModal'>"+
@@ -335,15 +347,15 @@ if (ISSET($_REQUEST['lang'])) {
                                         "</a>" +
                                     "<div class='popupInfoDiv'>" +
                                         "<div class = 'dogInfoOne'>" +
-                                            "<div><?php echo $lang[$myLang]['gender'];?>:" + response[i].gender + "</div><br>" +
-                                            "<div><?php echo $lang[$myLang]['breed'];?>:" + response[i].breed + "</div><br>" +
-                                            "<div><?php echo $lang[$myLang]['age'];?>:" + response[i].age + "</div><br>" + 
-                                            "<div><?php echo $lang[$myLang]['weight'];?>:" + response[i].weight + "</div><br>" +
+                                            "<div><?php echo $lang[$myLang]['gender'];?>: " + response[i].gender + "</div><br>" +
+                                            "<div><?php echo $lang[$myLang]['breed'];?>: " + response[i].breed + "</div><br>" +
+                                            "<div><?php echo $lang[$myLang]['age'];?>: " + response[i].age + "</div><br>" + 
+                                            "<div><?php echo $lang[$myLang]['weight'];?>: " + response[i].weight + "</div><br>" +
                                         "</div>" +
                                         "<div class = 'dogInfoTwo'>" +
-                                            "<div><?php echo $lang[$myLang]['arrivaldate'];?>:" + response[i].arrivaldate + "</div><br>" +
-                                            "<div>ID:" + response[i].id + "</div><br>" +
-                                            "<div><?php echo $lang[$myLang]['spayed'];?>:" + response[i].spayed + "</div>" +
+                                            "<div><?php echo $lang[$myLang]['arrivaldate'];?>: " + response[i].arrivaldate + "</div><br>" +
+                                            "<div>ID: " + response[i].id + "</div><br>" +
+                                            "<div><?php echo $lang[$myLang]['spayed'];?>: " + response[i].spayed + "</div>" +
                                         "</div>" +
                                     "</div>" +
                                     "<div class='notesDiv'><?php echo $lang[$myLang]['notes'];?>: " + response[i].notes + "</div>" +
