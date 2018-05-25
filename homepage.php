@@ -73,8 +73,8 @@ if (ISSET($_REQUEST['lang'])) {
         position: absolute;
         margin: auto;
         z-index: 1;
-        top: 60%;
-        left: 198px;
+        top: 65%;
+        left: 127px;
     }
 
     #next, #previous {
@@ -319,6 +319,12 @@ if (ISSET($_REQUEST['lang'])) {
         display: block;
     }
 
+    #buttondiv {
+        width: 100%;
+        left: 0;
+
+    }
+
     #previous, #next {
         /* display:block; */
         color:black;
@@ -540,7 +546,8 @@ if (ISSET($_REQUEST['lang'])) {
             showSlides();
             slideIndex + 1;
             clearInterval(myTime);
-            setTimeout(myFunction, 5000);
+            // setTimeout(myFunction, 10000);
+            
             
 
         });
@@ -550,7 +557,6 @@ if (ISSET($_REQUEST['lang'])) {
             showSlides();
             slideIndex - 1;
             clearInterval(myTime);
-            setTimeout(myFunction, 5000);
             
         });
 
