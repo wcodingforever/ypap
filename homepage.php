@@ -426,7 +426,7 @@ if (ISSET($_REQUEST['lang'])) {
         <div class="menudiv"></div><!--make space for donate button at the bottom-->
 
         <div class="donateArea">
-            <a href="">Donate <i class="far fa-heart"></i></a></div>
+            <a href="donations.php">Donate<i class="far fa-heart"></i></a></div>
     </div>
 
     <div id="bottommenuwrapper"><!--desktop-->
@@ -632,7 +632,7 @@ if (ISSET($_REQUEST['lang'])) {
                     }
                 }
             }
-            xhr.open("POST", "getdogprofile.php");
+            xhr.open("POST", "back/getdogprofile.php");
             var forSend = {
                 whattoget: "sample"
             }

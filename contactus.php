@@ -205,7 +205,7 @@ if (ISSET($_REQUEST['lang'])) {
                     <div id="form_field_phone_line">
                         <div class="form_fields">
                             <span class="fieldNameForm"><div><?php echo $lang[$myLang]['fosterphone'];?>: </div></span>
-                            <input type="tel" name="phone" class="form_input" id="phone"><!-- optionnal --> 
+                            <input type="text" name="phone" class="form_input" id="phone"><!-- optionnal --> 
                         </div><!-- end phone --> 
                     </div><!-- end form_field_phone_line -->    
 
@@ -258,33 +258,30 @@ if (ISSET($_REQUEST['lang'])) {
     function fieldsVerification() {
               
     var userNameElem = document.querySelector("#name");
-    var userSurnameElem = document.querySelector("#surname");
+    // var userSurnameElem = document.querySelector("#surname");
     var userPhoneElem = document.querySelector("#phone"); //optionnal
     var userEmailElem = document.querySelector("#email");
     var userWebsiteElem = document.querySelector("#website"); //optionnal
     var userSubjectElem = document.querySelector("#list");
     var userMessageElem = document.querySelector("#textarea_contact");
         var userName = userNameElem.value;
-        var userSurname = userSurnameElem.value;
+        // var userSurname = userSurnameElem.value;
         var userPhone = userPhoneElem.value;
         var userEmail = userEmailElem.value;
         var userWebsite = userEmailElem.value;
         var userSubject = userSubjectElem.value;
         var userMessage = userMessageElem.value;
         if  ((userName ==="") && (userName.length >= 1) ||
-            (userSurname === "") && (userSurname.length >= 1) ||
-            (userEmail === "") && (userEmail.length > 8) ||
+            ((userEmail === "") && (userEmail.length > 8) ||
             (userSubject === "") || 
-            (userMessage === "")) { 
+            (userMessage === ""))) { 
                 alert("Please complete all required fields.");
-                } else if(!isNaN(userName) ) { 
-                    alert("Please insert only letter as name.");
-                    } else if (!isNaN(userSurname) ) {
-                        alert("Please insert only letter as surname");
-                        } else if (userPhone !== "" && isNaN(userPhone) ) { 
-                            alert("Please insert only number as phone number.");
-                            }else if (userEmail.indexOf("@") === -1 || userEmail.indexOf(".") === -1) { /* true */
-                                alert("Please check the format of your email adress");
+                // } else if(!isNaN(userName) ) { 
+                //     alert("Please insert only letter as name.");
+                //     } else if (userPhone !== "" && userPhone.length()<20 ) { 
+                //             alert("Please insert only number as phone number.");
+                //             }else if (userEmail.indexOf("@") === -1 || userEmail.indexOf(".") === -1) { /* true */
+                //                 alert("Please check the format of your email adress");
         } else {
             alert("Thank you!");
           }
