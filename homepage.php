@@ -559,7 +559,7 @@ if (ISSET($_REQUEST['lang'])) {
                     }
                 }
             }
-            xhr.open("POST", "getdogprofile.php");
+            xhr.open("POST", "back/getdogprofile.php");
             var forSend = {
                 whattoget: "sample"
             }

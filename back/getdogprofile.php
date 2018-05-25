@@ -3,7 +3,6 @@
 
     $receiveMsg = file_get_contents("php://input");
     $receive = json_decode($receiveMsg);
-    $myLang = $receive->lang;
     ////////////////////////////////////////////// Server conf
     $servername = 'localhost';
 	$username = 'root';
@@ -29,6 +28,7 @@
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 $result = json_encode($result);
+                echo($result);
 
                 $connection = null;
                 $stmt = null;
@@ -37,6 +37,8 @@
             }
         }
         elseif ($receive->whattoget === "all") {
+            $myLang = $receive->lang;
+            
             try{
 	    		$stmt = $connection->prepare("
                     SELECT `id`, `name`, `gender`, `age`, `spayed`, `weight`, `breed`, `arrivaldate`, `notes`, `picture`
