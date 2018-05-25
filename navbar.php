@@ -159,7 +159,6 @@ if (ISSET($_REQUEST['lang'])) {
             border-radius: 3px;
             width: 80px;
             height: 30px;
-            margin-left: 100px;
             margin-bottom: 8px;
             font-family: sans-serif;
             font-weight: bold;
